@@ -1,0 +1,489 @@
+/*  HEADER COPONENT */
+.Header {
+  width: 1440px;
+  height: 80px;
+  background-color: #f0f0f0;
+}
+
+.socialLogos{
+  margin-left: 383px;
+  position: absolute;
+}
+
+.headerTitle{
+  position: absolute;
+  width: 260px;
+  height: 24px;
+  font-family: Gilroy;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.67px;
+  color: #18181d;
+  margin-top: 29px;
+  margin-bottom: 27px
+}
+
+.socialLogo{
+  width: 16px;
+  height: 12px;
+  padding: 0 8.75px;
+  background-color: var(--dark);
+  margin-top: 34px;
+  margin-bottom: 31px;
+}
+
+.communication {
+  margin-left: 835px;
+}
+
+.phoneLogo{
+  width: 20px;
+  height: 20px;
+  margin-top: 30px;
+  float: left;
+}
+
+.internationalCalls{
+  width: 142px;
+  height: 19px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #282828;
+  margin-top: 32px;
+  margin-left: 10px;
+  float: left;
+}
+
+.phoneNumber {
+  width: 130px;
+  height: 19px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #252851;
+  float: left; 
+  margin-top: 32px;
+  margin-left: 6px;
+}
+
+.headerWhatsapp{
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  float: left;
+  margin-top: 20px;
+  margin-left: 19px;
+  border-radius: 3px;
+}
+
+.whatsAppIcon{
+  width: 23px;
+  height: 23px;
+  margin-top:  9px;
+  margin-left: 9px;
+  background-color: #25d366;
+}
+
+.hearthIconDiv{
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.hearth_icon {
+  width: 20px;
+  height: 17px;
+  color: #9197b6;
+  margin-top: 13px;
+  margin-left: 10px;
+}
+
+.chosenLan{
+  float: left;
+  width: 120px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.flag{
+  float: left;
+  width: 28px;
+  height: 20px;
+  margin: 10px;
+}
+
+.flagText {
+  float: left;
+  width: 45px;
+  height: 17px;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.17px;
+  color: #18181d;
+}
+
+/* HEADER 2 COMPONENT */
+
+.header2 {
+  width: 1440px;
+  height: 100px;
+  background-color: #ffffff;
+}
+
+.header2Help {
+  float: left;
+  width: 197px;
+  height: 39px;
+  border-radius: 3px;
+  border: solid 1px #e0e0e0;
+  margin-left: 40px;
+  margin-top: 33px;
+  margin-right: 30px;
+}
+
+.header2HelpText{
+  width: 175px;
+  height: 19px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1d1f42;
+}
+
+.navigators {
+  float: left;
+  margin-left: 50px;
+  margin-top: 31px;
+}
+
+.navigatorText {
+  width: 80px;
+  height: 19px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1d1f42;
+}
+
+/* MAIN SEARCH COMPONENT*/
+
+.MainSearch{
+  background-image: url('./static/antalya_foto.jpeg');
+  width: 1440px;
+  height: 720px;
+  background-size: 100% 100%;
+}
+
+.cityContent {
+  margin-top: 307px;
+  margin-left: 135px;
+  position: absolute;
+}
+
+.cityContentHeader {
+
+  font-family: Gilroy;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.cityContentHeader2 {
+  color: white;
+  font-size: 60px;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.cityContentText {
+  width: 800px;
+  height: 115px;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.64;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-top:  452px;
+  margin-left: 135px;
+  position: absolute
+}
+
+.searchContainer {
+  margin-top: 560px;
+  position: absolute;
+  background-color: #1d1f42;
+  width: 362px;
+  height: 160px;
+}
+
+
+.Container1Text {
+  width: 176px;
+  height: 19px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-left: 50px;
+  margin-top: 34px;
+}
+
+.locationLogo {
+  width: 18px;
+  height: 24px;
+  color: rgba(253, 251, 251, 0.5);
+  margin-left: 20px;
+  margin-top: 18px;
+  float: left;
+}
+
+.searchInput {
+  width: 300px;
+  height: 60px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-left: 10px;
+  float: left
+}
+
+.locationInput {
+  width: 207px;
+  height: 17px;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-top: 22px;
+  margin-left: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  border: none
+}
+
+.searchOptions {
+  width: 188.5px;
+  background-color: #252851;
+  float: left;
+}
+
+.searchOptions2 {
+  margin-left: 362px;
+  position: absolute;
+  margin-top: 560px;
+  heigth: 322px;
+}
+
+.searchOptionText {
+  color: #ffffff;
+  margin-top: 71px;
+  margin-left:31px;
+  margin-bottom: 70px;
+}
+
+.searchBox {
+  position: absolute;
+  width: 187px;
+  height: 160px;
+  background-color: #e33654;
+  margin-top:560px;
+  margin-left:1116.49px;
+}
+
+.searchIcon{
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
+  margin-top: 69px;
+  margin-left: 18.5px;
+}
+
+.searchBoxText {
+  width: 41px;
+  height: 24px;
+  font-family: Gilroy;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  margin-left: 50.5px;
+  margin-top: 68.9px;
+  float: left;
+}
+
+/* FEATURED 1 */
+
+.featured1 {
+  width: 1440px;
+  height: 770px;
+  background-color: #f0f0f0;
+}
+
+.featured1Header {
+  margin-left: 135px;
+  margin-top: 93px;
+  width: 553px;
+  height: 66px;
+  font-family: Gilroy;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.65;
+  letter-spacing: normal;
+  color: var(--dark);
+  position: absolute;
+}
+
+.featuredContainer2{
+  width: 1270px;
+  margin-left: 105px;
+  position: absolute;
+}
+
+.featuredContainer{
+  width: 370px;
+  height: 400px;
+  background-color: #ffffff;
+  margin-top: 210px;
+  margin-left: 30px;
+  float: left;
+}
+
+.featuredHeader {
+  width: 113px;
+  height: 24px;
+  font-family: Gilroy;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-left: 39px;
+  margin-top: 166px;
+}
+
+.featuredsContent {
+  margin-top: 48px;
+  margin-left: 39px;
+  width: 310px;
+  height: 120px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #252627;
+}
+
+.featureMore{
+  margin-left: 259px;
+  width: 81px;
+  height: 19px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #252851;
+}
+
+/* FEATURED 2  */
+
+.featured2 {
+  margin-left: 100;
+}
+
+.featured2Container{
+  width: 370px;
+  height: 240px;
+  border-radius: 6px;
+  background-color: #25d366;
+  float: left;
+  margin-left: 30px;
+}
+
+.featured2Container2{
+  margin-left: 105px;
+  margin-top:51px;
+  margin-bottom: 170px;
+}
+
+.featured2Header2 {
+  margin-left: 135px;
+  margin-top: 80px;
+  width: 553px;
+  height: 66px;
+  font-family: Gilroy;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.65;
+  letter-spacing: normal;
+  color:#1d1f42
+}
+
+/* INTRODUCTION */
+
+.introduction {
+  width: 1440px;
+  height: 865px;
+  bacgkround-color:#252851;
+}
