@@ -15,6 +15,7 @@ import Header3 from './components/header3.js';
 import CityIntroduction from './components/cityIntroduction.js';
 import PropertyList from './components/propertyList.js';
 import SliderGallery from './components/SliderGallery.js';
+import Citizenship from './components/Citizenship.js';
 
 import './App.css';
 
@@ -45,6 +46,7 @@ class App extends React.Component{
         <Header3/>
         <CityIntroduction/>
         <SliderGallery />
+        <Citizenship />
         {/* <PropertyList/> */}
       </div>
     );
