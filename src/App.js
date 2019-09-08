@@ -14,6 +14,7 @@ import SearchHover from './components/searchHover.js';
 import Header3 from './components/header3.js';
 import CityIntroduction from './components/cityIntroduction.js';
 import PropertyList from './components/propertyList.js';
+import SliderGallery from './components/SliderGallery.js';
 
 import './App.css';
 
@@ -43,6 +44,7 @@ class App extends React.Component{
         <Header2/>
         <Header3/>
         <CityIntroduction/>
+        <SliderGallery />
         {/* <PropertyList/> */}
       </div>
     );
