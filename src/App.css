@@ -23,14 +23,14 @@
   letter-spacing: 1.67px;
   color: #18181d;
   margin-top: 29px;
-  margin-bottom: 27px
+  margin-bottom: 27px;
+  margin-left: 94px;
 }
 
 .socialLogo{
   width: 16px;
   height: 12px;
   padding: 0 8.75px;
-  background-color: var(--dark);
   margin-top: 34px;
   margin-bottom: 31px;
 }
@@ -94,7 +94,7 @@
   height: 23px;
   margin-top:  9px;
   margin-left: 9px;
-  background-color: #25d366;
+  /* background-color: #25d366; */
 }
 
 .hearthIconDiv{
@@ -185,7 +185,7 @@
 }
 
 .navigatorText {
-  width: 80px;
+  flex: 1;
   height: 19px;
   font-family: Gilroy;
   font-size: 16px;
@@ -448,6 +448,7 @@
 
 .featured2 {
   margin-left: 100;
+  height: 607px;
 }
 
 .featured2Container{
@@ -457,6 +458,8 @@
   background-color: #25d366;
   float: left;
   margin-left: 30px;
+  background-image: url('./static/antalya_night.jpg');
+  background-size: 100% 100%;
 }
 
 .featured2Container2{
@@ -480,10 +483,705 @@
   color:#1d1f42
 }
 
+.featured2Header {
+  margin-left: 27px;
+  margin-top: 171px;
+  color: white;
+}
+
+.featureds2Content{
+  width: 111px;
+  height: 30px;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.14;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-left: 30px;
+}
+
 /* INTRODUCTION */
 
 .introduction {
   width: 1440px;
   height: 865px;
-  bacgkround-color:#252851;
+  background-color:#252851;
+}
+
+.introductionContainer1 {
+  margin-left: 136px;
+  width: 569px;
+  float: left; 
+}
+
+.introductionContainer2{
+  margin-left: 30px;
+  margin-top:90px;
+  float: left;
+  width: 570px;
+  height: 675px;
+}
+
+.introductionImg{
+  width: 570px;
+  height: 675px;
+}
+
+.introductionHeader{
+  width: 413px;
+  height: 98px;
+  font-family: Gilroy;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-top: 115px;
+}
+
+.introductionContent{
+  width: 569px;
+  height: 463px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-top:32px;
+}
+
+.introductionButton {
+  height: 19px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  border-radius: 1px;
+  background-color: #252851;
+  flex: 1;
+  border: none;
+}
+
+/* CONCTACT FOOTER */
+
+.Footer2{
+  height: 599px;
+  width: 1440px;
+}
+
+.Footer2Container1{
+  width: 370px;
+  margin-left: 135px;
+  margin-top:90px;
+}
+
+.Footer2Container2{
+  width: 370px;
+  margin-left: 135px;
+  margin-top:27px;
+  float: left;
+}
+
+.Footer2Header{
+  width: 416px;
+  height: 49px;
+  font-family: Gilroy;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1d1f42;
+}
+
+.Footer2Content {
+  width: 419px;
+  height: 68px;
+  font-family: Gilroy;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.42;
+  letter-spacing: normal;
+  color: #1d1f42;
+  margin-top: 14px;
+}
+
+.Footer2Input1{
+  width: 370px;
+  height: 60px;
+  margin-top: 30px;
+}
+.Footer2Input2{
+  width: 370px;
+  height: 150px;
+  margin-top: 30px;
+}
+.Footer2Button{
+  width: 370px;
+  height: 60px;
+  margin-top: 31px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  background-color: #e33654;
+}
+
+/* SUBSCRIBE */
+
+.Subscribe{
+  width: 1440px;
+  height: 100px;
+  background-color: #f6f6f6;
+}
+
+.SubscribeRow1{
+  width: 735px;
+  height: 100px;
+  background-color: #f6f6f6;
+  float:left;
+}
+
+.SubscribeHeader {
+  width: 316px;
+  height: 28px;
+  margin-left:380px;
+  margin-top:26px;
+  font-family: Gilroy;
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1d1f42;
+}
+
+.SubscribeContent{
+  width: 316px;
+  height: 16px;
+  margin-left:380px;
+  float: left;
+  width: 309px;
+  height: 16px;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1d1f42;
+}
+
+.SubscribeRow2{
+  width: 500px;
+  height: 100px;
+  background-color: #1d1f42;
+  float: left;
+}
+
+.SubscribeInput {
+  width: 460px;
+  height: 60px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 20px;
+}
+
+.SubscribeRow3{
+  width: 205px;
+  height: 100px;
+  background-color: #e33654;
+  float: left;
+}
+
+.SubscribeButton {
+  width: 104px;
+  height: 24px;
+  font-family: Gilroy;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  margin-left: 43px;
+  margin-top: 40px;
+}
+
+/* FOOTER */
+
+.Footer {
+  width: 1440px;
+  height: 472px;
+  background-color: #e8e8e8;
+}
+
+.FooterRow1{
+  float: left;
+  margin-left: 120px;
+  margin-top: 28px;
+}
+.FooterRow2{
+  float: left;
+  margin-left: 120px;
+  width: 180px;
+  height: 315px;
+  margin-top: 28px;
+}
+.FooterRow3{
+  float: left;
+  margin-left: 120px;
+  width: 274px;
+  height: 315px;
+  margin-top: 28px;
+}
+.FooterRow4{
+  float: left;
+  margin-left: 100px;
+  width: 220px;
+  margin-top: 28px;
+}
+
+.FooterHeader {
+  height: 19px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1d1f42;
+  flex: 1;
+}
+
+.FooterContent{
+  width: 274px;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #1d1f42;
+}
+
+.FooterContact {
+    width: 176px;
+    margin-top:20px;
+}
+
+.FooterEmail {
+  width: 176px;
+  height: 17px;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1d1f42
+}
+
+.FooterPhoneLogo{
+  width: 16px;
+  height: 16px;
+  float: left;
+  
+}
+
+.FooterPhoneNumber{
+  width: 150px;
+  height: 19px;
+  margin-left:23px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #252851;
+}
+
+.FooterAdress{
+  width: 165px;
+  height: 72px;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: #1d1f42;
+  margin-top:23px;
+}
+
+/*  FOOTER2 */
+
+.Footer3 {
+   width: 1440px;
+  height: 80px; 
+  background-color: #252851; 
+}
+
+.Footer2Rigths {
+  width: 717px;
+  height: 16px;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  float: left;
+  margin-left:129px;
+  margin-top: 32px;
+}
+
+.Footer2socialLogos {
+  float: left;
+  margin-left: 326px;
+  color: #fff;
+}
+
+.FsocialLogo{
+  width: 16px;
+  height: 12px;
+  padding: 0 8.75px;
+  margin-top: 34px;
+  margin-bottom: 31px;
+  color: #fff;
+}
+
+/* SEARCH HOVER */
+
+.SearchHover{
+  z-index: 20;
+  width: 1440px;
+  height: 710px;
+  background-color: #ffffff;
+}
+
+.SearchHoverHeader {
+  flex: 1;
+  height: 19px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1d1f42;
+  margin-bottom: 25px;
+}
+
+.SearchHoverRow1 {
+  float: left;
+  width: 230px;
+  margin-left: 135px;
+
+}
+
+.SearchHoverRow2 {
+  float: left;
+  width: 230px;
+  margin-left: 65px;
+}
+
+.TagInput {
+  width: 230px;
+  height: 40px;
+  opacity: 0.5;
+  border-radius: 3px;
+  background-color: #5c5f81;
+  margin-top: 10px;
+
+}
+
+.propertiesTag {
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.19;
+  letter-spacing: normal;
+  color: #1d1f42;
+}
+
+.SearchHover4 {
+  margin-top: 139.1px;
+  margin-left: 189.3px;
+  float: left;
+  width: 570.3px;
+  height: 287px;
+}
+
+.SearchHoverRow3{
+  width: 1440px;
+  height: 300px;
+
+}
+
+.SearchHoverContainer{
+  margin-left: 105px;
+}
+
+.RecommendedRow {
+  float: left;
+  width: 270px;
+  height: 180px;
+  border-radius: 3px;
+  background-image: linear-gradient(to bottom, rgba(29, 31, 66, 0), rgba(29, 31, 66, 0.66));
+  margin-left: 30px;
+}
+
+.SearchHoverHeader2 {
+  margin-left: 135px;
+  flex: 1;
+  height: 19px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1d1f42;
+}
+
+.RecommendedContainer{
+  float: left;
+  width: 270px;
+  height: 180px;
+  border-radius: 3px;
+  background-image: linear-gradient(to bottom, rgba(29, 31, 66, 0), rgba(29, 31, 66, 0.66));
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+
+.RecommendedContent {
+  width: 209px;
+  height: 44px;
+  font-family: Gilroy;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-top: 115px;
+  margin-left: 15px;
+  
+}
+
+/* HEADER 3 */
+
+.Header3{
+  width: 1440px;
+  height: 100px;
+  background-color: #1d1f42;
+}
+
+.searchContainer3{
+  width: 317px;
+  height: 100px;
+  background-color: #1d1f42;
+  float: left;
+}
+
+.searchInput3{
+  width: 257px;
+  height: 60px;
+  opacity: 0.1;
+  border-radius: 3px;
+  background-color: #ffffff;
+  margin-top:20px;
+  margin-left: 40px;
+}
+
+.locationLogo3{
+  width: 30px;
+  height: 30px;
+  background-color: rgba(240, 240, 240, 0.5);
+  color: white;
+  margin-left: 20px;
+  margin-top: 18px;
+  float: left;
+}
+
+.locationInput3{
+  font-family: Gilroy;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  float: left;
+  width: 150px;
+  margin-top: 19px;
+  margin-left: 10px;
+  border: none;
+}
+
+.locationInput3::placeholder {
+  color: white;
+}
+
+
+.searchOptions4{
+  float:left;
+  width: 954px;
+  height: 100px;
+  background-color: #252851;
+  
+}
+
+.searchOptions3{
+  float: left;
+}
+
+.searchOptionText3{
+  width: 126px;
+  height: 19px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-left: 95px;
+  margin-top: 41px;
+}
+
+.searchBox3{
+  width: 169px;
+  height: 100px;
+  background-color: #e33654;
+  float: left;
+}
+
+.searchBoxText3 {
+  width: 33px;
+  height: 24px;
+  font-family: Gilroy;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  margin-left: 50.5px;
+  margin-top: 38.9px;
+  float: left;
+}
+
+.searchIcon3 {
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
+  float: left;
+  margin-top: 39px;
+  margin-left: 20px;
+}
+
+/* Introduction */
+
+.Introduction {
+  background-image: url('./static/antalya_night.jpg');
+  width: 1440px;
+  height: 450px;
+  background-size: 100% 100%;
+ }
+
+ .IntroductionContainer {
+  width: 570px;
+  height: 400px;
+  margin-left: 135px;
+  margin-top :130px;
+  position: absolute;
+ }
+
+.IntroductionHeader2{
+  width: 239px;
+  height: 69px;
+  font-family: Gilroy;
+  font-size: 60px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin: 0;
+  
+}
+
+.IntroductionText {
+  width: 570px;
+  height: 115px;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.64;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-top: 18px;
+}
+
+.IntroductionButton{
+  width: 200px;
+  height: 50px;
+  border-radius: 3px;
+  background-color: #e33654;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  border: none;
 }
