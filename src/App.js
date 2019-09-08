@@ -16,6 +16,7 @@ import CityIntroduction from './components/cityIntroduction.js';
 import PropertyList from './components/propertyList.js';
 import SliderGallery from './components/SliderGallery.js';
 import Citizenship from './components/Citizenship.js';
+import About from './components/About.js';
 
 import './App.css';
 
@@ -47,6 +48,7 @@ class App extends React.Component{
         <CityIntroduction/>
         <SliderGallery />
         <Citizenship />
+        <About />
         {/* <PropertyList/> */}
       </div>
     );
