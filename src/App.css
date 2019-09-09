@@ -1185,3 +1185,152 @@
   color: #ffffff;
   border: none;
 }
+
+/* PROPERTY LIST  */
+
+.CityPropertyList {
+  width: 1440px;
+  height: 2220px;
+  background-color: #f0f0f0;
+}
+
+.PropertyHeader {
+  position: absolute;
+  margin-left: 135px;
+  margin-top: 41px;
+}
+
+.PropertyButton{
+  width: 200px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  margin-top: 30px;
+  margin-left: 1120px;
+}
+
+.PropertyHeaderCity{
+  font-weight: bold;
+}
+
+.PropertyHr {
+  margin-top: 29px;
+}
+
+.PropertyContainer {
+  width: 1220px;
+  margin-left: 105px;
+  margin-top: 20px;
+  
+}
+
+.PropertyRow{
+  width: 370px;
+  height: 460px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  float: left;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.PropertyHead {
+  width: 370px;
+  height: 240px;
+  border-radius: 3px;
+  background-size : 100% 100%; 
+}
+
+.PropertyBody {
+  width: 370px;
+  height: 220px;
+  border-radius: 3px;
+}
+
+.PropertyBodyRow1{
+  height: 85px;
+  width: 370px;
+}
+
+.PropertyBodyRow2{
+  height: 56px;
+  width: 370px;
+  border-bottom: 2px solid #f0f0f0;;
+  border-top: 2px solid #f0f0f0;
+}
+
+.PropertyBodyRow3{
+  height: 60px;
+  width: 370px;
+}
+
+.PropertyType {
+  position : absolute;
+  margin-left: 30px;
+  margin-top: 20px;
+  border-radius: 3px;
+  background-color: rgba(29, 31, 66, 0.5);
+  padding: 10px 5px;
+  font-family: Gilroy;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.PropertyLocation {
+  width: 83px;
+  height: 17px;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #5c5f81;
+  margin-left: 29px;
+  margin-top: 17px;
+}
+
+.PropertyDescription {
+  width: 310px;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  color: #1d1f42;
+  margin-left: 30px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.PropertyCost {
+  width: 97px;
+  height: 22px;
+  font-family: Gilroy;
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1d1f42;
+  margin-left: 30px;
+}
+
+.PropertySize {
+  float: left;
+  margin-left: 72px;
+}
+
+.PropertyBedCount {
+  float: left;
+  margin-left: 120px;
+}

@@ -46,10 +46,11 @@ class App extends React.Component{
         <Header2/>
         <Header3/>
         <CityIntroduction/>
+        <PropertyList/>
         <SliderGallery />
         <Citizenship />
         <About />
-        {/* <PropertyList/> */}
+        
       </div>
     );
   }
