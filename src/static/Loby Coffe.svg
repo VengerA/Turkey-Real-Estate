@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>Icon/Amenities/Loby Coffe</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M36,32 C36.5522847,32 37,32.4477153 37,33 C37,33.5522847 36.5522847,34 36,34 L20,34 C19.4477153,34 19,33.5522847 19,33 C19,32.4477153 19.4477153,32 20,32 L36,32 Z M20,16 L36,16 C36.5522847,16 37,16.4477153 37,17 L37,25 C37,27.7612847 34.7612847,30 32,30 L24,30 C21.581583,30 19.564018,28.282729 19.1002647,26.0011467 L18,26 C15.2387153,26 13,23.7612847 13,21 C13,18.2387153 15.2387153,16 18,16 L20,16 L20,16 Z M35,18 L21,18 L21,25 C21,26.6567153 22.3432847,28 24,28 L32,28 C33.6567153,28 35,26.6567153 35,25 L35,18 Z M19,24 L19,18 L18,18 C16.3432847,18 15,19.3432847 15,21 C15,22.6567153 16.3432847,24 18,24 L19,24 Z" id="path-1"></path>
+    </defs>
+    <g id="Icon/Amenities/Loby-Coffe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+    </g>
+</svg>

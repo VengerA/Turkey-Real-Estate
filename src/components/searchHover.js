@@ -74,8 +74,6 @@ class SearchHover extends React.Component{
                         {recommendArr}
                     </div>
                 </div>
-                
-                
             </div>
         );
     }

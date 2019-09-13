@@ -21,7 +21,7 @@ class Subscribe extends React.Component{
                 <input className = "SubscribeInput" type = "email" placeholder = "Email"/>
             </div>
             <div className = "SubscribeRow3">
-                <a className = "SubscribeButton"><p>SUBSCRIBE</p></a>
+                <button className = "SubscribeButton">SUBSCRIBE</button>
             </div>
         </div>
     );

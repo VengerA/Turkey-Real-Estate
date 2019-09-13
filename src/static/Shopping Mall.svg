@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>Icon/Amenities/Shopping Mall</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M35,14 C35.5522847,14 36,14.4477153 36,15 L36,31 C36,33.7612847 33.7612847,36 31,36 L19,36 C16.2387153,36 14,33.7612847 14,31 L14,15 C14,14.4477153 14.4477153,14 15,14 L35,14 Z M34,16 L16,16 L16,31 C16,32.6567153 17.3432847,34 19,34 L31,34 C32.6567153,34 34,32.6567153 34,31 L34,16 Z M30,18 C30.5522847,18 31,18.4477153 31,19 L31,21 C31,24.3132847 28.3132847,27 25,27 C21.6867153,27 19,24.3132847 19,21 L19,19 C19,18.4477153 19.4477153,18 20,18 C20.5522847,18 21,18.4477153 21,19 L21,21 C21,23.2087153 22.7912847,25 25,25 C27.2087153,25 29,23.2087153 29,21 L29,19 C29,18.4477153 29.4477153,18 30,18 Z" id="path-1"></path>
+    </defs>
+    <g id="Icon/Amenities/Shopping-Mall" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+    </g>
+</svg>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="21px" viewBox="0 0 24 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>Icon / Wallet</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M21,0 C22.6572847,0 24,1.34271525 24,3 L24,17 C24,18.6572847 22.6572847,20 21,20 L3,20 C1.34271525,20 8.13151629e-20,18.6572847 8.13151629e-20,17 L8.13151629e-20,3 C8.13151629e-20,1.34271525 1.34271525,0 3,0 L21,0 Z M21.9997588,7.485 L14.0953289,11.1338344 C12.7663354,11.7476969 11.2349147,11.7476969 9.9049727,11.1339736 L9.9049727,11.1339736 L1.99975882,7.485 L2,17 C2,17.5527153 2.44728475,18 3,18 L21,18 C21.5527153,18 22,17.5527153 22,17 L21.9997588,7.485 Z M21,2 L3,2 C2.44728475,2 2,2.44728475 2,3 L1.99975882,5.283 L10.7430041,9.31801564 C11.4745785,9.6556125 12.3074049,9.68374557 13.0552591,9.40242312 L13.2569727,9.31802637 L21.9997588,5.283 L22,3 C22,2.44728475 21.5527153,2 21,2 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Subscribe" transform="translate(-775.000000, -41.000000)">
+            <g id="Icon-/-Mail">
+                <g transform="translate(757.000000, 21.333333)">
+                    <g id="Color-/-Smoke" transform="translate(18.000000, 20.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#FFFFFF" id="White">
+                            <g transform="translate(-18.000000, -20.000000)">
+                                <rect x="0" y="0" width="60" height="60"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -14,11 +14,14 @@ class Footer2 extends React.Component{
   constructor(props){
     super(props);
     this.state = { 
-        featureds : [
-          ],
+        
     }
   }
   render(){
+
+    
+    
+
     return (
         <div className= "Footer3">
             <p className = "Footer2Rigths">All Rights Reserved for Istsanbul Invetment Group - TurkeyRealEstate.com  © 2019 | Terms of Use - Privacy Policy</p>

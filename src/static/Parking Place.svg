@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>Icon/Amenities/Parking Place</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M25,13 C31.627417,13 37,18.372583 37,25 C37,31.627417 31.627417,37 25,37 C18.372583,37 13,31.627417 13,25 C13,18.372583 18.372583,13 25,13 Z M25,15 C19.4771525,15 15,19.4771525 15,25 C15,30.5228475 19.4771525,35 25,35 C30.5228475,35 35,30.5228475 35,25 C35,19.4771525 30.5228475,15 25,15 Z M27,19 C28.6572847,19 30,20.3427153 30,22 L30,24 C30,25.6572847 28.6572847,27 27,27 L24,27 L24,30 C24,30.5522847 23.5522847,31 23,31 C22.4477153,31 22,30.5522847 22,30 L22,20 C22,19.4477153 22.4477153,19 23,19 L27,19 Z M27,21 L24,21 L24,25 L27,25 C27.5527153,25 28,24.5527153 28,24 L28,22 C28,21.4472847 27.5527153,21 27,21 Z" id="path-1"></path>
+    </defs>
+    <g id="Icon/Amenities/Parking-Place" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+    </g>
+</svg>
