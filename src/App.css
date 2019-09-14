@@ -164,7 +164,8 @@
   background-color: #ffffff;
   position: absolute;
   margin-top: 80px;
-  margin-left: 77.5%
+  margin-left: 77.5%;
+  z-index: 40;
 }
 
 .CurrencyHover1Text{
@@ -299,9 +300,22 @@
 }
 
 /* MAIN SEARCH COMPONENT*/
+.DownArrow{
+  position: absolute;
+  margin-top:-20px;
+  margin-left: 14%;
+}
 
+.CitySearchIntroductionHeader{
+  position: absolute;
+    top: 209px;
+    left: 100px;
+    textAlign: center;
+    height:191px;
+    width: 400px;
+    display: flex;
+}
 .MainSearch{
-  background-image: url('./static/antalya_night.jpg');
   width: 100%;
   height: 800px;
   background-size: 100% 100%;
@@ -309,10 +323,10 @@
 }
 
 .cityContent {
-  margin-top: 293px;
   margin-left: 8.37%;
   position: absolute;
-  z-index: 20;
+  z-index: 21;
+  margin-top: -500px;
 }
 
 .cityContentHeader {
@@ -346,10 +360,10 @@
   line-height: 1.64;
   letter-spacing: normal;
   color: #ffffff;
-  margin-top:  452px;
   margin-left: 8.37%;
   position: absolute;
-  z-index: 20;
+  z-index: 10;
+  margin-top: -330px;
 }
 
 .searchContainer {
@@ -358,7 +372,7 @@
   background-color: #1d1f42;
   width: 26%;
   height: 161px;
-  z-index: 20;
+  z-index: 10;
 }
 
 
@@ -425,7 +439,7 @@
 
 .searchOptions {
   width: 24.78%;
-  height: 160px;
+  height: 161px;
   background-color: #252851;
   float: left;
   border-left: 1px solid #1d1f42;
@@ -436,9 +450,9 @@
   margin-left: 26%;
   position: absolute;
   margin-top: 639px;
-  height: 160px;
+  height: 161px;
   width: 52.5%;
-  z-index: 20;
+  z-index: 10;
 }
 
 .searchOptionText {
@@ -454,14 +468,27 @@
   font-family: Gilroy-SemiBold;
 }
 
+.searchOptionText2 {
+  color: #ffffff;
+  flex: 1;
+  margin-top: 71px;
+  margin-left: 40%;
+  margin-bottom: 50px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  font-family: Gilroy-SemiBold;
+}
+
 .searchBox {
   position: absolute;
   width: 13%;
-  height: 160px;
+  height: 161px;
   background-color: #e33654;
   margin-top: 639px;
   margin-left:78.3%;
-  z-index: 20;
+  z-index: 10;
 }
 
 .searchIcon{
@@ -663,7 +690,6 @@ input[type=range]:focus::-ms-fill-upper {
 .AdvancedFilter {
   background-color: #ffffff;
   width: 40.25%;
-  margin-top: 800px;
   position: absolute;
   margin-left: 50%;
   z-index: 20;
@@ -729,13 +755,13 @@ input[type=range]:focus::-ms-fill-upper {
 
 .CityContentProperities{
   position: absolute;
-  width: 11%;
+  width: 225px;
   height: 78px;
   border-radius: 3px;
   background-color: rgba(227, 54, 84, 0.9);
-  margin-top: 320px;
   margin-left:26%;
   z-index: 20;
+  margin-top:-450px;
 }
 .CityContentProperitiesText {
   width: 78px;
@@ -795,6 +821,7 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #f0f0f0;
 }
 
+
 .featured1Header {
   margin-left: 9.4%;
   margin-top: 93px;
@@ -826,6 +853,12 @@ input[type=range]:focus::-ms-fill-upper {
   float: left;
 }
 
+.featuredRow1{
+  height: 200px;
+  background-image: url('./static/plane.svg')
+}
+
+
 .featuredHeader {
   flex: 1;
   height: 24px;
@@ -836,13 +869,14 @@ input[type=range]:focus::-ms-fill-upper {
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  /* color: #ffffff; */
+  color: #ffffff;
   margin-left: 39px;
   margin-top: 166px;
+  position: absolute;
 }
 
 .featuredsContent {
-  margin-top: 48px;
+  margin-top: 18px;
   margin-left: 39px;
   width: 310px;
   height: 120px;
@@ -890,7 +924,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .featured2Container2{
   margin-left: 7.3%;
-  margin-top:51px;
+  margin-top:106px;
   margin-bottom: 170px;
 }
 
@@ -1318,18 +1352,18 @@ input[type=range]:focus::-ms-fill-upper {
 .ParentSearchHover{
   width: 100%;
   height: 720px;
-  background-color: #ffffff;
-  z-index: 20;
+  z-index: 50;
   margin-top: 100px;
   position: absolute;
 }
 
 .SearchHover{
-  z-index: 20;
-  width: 1440px;
-  height: 710px;
+  z-index: 22;
+  width: 100%;
+  height: 800px;
   background-color: #ffffff;
   position: absolute;
+  box-shadow: 4px 4px 24px 4px rgba(29, 31, 66, 0.11);
 }
 
 .SearchHoverHeader {
@@ -1349,11 +1383,13 @@ input[type=range]:focus::-ms-fill-upper {
 .SearchHoverRow1 {
   float: left;
   width: 230px;
-  margin-left: 135px;
+  margin-left: 155px;
+  margin-top: 40px;
 
 }
 
 .SearchHoverRow2 {
+  margin-top: 40px;
   float: left;
   width: 230px;
   margin-left: 65px;
@@ -1362,11 +1398,21 @@ input[type=range]:focus::-ms-fill-upper {
 .TagInput {
   width: 230px;
   height: 40px;
-  opacity: 0.5;
   border-radius: 3px;
-  background-color: #5c5f81;
+  background-color: #bebfcd;
   margin-top: 10px;
+  color: white;
+  font-family: Gilroy-SemiBold;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
 
+.TagInput:hover {
+  background-color: #0f113d;
 }
 
 .propertiesTag {
@@ -1378,11 +1424,13 @@ input[type=range]:focus::-ms-fill-upper {
   line-height: 2.19;
   letter-spacing: normal;
   color: #1d1f42;
+  text-decoration: none;
+  margin-top: 100px;
 }
 
 .SearchHover4 {
   margin-top: 139.1px;
-  margin-left: 189.3px;
+  margin-left: 155px;
   float: left;
   width: 570.3px;
   height: 287px;
@@ -1391,11 +1439,11 @@ input[type=range]:focus::-ms-fill-upper {
 .SearchHoverRow3{
   width: 1440px;
   height: 300px;
-
+  margin-top: 450px;
 }
 
 .SearchHoverContainer{
-  margin-left: 105px;
+  margin-left: 125px;
 }
 
 .RecommendedRow {
@@ -1408,7 +1456,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .SearchHoverHeader2 {
-  margin-left: 135px;
+  margin-left: 155px;
   flex: 1;
   height: 19px;
   font-family: Gilroy-SemiBold;
@@ -1451,39 +1499,50 @@ input[type=range]:focus::-ms-fill-upper {
 /* HEADER 3 */
 
 .Header3{
-  width: 1440px;
+  width: 100%;
   height: 100px;
   background-color: #1d1f42;
 }
 
 .searchContainer3{
-  width: 317px;
+  width: 30%;
   height: 100px;
   background-color: #1d1f42;
   float: left;
 }
 
 .searchInput3{
-  width: 257px;
+  width: 307px;
   height: 60px;
   opacity: 0.1;
   border-radius: 3px;
   background-color: #ffffff;
   margin-top:20px;
-  margin-left: 40px;
+  margin-left: 80px;
 }
 
 .locationLogo3{
   width: 30px;
   height: 30px;
-  background-color: rgba(240, 240, 240, 0.5);
-  color: white;
   margin-left: 20px;
   margin-top: 18px;
   float: left;
 }
 
 .locationInput3{
+  font-family: Gilroy-SemiBoldItalic;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding-left: 40px;
+}
+
+.locationInput3::placeholder{
+  color: white;
   font-family: Gilroy-Regular;
   font-size: 20px;
   font-weight: 300;
@@ -1491,12 +1550,7 @@ input[type=range]:focus::-ms-fill-upper {
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: #ffffff;
-  float: left;
-  width: 150px;
-  margin-top: 19px;
-  margin-left: 10px;
-  border: none;
+
 }
 
 .locationInput3::placeholder {
@@ -1532,7 +1586,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .searchBox3{
-  width: 169px;
+  width: 13.2%;
   height: 100px;
   background-color: #e33654;
   float: left;
@@ -1567,9 +1621,9 @@ input[type=range]:focus::-ms-fill-upper {
 /* Introduction */
 
 .Introduction {
-  background-image: url('./static/antalya_night.jpg');
-  width: 1440px;
-  height: 450px;
+  background-image: url('./static/istanbul.jpg');
+  width: 100%;
+  height: 550px;
   background-size: 100% 100%;
  }
 
@@ -1577,7 +1631,7 @@ input[type=range]:focus::-ms-fill-upper {
   width: 570px;
   height: 400px;
   margin-left: 135px;
-  margin-top :130px;
+  margin-top :200px;
   position: absolute;
  }
 
@@ -2140,4 +2194,41 @@ input[type=range]:focus::-ms-fill-upper {
 
 .Property2FeatureContent{
 
+}
+
+.Footer2Input1::placeholder {
+  font-family: Gilroy-SemiBold;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3a3a3a;
+  padding-left: 40px;
+}
+
+.Footer2Input2::placeholder{
+  font-family: Gilroy-SemiBold;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3a3a3a;
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+.SubscribeInput::placeholder{
+  font-family: Gilroy-SemiBoldItalic;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding-left: 40px;
 }

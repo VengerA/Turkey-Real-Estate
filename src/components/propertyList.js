@@ -1,15 +1,16 @@
 import React from 'react';
 import location_logo from './../static/location.svg';
 import search_icon from './../static/search_icon.svg';
+import global_logo from './static/global_logo.svg'
 import './../App.css';
+import MainStore from './store'
+import axios from 'axios';
 
 class CityPropertyList extends React.Component{
   constructor(props){
     super(props);
     this.state = {  
         city: {
-            name :"Izmir",
-            size: 234
         },
         propertyList: [
           {type : "LUXURY  VILLA" ,location:"Izmir/Çeşme" , shortDescription:"Luxury Villa in Çeşme with private beacgh" , cost: "1.200.000" , m2: "140 m^2 / 520 m^2" , bed_count: 4 },
@@ -25,6 +26,18 @@ class CityPropertyList extends React.Component{
         ]
     }
   }
+
+  componentWillMount() {
+
+  }
+
+  takePropertyList = () =>{
+    axios.get("http://138.201.16.232/properties/search/?city=" + MainStore.clickedCityID)
+    .then(res => {
+      this.state.city = res.data
+    })
+  }
+
   render(){
     const propertyArr = this.state.propertyList.map(item =>{
       let output = null 
@@ -54,7 +67,7 @@ class CityPropertyList extends React.Component{
     return (
         <div className= "CityPropertyList">
             <div className = "CityPropertyHeader">
-                <p className = "PropertyHeader"><span className = "PropertyHeaderCity">{this.state.city.name}</span> offers {this.state.city.size} properties</p>
+                <p className = "PropertyHeader"><span className = "PropertyHeaderCity">Izmir</span> offers {this.state.city.size} properties</p>
                 <select className = "PropertyButton">
                   <option value="newest">Show Newest First</option>
                   <option value="expensive">Show Most Expensive First</option>

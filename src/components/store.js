@@ -1,10 +1,15 @@
 import { observable, action } from "mobx";
 
 class MainStore {
-    showProperty = false
+    @observable showProperty = false
+
+    @observable cities = []
+
+    @observable clickedCity= null
 
     
 }
 
+const store = new MainStore()
 
-export default MainStore;
+export default store;

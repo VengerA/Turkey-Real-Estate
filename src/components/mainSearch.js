@@ -9,9 +9,11 @@ import wallet_icon from './../static/wallet2_logo.svg';
 import bed_logo from './../static/bed_logo.svg';
 import klavye_logo from './../static/klavye_logo.svg';
 import './../App.css';
+import down_arrow from './../static/down_arrow.svg';
 
 import MainStore from './store.js';
 import {observer} from 'mobx-react';
+import axios from 'axios';
 
 import cover1 from '../static/antalya.jpg'
 import cover2 from '../static/bursa.jpg'
@@ -27,6 +29,7 @@ const coverImages = [
     cover5,
 ]
 
+@observer
 class MainSection extends React.Component{
   constructor(props){
         super(props);
@@ -42,7 +45,8 @@ class MainSection extends React.Component{
                 {item: "All Property Types", selected: true} 
             ],
             currentImageIndex: 0,
-            imageSwitchTimer: undefined
+            imageSwitchTimer: undefined,
+            cities : []
         }
     }
     componentDidMount() {
@@ -51,6 +55,20 @@ class MainSection extends React.Component{
         this.setState({ imageSwitchTimer: setInterval(() => {
             vm.switchNextImage()
         }, 2000) })
+    }
+
+    componentWillMount() {
+        this.getCities()
+    }
+
+    getCities = () => {
+        axios.get("http://138.201.16.232/properties/cities/")
+        .then(res => {
+             MainStore.cities = [
+                 ...res.data
+                ]
+             console.log(res)}
+             )
     }
 
     switchNextImage = () => {
@@ -188,16 +206,16 @@ class MainSection extends React.Component{
                             <div className = "AdvancedContainer1">
                                 <p className = "AdvancedFilterText">Net m2:</p>
                                 <select className = "AdvancedSelector">
-                                    <option>ASDASD</option>
-                                    <option>ASDASD</option>
-                                    <option>ASDASD</option>
-                                    <option>ASDASD</option>
+                                    <option>OPTION1</option>
+                                    <option>OPTION</option>
+                                    <option>OPTION</option>
+                                    <option>OPTION</option>
                                 </select>
                                 <select className = "AdvancedSelector">
-                                    <option>ASDASD</option>
-                                    <option>ASDASD</option>
-                                    <option>ASDASD</option>
-                                    <option>ASDASD</option>
+                                    <option>OPTION</option>
+                                    <option>OPTION</option>
+                                    <option>OPTION</option>
+                                    <option>OPTION</option>
                                 </select>
                             </div>
                         </div>
@@ -229,41 +247,36 @@ class MainSection extends React.Component{
 
         return (
             <div className= "MainSearch">
-                <div className = "cityContent">
-                    <p className= "cityContentHeader">WIDEN YOUR TURKEY</p>
-                    <p className = "cityContentHeader2">Antalya</p>
-                </div>
-                <p className = "cityContentText">Antalya's warm climate, beautiful beaches and luxury resorts make it the perfect place to spend a hard-earned break, which is why it’s the first place to spring to mind whenever Turks hear the words "summer holiday." With recent investments in golf courses bringing record numbers of visitors to the area, Antalya has a whole host of things to offer, making it an unbeatable holiday destination.</p>
-                <div className = "CityContentProperities">
-                    <p className = "CityContentProperitiesText"><span className = "CityContentProperitiesText1" >234</span> PROPERTIES</p>
-                    <div>
-                        <img className = "CityContentProperitiesIcon" src ={triangle_icon}/>
-                    </div>
-                </div>
+                
                 <div>
                     <div className = "searchContainer">
                         <p className = "Container1Text">Property Turkey For Sale</p>
                         <div className = 'searchInput'>
                             <img className= "locationLogo" src = {location_logo}/>
                             <input className = "locationInput" type="text" value = "Start typing to select a location"/>
+                           
                         </div>
                     </div>
                     <div className = "searchOptions2">
                         <div className = "searchOptions" onClick = {this.showPropertyType}>
                             <img src = {home_icon} className = "MainSearchIcons" />
-                            <p className ="searchOptionText">3 Property Types</p>
+                            <p className ="searchOptionText">All Property Types</p>
+                            <img src = {down_arrow} className = "DownArrow"/>
                         </div>
                         <div className = "searchOptions" onClick = {() => this.showPrice()}>
                             <img src = {wallet_icon} className = "MainSearchIcons" />
-                            <p className ="searchOptionText">Any Price</p>
+                            <p className ="searchOptionText2" >Any Price</p>
+                            <img src = {down_arrow} className = "DownArrow"/>
                         </div>
                         <div className = "searchOptions">
                             <img src = {bed_logo} className = "MainSearchIcons" />
                             <p className ="searchOptionText">All Bed Rooms</p>
+                            <img src = {down_arrow} className = "DownArrow"/>
                         </div>
                         <div className = "searchOptions" onClick = {() =>this.showAdvanced()}>
                             <img src = {klavye_logo} className = "MainSearchIcons" />
                             <p className ="searchOptionText">Advanced Filter</p>
+                            <img src = {down_arrow} className = "DownArrow"/>
                         </div>
                     </div>
                     <div className = "searchBox" >
@@ -276,14 +289,28 @@ class MainSection extends React.Component{
                         className="slider-cover-image"
                         src={coverImages[this.state.currentImageIndex]}
                     />
+                    <div className = "cityContent">
+                        <p className= "cityContentHeader">WIDEN YOUR TURKEY</p>
+                        <p className = "cityContentHeader2">Antalya</p>
+                    </div>
+                    <p className = "cityContentText">Antalya's warm climate, beautiful beaches and luxury resorts make it the perfect place to spend a hard-earned break, which is why it’s the first place to spring to mind whenever Turks hear the words "summer holiday." With recent investments in golf courses bringing record numbers of visitors to the area, Antalya has a whole host of things to offer, making it an unbeatable holiday destination.</p>
+                    <div className = "CityContentProperities">
+                        <p className = "CityContentProperitiesText"><span className = "CityContentProperitiesText1" >234</span> PROPERTIES</p>
+                        <div>
+                            <img className = "CityContentProperitiesIcon" src ={triangle_icon}/>
+                        </div>
+                    </div>
                     <div className="slider-imageslider" style={styles.slider}>
-                        {coverImages.map((uri, index) => (
-                            <div
-                                style={this.state.currentImageIndex == index ? styles.sliderItemSelected : styles.sliderItem}
-                                onClick={() => {this.switchToImageByIndex(index)}}
-                                className="slider-imagesilder-item"
-                            >
-                                {index + 1}
+                        {MainStore.cities.map((uri, index) => (
+                            <div className = "CitySearchIntroductionHeader">
+                                <div
+                                    style={this.state.currentImageIndex == index ? styles.sliderItemSelected : styles.sliderItem}
+                                    onClick={() => {this.switchToImageByIndex(index)}}
+                                    className="slider-imagesilder-item"
+                                >
+                                    {index + 1}
+                                    
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -300,8 +327,8 @@ const styles = {
     slider: {
         position: 'absolute',
         top: '209px',
-        right: '64px',
-        width: '139px',
+        left: '100px',
+        width : "400px",
         textAlign: 'center',
         height: '191px',
         display: 'flex',
@@ -309,19 +336,21 @@ const styles = {
         alignItems: 'center',
         overflowY: 'scroll',
         scrollbarColor: 'white rgba(255, 255, 255, 0.4)',
-        scrollbarWidth: 'thin'
+        scrollbarWidth: 'thin',
     },
     sliderItem: {
         fontSize: '18.6px',
         color: '#fff',
         fontWeight: 'bold',
         marginBottom: '15px',
-        marginTop: '15px'
+        marginTop: '15px',
+        right: '64px',
     },
     sliderItemSelected: {
         fontSize: '41px',
         color: '#fff',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        right: '64px',
     }
 }
 
