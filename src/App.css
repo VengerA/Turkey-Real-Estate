@@ -228,7 +228,7 @@
 
 .header2Help {
   float: left;
-  width: 11.06%;
+  width: 13.06%;
   height: 39px;
   border-radius: 3px;
   border: solid 1px #e0e0e0;
@@ -312,6 +312,7 @@
   margin-top: 293px;
   margin-left: 8.37%;
   position: absolute;
+  z-index: 20;
 }
 
 .cityContentHeader {
@@ -347,7 +348,8 @@
   color: #ffffff;
   margin-top:  452px;
   margin-left: 8.37%;
-  position: absolute
+  position: absolute;
+  z-index: 20;
 }
 
 .searchContainer {
@@ -356,6 +358,7 @@
   background-color: #1d1f42;
   width: 26%;
   height: 161px;
+  z-index: 20;
 }
 
 
@@ -414,8 +417,10 @@
 
 .MainSearchIcons {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.001);
   fill:#ffffff;
+  margin-top: 29px;
+  margin-left: 13%;
 }
 
 .searchOptions {
@@ -432,7 +437,8 @@
   position: absolute;
   margin-top: 639px;
   height: 160px;
-  width: 52.5%
+  width: 52.5%;
+  z-index: 20;
 }
 
 .searchOptionText {
@@ -455,6 +461,7 @@
   background-color: #e33654;
   margin-top: 639px;
   margin-left:78.3%;
+  z-index: 20;
 }
 
 .searchIcon{
@@ -468,7 +475,7 @@
 .searchBoxText {
   width: 41px;
   height: 24px;
-  font-family: Gilroy;
+  font-family: Gilroy-Regular;
   font-size: 20px;
   font-weight: 600;
   font-style: normal;
@@ -717,8 +724,68 @@ input[type=range]:focus::-ms-fill-upper {
   border-radius: 4px;
   border: solid 1px #e3e5ed;
   margin-left: 22%;
+  position: absolute; 
+}
+
+.CityContentProperities{
   position: absolute;
-  
+  width: 11%;
+  height: 78px;
+  border-radius: 3px;
+  background-color: rgba(227, 54, 84, 0.9);
+  margin-top: 320px;
+  margin-left:26%;
+  z-index: 20;
+}
+.CityContentProperitiesText {
+  width: 78px;
+  height: 50px;
+  font-family: Gilroy-SemiBold;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  position: absolute;
+  margin-top: 4px;
+  margin-left: 20px;
+  padding-right: 20%;
+  border-right: 1px solid #c02540;
+}
+
+.CityContentProperitiesText1 {
+  font-family: Gilroy-SemiBold;
+  font-size: 41px;
+}
+
+.CityContentProperitiesIcon{
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 1px;
+  margin-left: 86%;
+  margin-top: 19%;
+}
+
+.SliderGallery{
+  width: 100%;
+  position: relative;
+}
+
+.slider-cover-image {
+  width: 100%;
+  height: 800px;
+}
+
+.slider{
+  position: absolute;
+  top: 209px;
+  right: 64px;
+  width: 59px;
+  height: 191px;
+  display: flex;
 }
 /* FEATURED 1 */
 
@@ -919,7 +986,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .introductionButton {
   height: 19px;
-  font-family: Gilroy-LigthItalic;
+  font-family: Gilroy-Regular;
   font-size: 16px;
   font-weight: normal;
   font-style: italic;
@@ -1253,7 +1320,7 @@ input[type=range]:focus::-ms-fill-upper {
   height: 720px;
   background-color: #ffffff;
   z-index: 20;
-  margin-top: 115px;
+  margin-top: 100px;
   position: absolute;
 }
 
@@ -2072,5 +2139,5 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .Property2FeatureContent{
-  
+
 }
