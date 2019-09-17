@@ -64,18 +64,24 @@ class MainSection extends React.Component{
     }
 
     getCities = () => {
+        var vm = this;
         axios.get("http://138.201.16.232/properties/cities/")
         .then(res => {
              MainStore.cities = [
                  ...res.data
                 ]
+                let _cities = [];
+                res.data.forEach(c => {
+                    _cities.push(c.name)
+                })
+                vm.setState({cities: _cities})
              console.log(res)}
              )
     }
 
     switchNextImage = () => {
         let currentImageIndex = (this.state.currentImageIndex + 1) % coverImages.length
-        this.setState({ currentImageIndex })
+        this.setState({ currentImageIndex, cCity: this.state.cities[currentImageIndex] })
     }
 
     switchToImageByIndex = (indx) => {
@@ -340,9 +346,6 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        overflowY: 'scroll',
-        scrollbarColor: 'white rgba(255, 255, 255, 0.4)',
-        scrollbarWidth: 'thin',
     },
     sliderItem: {
         fontSize: '18.6px',

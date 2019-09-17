@@ -307,10 +307,8 @@
 }
 
 .CitySearchIntroductionHeader {
-  height: 191px;
   display: flex;
   text-align: center;
-  scrollbar-color: rgba(255, 255, 255, 0.4);
 }
 .MainSearch{
   width: 100%;
@@ -2279,16 +2277,9 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .slider-imageslider {
-  position: absolute;
-  top: 209px;
-  right: 70px;
   text-align: center;
-  height: 191px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: scroll;
-  scrollbar-color: rgba(255, 255, 255, 0.4);
-  scrollbar-width: thin;
   width: 45px;
 }
