@@ -1,7 +1,9 @@
 import React from 'react';
 import location_logo from './../static/location.svg';
 import search_icon from './../static/search_icon.svg';
-import global_logo from './static/global_logo.svg'
+import global_logo from './../static/global_logo.svg'
+import cerceve_ev from './../static/cerceveEv_logo.png';
+import bed_logo from './../static/bed_logo.svg';
 import './../App.css';
 import MainStore from './store'
 import axios from 'axios';
@@ -21,8 +23,6 @@ class CityPropertyList extends React.Component{
           {type : "LUXURY  VILLA" ,location:"Izmir/Çeşme" , shortDescription:"Luxury Villa in Çeşme with private beacgh" , cost: "1.200.000" , m2: "140 m^2 / 520 m^2" , bed_count: 4 },
           {type : "LUXURY  VILLA" ,location:"Izmir/Çeşme" , shortDescription:"Luxury Villa in Çeşme with private beacgh" , cost: "1.200.000" , m2: "140 m^2 / 520 m^2" , bed_count: 4 },
           {type : "LUXURY  VILLA" ,location:"Izmir/Çeşme" , shortDescription:"Luxury Villa in Çeşme with private beacgh" , cost: "1.200.000" , m2: "140 m^2 / 520 m^2" , bed_count: 4 }
-        
-        
         ]
     }
   }
@@ -42,7 +42,7 @@ class CityPropertyList extends React.Component{
     const propertyArr = this.state.propertyList.map(item =>{
       let output = null 
       output = ((
-        <div className = "PropertyRow">
+        <a className = "PropertyRow" href = "/property">
           <div className = "PropertyHead" style = {{backgroundImage : "http://167.99.131.163/media/static/uploads/properties/bac9dc3a6caa4c12a504e40dcf090a08.jpg"}}>
             <p className = "PropertyType">{item.type}</p>
           </div>
@@ -53,13 +53,16 @@ class CityPropertyList extends React.Component{
           </div>
             <div className = "PropertyBodyRow2">
               <p className = "PropertyCost">$ {item.cost}</p>
+              <img src = {global_logo} className = "GlobalLogo"/>
             </div>
             <div className = "PropertyBodyRow3">
+              <img src = {cerceve_ev} className ="CerceveEvLogo"/>
               <p className = "PropertySize">{item.m2}</p>
+              <img src = {bed_logo} className = "bedLogo"/>
               <p className = "PropertyBedCount">{item.bed_count}</p>
             </div>
           </div>
-        </div>
+        </a>
       ))
       return output;
     })

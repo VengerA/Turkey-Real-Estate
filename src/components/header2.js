@@ -30,33 +30,32 @@ class Header2 extends React.Component{
       }
     } 
     return (
-      <div className= "header2">
-        <Link className = "header2Help" to = "">
-            <p className= "header2HelpText">How Can We Help You ?</p>
-        </Link>
-        <div className = "Header2navigatorsContainer">
-          <button className = "navigators" onClick = {this.showProperty}>
-              <p className = "navigatorText">Property</p>
-          </button>
+      <div class="middle-header row align-items-center">
+        <div class="container-fluid">
+            <div class="row m-0 align-items-center">
+                <div class="col-lg-3 col-12">
+                    <a href="#" class="help-button">
+                        How we can help you?
+                    </a>
+                </div>
 
-          <Link className = "navigators" to = "Guide">
-              <p className = "navigatorText">Guide To Turkey</p>
-          </Link>
-          <Link className = "navigators" to = "Citizienship">
-              <p className = "navigatorText">Citizienship</p>
-          </Link>
-          <Link className = "navigators" to = "#">
-              <p className = "navigatorText">Blog</p>
-          </Link>
-          <Link className = "navigators" to = "AboutUs">
-              <p className = "navigatorText">About Us</p>
-          </Link>
-          <Link className = "navigators" to = "ContactUs">
-              <p className = "navigatorText">Contact</p>
-          </Link>
+                <div class="col-lg-9 col-12">
+                    <nav class="header-menu">
+                        <ul>
+                            <li><a href="#">Property</a></li>
+                            <li><a href="#">Find My Home</a></li>
+                            <li><a href="#">Guide To Turkey</a></li>
+                            <li><a href="#">Finance & Law</a></li>
+                            <li><a href="#">Citizenship</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
-        {ShowProperty()}
-      </div>
+    </div>
     );
   }
 }

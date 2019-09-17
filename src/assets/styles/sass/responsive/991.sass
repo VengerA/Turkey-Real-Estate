@@ -1,0 +1,149 @@
+/* Max Width: 991px */
+@media (max-width: 991px)
+    div#app
+        overflow: hidden
+    /* Header */
+    header#header
+        display: none
+    div#responsive-header
+        div.header-layout
+            height: 60px
+            background-color: #f0f0f0
+    main#main.home
+        div#hero-placeholder
+            div#hero-slider
+                div.hero-slider
+                    .owl-dots
+                        display: none
+                    div.slider-item
+                        height: 240px
+                        div.slider-details
+                            div.slider-header
+                                div.slider-title
+                                    font-size: 14px
+                                    span
+                                        font-size: 45px
+                                div.slider-buttons
+                                    display: none
+                            div.slider-desc
+                                display: none
+                        div.slider-navigation
+                            display: none
+            div.hero-search
+                position: relative
+                bottom: unset
+                left: unset
+                margin: 0
+                div.location
+                    padding: 30px 0px
+                &:before
+                    content: ""
+                    position: absolute
+                    top: 0
+                    left: calc(-50% + 2px)
+                    width: 50%
+                    height: 100%
+                    background-color: #1d1f42
+                &:after
+                    content: ""
+                    position: absolute
+                    top: 0
+                    right: calc(-50% + 2px)
+                    width: 50%
+                    height: 100%
+                    background-color: #e33654
+                div.form-box
+                    display: none
+        div.featured-projects-1
+            padding: 50px 0px
+            div.section-title
+                font-size: 20px
+                line-height: 1.35
+                margin-bottom: 15px
+            div.featured-project-list-1
+                div.item
+                    div.project-block
+                        figure.project-image
+                            height: 201px
+                        div.project-details
+                            div.project-desc
+                                font-size: 14px
+        div.featured-projects-2
+            padding: 50px 0px 30px 0px
+            div.section-title
+                font-size: 20px
+                line-height: 1.35
+                margin-bottom: 15px
+            div.featured-project-list-2
+                .owl-stage-outer
+                    padding-bottom: 80px
+                .owl-nav
+                    display: none
+                div.item
+                    div.project-block
+                        div.project-details
+                            color: #000
+                        div.project-view
+                            display: flex
+        div.policy-area
+            padding: 40px 0px
+            div.row
+                flex-direction: column-reverse
+                div.policy-text
+                    margin-top: 30px !important
+                    div.section-title
+                        font-size: 20px
+                        line-height: 32px
+                        margin-bottom: 15px
+                    font-size: 14px
+                    line-height: 25px
+    main#main
+        div.help-form
+            padding: 30px 0px
+            div.section-title
+                font-size: 20px
+                line-height: 32px
+            div.section-desc
+                font-size: 14px
+                line-height: 22px
+                margin-bottom: 15px
+            form.help-form
+                textarea
+                    margin-top: 1rem
+                    
+    footer#footer
+        div.top-footer
+            height: unset
+            div.top-footer-left
+                padding: 15px 0px
+                div.subscribe-info
+                    max-width: 100%
+                    padding: 0px 15px
+                    div.subscribe-desc
+                        text-align: left
+                        font-size: 16px
+                        span
+                            font-size: 12px
+            div.top-footer-right
+                form.footer-subscribe-form
+                    div.input
+                        padding: 0
+                        width: calc(100% - 60px)
+                        div.placeholder
+                            div.icon
+                                display: none
+                            input
+                                width: 100%
+                    button
+                        width: 60px
+                        height: 60px
+        div.bottom-footer
+            height: unset
+            div.row
+                flex-direction: column-reverse
+            div.copyright
+                padding: 0px 0px 30px 0px
+                text-align: center
+            div.social-icons
+                padding: 30px 0px 30px 0px
+                text-align: center

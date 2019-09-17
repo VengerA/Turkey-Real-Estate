@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Header from './header.js';
-import Header2 from './header2.js';
+import HeaderSection from './headersSection';
 import MainSearch from './mainSearch.js';
 import Featured1 from './featured1.js';
 import Featured2 from './featured2.js';
@@ -30,17 +29,18 @@ class Home extends React.Component{
   render(){
     
     return (
-      <div>
-        <Header/>
-        <Header2/>
-        <MainSearch/>
-        <Featured1/>
-        <Featured2/>
-        <Introduction/>
-        <ContactFooter/>
-        <Subscribe/>
-        <Footer/>
-        <Footer2/>
+      <div className = "container-fluid" id = "app">
+        <div className ="general-container">
+          <HeaderSection/>
+          <MainSearch/>
+          <Featured1/>
+          <Featured2/>
+          <Introduction/>
+          <ContactFooter/>
+          <Subscribe/>
+          <Footer/>
+          <Footer2/>
+        </div>
       </div>
     );
   }

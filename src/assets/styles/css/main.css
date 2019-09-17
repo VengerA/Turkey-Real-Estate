@@ -1,0 +1,1220 @@
+/* Base */
+/* Fonts */
+/* Body */
+body {
+  background-color: #f0f0f0; }
+  body a {
+    color: inherit;
+    text-decoration: none; }
+    body a:hover {
+      color: inherit;
+      text-decoration: none; }
+  body * {
+    outline: none !important; }
+
+@keyframes frombottom {
+  from {
+    transform: translateY(45px); }
+  to {
+    transform: translateY(0px); } }
+@keyframes todark {
+  from {
+    color: #fff; }
+  to {
+    color: #000; } }
+@keyframes favme-anime {
+  0% {
+    opacity: 1;
+    font-size: ms(0);
+    -webkit-text-stroke-color: transparent; }
+  25% {
+    opacity: 0.6;
+    color: #FFF;
+    font-size: ms(-2);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #DC3232; }
+  75% {
+    opacity: 0.6;
+    color: #FFF;
+    font-size: ms(3);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #DC3232; }
+  100% {
+    opacity: 1;
+    font-size: ms(2);
+    -webkit-text-stroke-color: transparent; } }
+@keyframes favme-hover {
+  from {
+    font-size: ms(3); }
+  80% {
+    font-size: ms(2); } }
+/* Layouts */
+/* Header */
+header#header {
+  /* Top Header */
+  /* Middle Header */ }
+  header#header div.top-header {
+    height: 80px;
+    background-color: #f0f0f0;
+    /* Logo */
+    /* Social Icons */
+    /* Header Buttons */ }
+    header#header div.top-header div.logo {
+      font-family: "Gilroy Bold";
+      font-size: 20px;
+      letter-spacing: 1.67px;
+      color: #18181d; }
+      header#header div.top-header div.logo img {
+        vertical-align: middle;
+        margin-right: 5px;
+        position: relative;
+        top: -2px; }
+    header#header div.top-header div.social-icons {
+      font-size: 0; }
+      header#header div.top-header div.social-icons a.social {
+        display: inline-block;
+        font-size: 16px;
+        margin-right: 20px; }
+        header#header div.top-header div.social-icons a.social:last-child {
+          margin-right: 0; }
+    header#header div.top-header div.header-buttons {
+      text-align: right;
+      /* Phone */
+      /* Whatsapp */
+      /* Buttons */
+      /* Favorite */ }
+      header#header div.top-header div.header-buttons div.phone {
+        font-family: "Gilroy Bold";
+        font-size: 16px;
+        color: #282828;
+        display: inline-block;
+        vertical-align: middle; }
+        header#header div.top-header div.header-buttons div.phone span {
+          color: #252851;
+          margin: 0px 5px; }
+          header#header div.top-header div.header-buttons div.phone span i {
+            font-size: 20px; }
+      header#header div.top-header div.header-buttons div.whatsapp {
+        display: inline-block;
+        vertical-align: middle; }
+        header#header div.top-header div.header-buttons div.whatsapp a.button {
+          width: 40px;
+          height: 40px;
+          background-color: #fff;
+          border-radius: 3px;
+          display: inline-block;
+          text-align: center;
+          line-height: 30px;
+          margin: 0px 10px 0px 5px;
+          color: #25d366;
+          font-size: 22px;
+          transition: 0.5s ease; }
+          header#header div.top-header div.header-buttons div.whatsapp a.button:hover {
+            background-color: #25d366;
+            color: #fff; }
+      header#header div.top-header div.header-buttons div.buttons {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 15px;
+        position: relative;
+        /* Placeholder */
+        /* Landc Box */ }
+        header#header div.top-header div.header-buttons div.buttons div.placeholder {
+          height: 40px;
+          background-color: #fff;
+          border-radius: 3px;
+          padding: 10px;
+          line-height: 0px;
+          cursor: pointer; }
+          header#header div.top-header div.header-buttons div.buttons div.placeholder div.current-language {
+            display: inline-block;
+            vertical-align: middle; }
+            header#header div.top-header div.header-buttons div.buttons div.placeholder div.current-language img {
+              display: block;
+              max-width: 28px; }
+          header#header div.top-header div.header-buttons div.buttons div.placeholder span.current-currency {
+            display: inline-block;
+            vertical-align: middle;
+            font-family: "Gilroy Bold";
+            font-size: 14px;
+            letter-spacing: 1.17px;
+            text-transform: uppercase;
+            margin: 0px 5px; }
+          header#header div.top-header div.header-buttons div.buttons div.placeholder span.icon {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 14px; }
+        header#header div.top-header div.header-buttons div.buttons div.landc-box {
+          display: none;
+          position: absolute;
+          top: 55px;
+          right: 0;
+          width: 210px;
+          padding: 20px;
+          background-color: #fff;
+          box-shadow: 0 2px 24px rgba(0, 0, 0, 0.2);
+          border-radius: 3px;
+          text-align: left;
+          z-index: 4;
+          /* Form Group */ }
+          header#header div.top-header div.header-buttons div.buttons div.landc-box:before {
+            content: "";
+            position: absolute;
+            top: -16px;
+            right: 62px;
+            border: 8px solid transparent;
+            border-bottom-color: #fff; }
+          header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group:last-child {
+            margin-bottom: 0; }
+          header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group label.title {
+            font-family: "Gilroy Regular";
+            font-size: 14px;
+            color: #1d1f42; }
+          header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group div.select {
+            border-radius: 3px;
+            border: 1px solid #d5d7e2;
+            overflow: hidden; }
+            header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group div.select div.choice {
+              font-size: 0;
+              cursor: pointer;
+              height: 0px;
+              overflow: hidden; }
+              header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group div.select div.choice span.currency {
+                width: 28px;
+                height: 20px;
+                line-height: 20px;
+                border-radius: 2px;
+                display: inline-block;
+                vertical-align: middle;
+                background-color: #252851;
+                font-size: 12px;
+                text-align: center;
+                color: #fff;
+                font-family: "Arial"; }
+              header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group div.select div.choice span.icon {
+                width: 28px;
+                display: inline-block;
+                vertical-align: middle; }
+                header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group div.select div.choice span.icon img {
+                  max-width: 28px; }
+              header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group div.select div.choice span.name {
+                width: calc(100% - 56px);
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 16px;
+                padding: 0px 15px;
+                font-family: "Gilroy Medium";
+                color: #3a3a3a; }
+              header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group div.select div.choice span.arrow {
+                width: 28px;
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 12px;
+                color: #3e4da7;
+                text-align: right;
+                padding: 0px 5px; }
+            header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group div.select div.active {
+              display: block;
+              height: unset;
+              overflow: visible;
+              padding: 10px; }
+          header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group div.select.active {
+            height: unset; }
+            header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group div.select.active div.choice {
+              display: block;
+              height: unset;
+              overflow: visible;
+              padding: 10px; }
+          header#header div.top-header div.header-buttons div.buttons div.landc-box div.form-group button {
+            width: 100%;
+            display: block;
+            height: 40px;
+            border-radius: 3px;
+            background-color: #e33654;
+            text-align: center;
+            line-height: 40px;
+            border: none;
+            font-family: "Gilroy Bold";
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #fff; }
+      header#header div.top-header div.header-buttons div.favorite {
+        display: inline-block;
+        vertical-align: middle; }
+        header#header div.top-header div.header-buttons div.favorite .fav-btn {
+          display: inline;
+          vertical-align: middle;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          background-color: #fff;
+          border-radius: 100px;
+          position: relative;
+          text-align: center;
+          line-height: 40px; }
+          header#header div.top-header div.header-buttons div.favorite .fav-btn .favme {
+            font-size: 14px;
+            width: auto;
+            height: auto;
+            cursor: pointer;
+            box-shadow: none;
+            transition: all 0.2s ease;
+            color: #CBCDCE;
+            margin: 0;
+            height: 100%;
+            width: 100%; }
+            header#header div.top-header div.header-buttons div.favorite .fav-btn .favme:hover {
+              animation: favme-hover 0.3s infinite alternate; }
+            header#header div.top-header div.header-buttons div.favorite .fav-btn .favme i {
+              columns: #000;
+              font-size: 18px; }
+          header#header div.top-header div.header-buttons div.favorite .fav-btn .favme.active {
+            color: #dc3232; }
+          header#header div.top-header div.header-buttons div.favorite .fav-btn .favme.is_animating {
+            animation: favme-anime 0.3s; }
+  header#header div.middle-header {
+    height: 80px;
+    background-color: #fff;
+    border-bottom: 2px solid #f0f0f0;
+    /* Help Button */
+    /* Header Menu */ }
+    header#header div.middle-header a.help-button {
+      height: 40px;
+      display: inline-block;
+      border: 1px solid #e0e0e0;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 3px;
+      padding: 0px 15px;
+      font-family: "Gilroy Bold";
+      font-size: 16px; }
+      header#header div.middle-header a.help-button:hover {
+        background-color: #e0e0e0; }
+    header#header div.middle-header nav.header-menu {
+      text-align: right;
+      font-family: "Gilroy SemiBold"; }
+      header#header div.middle-header nav.header-menu ul {
+        padding: 0;
+        margin: 0;
+        font-size: 0; }
+        header#header div.middle-header nav.header-menu ul li {
+          display: inline-block;
+          font-size: 16px;
+          color: #1d1f42;
+          margin-left: 40px; }
+          header#header div.middle-header nav.header-menu ul li:first-child {
+            margin-left: 0; }
+          header#header div.middle-header nav.header-menu ul li a {
+            display: block;
+            position: relative; }
+            header#header div.middle-header nav.header-menu ul li a:after {
+              content: "";
+              position: absolute;
+              bottom: -5px;
+              left: calc(50%);
+              width: 0px;
+              height: 2px;
+              background-color: #1d1f42;
+              border-radius: 100px;
+              transition-duration: 0.5s; }
+            header#header div.middle-header nav.header-menu ul li a:hover:after {
+              left: 0;
+              width: 100%; }
+
+/* Footer */
+footer#footer {
+  /* Top Footer */
+  /* Middle Footer */
+  /* Bottom Footer */ }
+  footer#footer div.top-footer {
+    height: 100px;
+    background-color: #f6f6f6;
+    /* Top Footer Left */
+    /* Top Footer Right */ }
+    footer#footer div.top-footer div.top-footer-left {
+      text-align: right;
+      /* Subscribe Info */ }
+      footer#footer div.top-footer div.top-footer-left div.subscribe-info {
+        text-align: left;
+        max-width: 570px;
+        width: 100%;
+        display: inline-block;
+        padding: 0px 30px;
+        font-size: 0;
+        color: #1d1f42;
+        /* Footer Logo */
+        /* Subscribe Desc */ }
+        footer#footer div.top-footer div.top-footer-left div.subscribe-info div.footer-logo {
+          width: 50px;
+          display: inline-block;
+          vertical-align: middle; }
+        footer#footer div.top-footer div.top-footer-left div.subscribe-info div.subscribe-desc {
+          width: calc(100% - 50px);
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 14px;
+          text-align: right;
+          font-family: "Gilroy Light";
+          font-size: 24px;
+          color: #1d1f42; }
+          footer#footer div.top-footer div.top-footer-left div.subscribe-info div.subscribe-desc span {
+            display: block;
+            font-family: "Gilroy Regular";
+            font-size: 14px; }
+    footer#footer div.top-footer div.top-footer-right {
+      padding: 0;
+      height: 100%;
+      /* Footer Subscribe Form */ }
+      footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form {
+        font-size: 0;
+        height: 100%;
+        background-color: #1d1f42; }
+        footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form div.input {
+          width: calc(100% - 205px);
+          display: inline-block;
+          vertical-align: middle;
+          padding: 15px 20px; }
+          footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form div.input div.placeholder {
+            width: 100%;
+            display: block;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            height: 60px;
+            font-size: 0; }
+            footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form div.input div.placeholder div.icon {
+              width: 75px;
+              display: inline-block;
+              vertical-align: middle;
+              font-size: 24px;
+              text-align: center;
+              color: #fff; }
+              footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form div.input div.placeholder div.icon img {
+                opacity: 0.5; }
+            footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form div.input div.placeholder input {
+              width: calc(100% - 75px);
+              display: inline-block;
+              vertical-align: middle;
+              height: 100%;
+              padding: 0px 15px;
+              background-color: transparent;
+              border: none;
+              font-family: "Gilroy SemiBold";
+              font-size: 14px;
+              color: #fff; }
+            footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form div.input div.placeholder input::placeholder {
+              opacity: 1;
+              color: #fff; }
+        footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form button {
+          height: 100%;
+          display: inline-block;
+          vertical-align: middle;
+          width: 205px;
+          background-color: #e33654;
+          font-size: 20px;
+          border: none;
+          color: #fff;
+          font-family: "Gilroy SemiBold";
+          font-size: 20px;
+          text-transform: uppercase; }
+          footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form button img {
+            max-width: 100%;
+            height: auto; }
+  footer#footer div.middle-footer {
+    padding: 65px 0px;
+    background-color: #e8e8e8;
+    /* Footer Title */
+    /* Footer Menu */
+    /* Footer Desc */
+    /* Bold Block */ }
+    footer#footer div.middle-footer div.footer-title {
+      font-family: "Gilroy Bold";
+      font-size: 16px;
+      text-transform: uppercase;
+      color: #1d1f42;
+      margin-bottom: 30px; }
+    footer#footer div.middle-footer nav.footer-menu ul {
+      padding: 0;
+      margin: 0; }
+      footer#footer div.middle-footer nav.footer-menu ul li {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 14px;
+        font-family: "Gilroy Bold";
+        color: #1d1f42; }
+    footer#footer div.middle-footer div.footer-desc {
+      font-family: "Gilroy Regular";
+      font-size: 14px;
+      line-height: 24px;
+      color: #1d1f42;
+      margin: 20px 0px; }
+    footer#footer div.middle-footer div.bold-block {
+      margin: 10px 0px;
+      font-family: "Gilroy Bold";
+      font-size: 14px; }
+      footer#footer div.middle-footer div.bold-block i {
+        font-size: 20px; }
+  footer#footer div.bottom-footer {
+    height: 80px;
+    background-color: #252851;
+    /* Copyright */
+    /* Social Icons */ }
+    footer#footer div.bottom-footer div.copyright {
+      font-family: "Gilroy Regular";
+      font-size: 14px;
+      color: #fff; }
+    footer#footer div.bottom-footer div.social-icons {
+      text-align: right; }
+      footer#footer div.bottom-footer div.social-icons a.social {
+        display: inline-block;
+        font-size: 16px;
+        margin-left: 20px;
+        color: #fff; }
+        footer#footer div.bottom-footer div.social-icons a.social:first-child {
+          margin-left: 0; }
+
+/* Pages */
+/* Main */
+main#main {
+  /* Help Form */ }
+  main#main div.help-form {
+    padding: 100px 0px;
+    background-color: #fff;
+    /* Section Title */
+    /* Section Desc */
+    /* Help Form */ }
+    main#main div.help-form div.section-title {
+      font-family: "Gilroy Bold";
+      font-size: 40px;
+      color: #1d1f42;
+      line-height: 52px;
+      margin-bottom: 10px; }
+    main#main div.help-form div.section-desc {
+      font-family: "Gilroy Regular";
+      font-size: 24px;
+      line-height: 34px;
+      color: #1d1f42;
+      max-width: 450px;
+      width: 100%; }
+    main#main div.help-form form.help-form div.form-blocks div.form-group:last-child {
+      margin-bottom: 0; }
+    main#main div.help-form form.help-form input {
+      width: 100%;
+      height: 60px;
+      border-radius: 3px;
+      border: 1px solid #d5d7e2;
+      padding: 0px 20px;
+      font-family: "Gilroy Bold";
+      font-size: 16px;
+      color: #3a3a3a; }
+    main#main div.help-form form.help-form input::placeholder {
+      color: #3a3a3a;
+      opacity: 1; }
+    main#main div.help-form form.help-form textarea {
+      width: 100%;
+      resize: none;
+      border-radius: 3px;
+      border: 1px solid #d5d7e2;
+      padding: 15px 20px;
+      font-family: "Gilroy Bold";
+      font-size: 16px;
+      color: #3a3a3a;
+      height: 133px; }
+    main#main div.help-form form.help-form textarea::placeholder {
+      opacity: 1;
+      color: #3a3a3a; }
+    main#main div.help-form form.help-form button {
+      width: 100%;
+      display: block;
+      height: 56px;
+      background-color: #e33654;
+      border: none;
+      color: #fff;
+      font-family: "Gilroy Bold";
+      font-size: 16px;
+      text-transform: uppercase;
+      border-radius: 3px; }
+    main#main div.help-form div.to-up {
+      cursor: pointer; }
+      main#main div.help-form div.to-up span.button {
+        width: 75px;
+        height: 75px;
+        background-color: #f0f0f0;
+        display: inline-block;
+        border-radius: 100px;
+        line-height: 75px;
+        text-align: center;
+        margin-bottom: 10px; }
+      main#main div.help-form div.to-up span.title {
+        font-family: "Gilroy Regular";
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #1d1f42;
+        display: block; }
+
+/* Home */
+main#main.home {
+  /* Hero Placeholder */
+  /* Featured Projects 1 */
+  /* Featured Projects 2 */
+  /* Policy Area */ }
+  main#main.home div#hero-placeholder {
+    position: relative;
+    /* Hero Slider */
+    /* Hero Search */ }
+    main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item {
+      height: 720px;
+      width: 100%; }
+      main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item img {
+        width: unset;
+        display: unset; }
+      main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-title {
+        font-family: "Gilroy Bold";
+        font-size: 24px;
+        color: #fff;
+        display: inline-block;
+        vertical-align: middle; }
+        main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-title span {
+          display: block;
+          font-family: "Gilroy Regular";
+          font-size: 60px; }
+      main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 15px; }
+        main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons a.slider-button {
+          background-color: rgba(227, 54, 84, 0.9);
+          border-radius: 3px;
+          font-size: 0;
+          display: block; }
+          main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons a.slider-button div.count {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0px 15px;
+            font-family: "Gilroy Bold";
+            font-size: 16px;
+            color: #fff; }
+            main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons a.slider-button div.count span {
+              display: block;
+              font-size: 41px;
+              line-height: 41px; }
+          main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons a.slider-button div.icon {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 30px 20px;
+            border-left: 1px solid #c02540;
+            font-size: 14px; }
+      main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-desc {
+        font-family: "Gilroy SemiBold";
+        font-size: 14px;
+        line-height: 23px;
+        color: #ffffff; }
+    main#main.home div#hero-placeholder div#hero-slider .owl-dots {
+      position: absolute;
+      top: calc(50% - 160px);
+      right: 50px;
+      counter-reset: section; }
+      main#main.home div#hero-placeholder div#hero-slider .owl-dots .owl-dot {
+        display: block;
+        margin: 10px 0px;
+        text-align: center; }
+        main#main.home div#hero-placeholder div#hero-slider .owl-dots .owl-dot:before {
+          counter-increment: section;
+          content: counter(section);
+          font-size: 14px;
+          font-family: "Gilroy Bold";
+          font-size: 16px;
+          color: #fff;
+          text-align: center; }
+      main#main.home div#hero-placeholder div#hero-slider .owl-dots .active {
+        padding: 0px 10px; }
+        main#main.home div#hero-placeholder div#hero-slider .owl-dots .active:before {
+          font-size: 32px; }
+    main#main.home div#hero-placeholder div.hero-search {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 4;
+      height: 160px; }
+      main#main.home div#hero-placeholder div.hero-search div.location {
+        background-color: #1d1f42;
+        padding: 30px; }
+        main#main.home div#hero-placeholder div.hero-search div.location div.title {
+          display: block;
+          width: 100%;
+          font-family: "Gilroy SemiBold";
+          font-size: 16px;
+          color: #fff; }
+        main#main.home div#hero-placeholder div.hero-search div.location div.input {
+          width: 100%;
+          display: block;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 3px;
+          height: 60px;
+          font-size: 0; }
+          main#main.home div#hero-placeholder div.hero-search div.location div.input div.icon {
+            width: 50px;
+            text-align: center;
+            line-height: 60px;
+            display: inline-block;
+            vertical-align: middle; }
+          main#main.home div#hero-placeholder div.hero-search div.location div.input input {
+            width: calc(100% - 75px);
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            padding: 0px 15px;
+            background-color: transparent;
+            border: none;
+            font-family: "Gilroy SemiBold";
+            font-size: 14px;
+            color: #fff; }
+          main#main.home div#hero-placeholder div.hero-search div.location div.input input::placeholder {
+            opacity: 1;
+            color: #fff; }
+      main#main.home div#hero-placeholder div.hero-search div.form-box {
+        background-color: #252851;
+        height: 100%;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        border-right: 2px solid #1d1f42; }
+        main#main.home div#hero-placeholder div.hero-search div.form-box:last-child {
+          border-right: none; }
+        main#main.home div#hero-placeholder div.hero-search div.form-box:nth-last-child(2) {
+          border-right: none; }
+        main#main.home div#hero-placeholder div.hero-search div.form-box div.form-item {
+          text-align: center;
+          display: block;
+          margin: 0 auto; }
+          main#main.home div#hero-placeholder div.hero-search div.form-box div.form-item div.title {
+            font-family: "Gilroy SemiBold";
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 10px; }
+          main#main.home div#hero-placeholder div.hero-search div.form-box div.form-item div.icon {
+            margin-bottom: 15px; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-item div.icon:last-child {
+              margin-bottom: 0; }
+        main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener {
+          position: absolute;
+          top: calc(100% - 43px);
+          left: -25px;
+          width: calc(100% + 50px);
+          background-color: #fff;
+          z-index: 4;
+          box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+          border-radius: 3px;
+          display: none; }
+          main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener:before {
+            content: "";
+            position: absolute;
+            top: -24px;
+            left: calc(50% - 12px);
+            border: 12px solid transparent;
+            border-bottom-color: #fff; }
+          main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox {
+            margin: 0;
+            width: 100%;
+            height: 60px;
+            border-bottom: 1px solid rgba(54, 58, 108, 0.3); }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox:last-child {
+              border-bottom: none; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox input {
+              display: none; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox input:checked ~ div.checkbox div.icon {
+              border-color: #363a6c;
+              background-color: #484b79;
+              color: #fff; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox div.checkbox {
+              padding: 0px 15px;
+              text-align: left;
+              height: 60px;
+              line-height: 60px;
+              cursor: pointer; }
+              main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox div.checkbox div.icon {
+                width: 22px;
+                height: 22px;
+                display: inline-block;
+                vertical-align: middle;
+                border: 2px solid #9197b6;
+                border-radius: 100px;
+                font-size: 10px;
+                text-align: center;
+                line-height: 18px;
+                margin-right: 5px; }
+              main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox div.checkbox div.text {
+                display: inline-block;
+                vertical-align: middle;
+                color: #484b79;
+                font-family: "Gilroy SemiBold";
+                font-size: 16px; }
+          main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider {
+            text-align: left;
+            padding: 30px 30px 30px 30px; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider div.title {
+              font-family: "Gilroy Bold";
+              font-size: 16px;
+              color: #484b79;
+              margin-bottom: 20px;
+              margin-top: 15px; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input {
+              display: block;
+              width: 100%; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type="range"] {
+              -webkit-appearance: none;
+              width: 100%;
+              background: transparent; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]::-webkit-slider-thumb {
+              -webkit-appearance: none; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]:focus {
+              outline: none; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]::-ms-track {
+              width: 100%;
+              cursor: pointer;
+              background: transparent;
+              border-color: transparent;
+              color: transparent; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              width: 20px;
+              height: 20px;
+              cursor: pointer;
+              margin-top: -10px;
+              background-image: url("../../images/icons/slider-bg.png");
+              background-size: cover;
+              background-repeat: no-repeat; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]::-webkit-slider-runnable-track {
+              width: 100%;
+              height: 2px;
+              cursor: pointer;
+              background-color: #d8d8d8;
+              border-radius: 2px; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider div.values {
+              margin-top: 20px;
+              font-family: "Gilroy Bold";
+              font-size: 16px;
+              text-transform: uppercase;
+              color: #484b79; }
+        main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple {
+          right: -100%;
+          left: unset;
+          width: calc(100% * 5 + 5px); }
+          main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple:before {
+            left: unset;
+            right: 28.5%; }
+          main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms {
+            text-align: left; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block {
+              border-right: 1px solid rgba(54, 58, 108, 0.3);
+              padding: 0; }
+              main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group {
+                font-size: 0;
+                margin: 0;
+                padding: 15px; }
+                main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.title {
+                  width: 160px;
+                  display: inline-block;
+                  vertical-align: middle;
+                  font-family: "Gilroy Bold";
+                  font-size: 16px;
+                  color: #484b79; }
+                main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input {
+                  display: inline-block;
+                  width: calc(100% - 160px);
+                  vertical-align: middle; }
+                  main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input input {
+                    font-size: 14px;
+                    width: 100%;
+                    height: 40px;
+                    border-radius: 4px;
+                    border: 1px solid #e3e5ed;
+                    padding: 0px 15px;
+                    color: #3a3a3a;
+                    font-family: "Gilroy SemiBold";
+                    font-size: 14px; }
+                  main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input input::placeholder {
+                    color: #3a3a3a;
+                    opacity: 1; }
+                  main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input select {
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    height: 40px;
+                    border-radius: 4px;
+                    border: 1px solid #e3e5ed;
+                    width: 110px;
+                    display: inline-block;
+                    font-size: 14px;
+                    font-family: "Gilroy SemiBold";
+                    color: #3a3a3a;
+                    padding: 0px 15px;
+                    background-image: url("../../images/icons/chevron-arrow-down-blue.png");
+                    background-repeat: no-repeat;
+                    background-position: 90% 50%; }
+                  main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input span.seperator {
+                    margin: 0 10px;
+                    font-size: 14px; }
+                  main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox {
+                    margin: 0;
+                    width: 100%; }
+                    main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox:last-child {
+                      border-bottom: none; }
+                    main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox input {
+                      display: none; }
+                    main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox input:checked ~ div.checkbox div.icon {
+                      border-color: #363a6c;
+                      background-color: #484b79;
+                      color: #fff; }
+                    main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox div.checkbox {
+                      padding: 0px;
+                      margin-top: 10px;
+                      text-align: left;
+                      cursor: pointer; }
+                      main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox div.checkbox div.icon {
+                        width: 22px;
+                        height: 22px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        border: 2px solid #9197b6;
+                        border-radius: 100px;
+                        font-size: 10px;
+                        text-align: center;
+                        line-height: 18px;
+                        margin-right: 5px; }
+                      main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox div.checkbox div.text {
+                        display: inline-block;
+                        vertical-align: middle;
+                        color: #484b79;
+                        font-family: "Gilroy SemiBold";
+                        font-size: 16px; }
+              main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.select-group {
+                padding: 5px 15px; }
+                main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.select-group:first-child {
+                  margin-top: 13px; }
+                main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.select-group:last-child {
+                  margin-top: 35px; }
+            main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.first-input div.form-group {
+              margin: 0; }
+              main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.first-input div.form-group:first-child {
+                border-bottom: 1px solid rgba(54, 58, 108, 0.3); }
+      main#main.home div#hero-placeholder div.hero-search button {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: #e33654;
+        border: none;
+        font-family: "Gilroy SemiBold";
+        font-size: 20px;
+        color: #fff;
+        text-align: center; }
+  main#main.home div.featured-projects-1 {
+    padding: 100px 0px;
+    /* Section Title */
+    /* Featured Project List 1 */ }
+    main#main.home div.featured-projects-1 div.section-title {
+      font-family: "Gilroy Bold";
+      font-size: 40px;
+      color: #1d1f42;
+      margin-bottom: 50px; }
+    main#main.home div.featured-projects-1 div.featured-project-list-1 div.item div.project-block figure.project-image {
+      width: 100%;
+      height: 216px;
+      position: relative;
+      margin: 0;
+      background-image: linear-gradient(180deg, rgba(37, 40, 81, 0) 0%, #252851 100%); }
+      main#main.home div.featured-projects-1 div.featured-project-list-1 div.item div.project-block figure.project-image span.image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover; }
+      main#main.home div.featured-projects-1 div.featured-project-list-1 div.item div.project-block figure.project-image h2.project-title {
+        position: absolute;
+        bottom: 15px;
+        left: 30px;
+        width: calc(100% - 60px);
+        font-family: "Gilroy SemiBold";
+        font-size: 20px;
+        color: #ffffff; }
+    main#main.home div.featured-projects-1 div.featured-project-list-1 div.item div.project-block div.project-details {
+      padding: 30px;
+      background-color: #fff;
+      height: 220px; }
+      main#main.home div.featured-projects-1 div.featured-project-list-1 div.item div.project-block div.project-details div.project-desc {
+        font-family: "Gilroy Regular";
+        font-size: 16px;
+        color: #252627;
+        line-height: 24px;
+        margin-bottom: 15px; }
+      main#main.home div.featured-projects-1 div.featured-project-list-1 div.item div.project-block div.project-details div.project-buttons {
+        text-align: right; }
+        main#main.home div.featured-projects-1 div.featured-project-list-1 div.item div.project-block div.project-details div.project-buttons a.more {
+          display: inline-block;
+          font-family: "Gilroy Bold";
+          font-size: 16px;
+          color: #252851; }
+    main#main.home div.featured-projects-1 div.featured-project-list-1 .owl-dots {
+      text-align: center;
+      margin-top: 30px; }
+      main#main.home div.featured-projects-1 div.featured-project-list-1 .owl-dots .owl-dot {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background-color: rgba(92, 95, 129, 0.5);
+        border-radius: 100px;
+        margin: 0px 4px;
+        outline: none !important; }
+        main#main.home div.featured-projects-1 div.featured-project-list-1 .owl-dots .owl-dot:hover {
+          background-color: #e33654; }
+      main#main.home div.featured-projects-1 div.featured-project-list-1 .owl-dots .owl-dot.active {
+        background-color: #e33654; }
+  main#main.home div.featured-projects-2 {
+    padding: 100px 0px 0px 0px;
+    background-color: #fff;
+    /* Section Title */
+    /* Featured Project List 2 */ }
+    main#main.home div.featured-projects-2 div.section-title {
+      font-family: "Gilroy Bold";
+      font-size: 40px;
+      color: #1d1f42;
+      margin-bottom: 50px; }
+    main#main.home div.featured-projects-2 div.featured-project-list-2 .owl-stage-outer {
+      padding-bottom: 130px; }
+    main#main.home div.featured-projects-2 div.featured-project-list-2 div.item div.project-block:hover div.project-view {
+      display: flex; }
+    main#main.home div.featured-projects-2 div.featured-project-list-2 div.item div.project-block:hover div.project-details {
+      animation: todark 0.5s forwards; }
+    main#main.home div.featured-projects-2 div.featured-project-list-2 div.item div.project-block figure.project-image {
+      margin: 0;
+      width: 100%;
+      height: 240px;
+      position: relative; }
+      main#main.home div.featured-projects-2 div.featured-project-list-2 div.item div.project-block figure.project-image span.image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+        background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+        box-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%; }
+    main#main.home div.featured-projects-2 div.featured-project-list-2 div.item div.project-block div.project-type {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.7);
+      height: 25px;
+      border-radius: 3px;
+      padding: 0px 20px;
+      font-family: "Gilroy Bold";
+      font-size: 10px;
+      line-height: 25px;
+      text-transform: uppercase; }
+    main#main.home div.featured-projects-2 div.featured-project-list-2 div.item div.project-block div.project-details {
+      position: absolute;
+      bottom: 15px;
+      left: 30px;
+      width: calc(100% - 60px);
+      z-index: 4;
+      color: #fff; }
+      main#main.home div.featured-projects-2 div.featured-project-list-2 div.item div.project-block div.project-details h2.project-name {
+        font-family: "Gilroy Bold";
+        font-size: 18px; }
+      main#main.home div.featured-projects-2 div.featured-project-list-2 div.item div.project-block div.project-details div.project-location {
+        font-family: "Gilroy Regular";
+        font-size: 14px; }
+    main#main.home div.featured-projects-2 div.featured-project-list-2 div.item div.project-block div.project-view {
+      animation: frombottom 0.5s;
+      position: absolute;
+      z-index: 3;
+      top: calc(50% + 45px);
+      left: 15px;
+      width: calc(100% - 30px);
+      background-color: #fff;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+      height: 130px;
+      border-radius: 6px;
+      padding: 30px;
+      text-align: center;
+      justify-content: center;
+      margin: 0 auto;
+      font-family: "Gilroy Bold";
+      font-size: 18px;
+      color: #363a6c;
+      display: none; }
+    main#main.home div.featured-projects-2 div.featured-project-list-2 .owl-nav {
+      position: absolute;
+      top: -100px;
+      right: 15px; }
+      main#main.home div.featured-projects-2 div.featured-project-list-2 .owl-nav button {
+        width: 48px;
+        height: 48px;
+        font-size: 0;
+        border: 4px solid #e3e5ed;
+        display: inline-block;
+        border-radius: 100px;
+        text-align: center;
+        line-height: 42px;
+        color: #252851; }
+      main#main.home div.featured-projects-2 div.featured-project-list-2 .owl-nav button.owl-prev {
+        margin-right: 10px; }
+  main#main.home div.policy-area {
+    padding: 100px 0px;
+    background-color: #252851; }
+    main#main.home div.policy-area div.policy-text {
+      font-family: "Gilroy Regular";
+      font-size: 16px;
+      line-height: 25px;
+      color: #ffffff; }
+      main#main.home div.policy-area div.policy-text div.section-title {
+        font-family: "Gilroy Bold";
+        font-size: 40px;
+        margin-bottom: 30px;
+        line-height: 56px; }
+
+/* Responsive */
+/* Max Width: 991px */
+@media (max-width: 991px) {
+  div#app {
+    overflow: hidden; }
+
+  /* Header */
+  header#header {
+    display: none; }
+
+  div#responsive-header div.header-layout {
+    height: 60px;
+    background-color: #f0f0f0; }
+
+  main#main.home div#hero-placeholder div#hero-slider div.hero-slider .owl-dots {
+    display: none; }
+  main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item {
+    height: 240px; }
+    main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-title {
+      font-size: 14px; }
+      main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-title span {
+        font-size: 45px; }
+    main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons {
+      display: none; }
+    main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-desc {
+      display: none; }
+    main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-navigation {
+      display: none; }
+  main#main.home div#hero-placeholder div.hero-search {
+    position: relative;
+    bottom: unset;
+    left: unset;
+    margin: 0; }
+    main#main.home div#hero-placeholder div.hero-search div.location {
+      padding: 30px 0px; }
+    main#main.home div#hero-placeholder div.hero-search:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: calc(-50% + 2px);
+      width: 50%;
+      height: 100%;
+      background-color: #1d1f42; }
+    main#main.home div#hero-placeholder div.hero-search:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: calc(-50% + 2px);
+      width: 50%;
+      height: 100%;
+      background-color: #e33654; }
+    main#main.home div#hero-placeholder div.hero-search div.form-box {
+      display: none; }
+  main#main.home div.featured-projects-1 {
+    padding: 50px 0px; }
+    main#main.home div.featured-projects-1 div.section-title {
+      font-size: 20px;
+      line-height: 1.35;
+      margin-bottom: 15px; }
+    main#main.home div.featured-projects-1 div.featured-project-list-1 div.item div.project-block figure.project-image {
+      height: 201px; }
+    main#main.home div.featured-projects-1 div.featured-project-list-1 div.item div.project-block div.project-details div.project-desc {
+      font-size: 14px; }
+  main#main.home div.featured-projects-2 {
+    padding: 50px 0px 30px 0px; }
+    main#main.home div.featured-projects-2 div.section-title {
+      font-size: 20px;
+      line-height: 1.35;
+      margin-bottom: 15px; }
+    main#main.home div.featured-projects-2 div.featured-project-list-2 .owl-stage-outer {
+      padding-bottom: 80px; }
+    main#main.home div.featured-projects-2 div.featured-project-list-2 .owl-nav {
+      display: none; }
+    main#main.home div.featured-projects-2 div.featured-project-list-2 div.item div.project-block div.project-details {
+      color: #000; }
+    main#main.home div.featured-projects-2 div.featured-project-list-2 div.item div.project-block div.project-view {
+      display: flex; }
+  main#main.home div.policy-area {
+    padding: 40px 0px; }
+    main#main.home div.policy-area div.row {
+      flex-direction: column-reverse; }
+      main#main.home div.policy-area div.row div.policy-text {
+        margin-top: 30px !important;
+        font-size: 14px;
+        line-height: 25px; }
+        main#main.home div.policy-area div.row div.policy-text div.section-title {
+          font-size: 20px;
+          line-height: 32px;
+          margin-bottom: 15px; }
+
+  main#main div.help-form {
+    padding: 30px 0px; }
+    main#main div.help-form div.section-title {
+      font-size: 20px;
+      line-height: 32px; }
+    main#main div.help-form div.section-desc {
+      font-size: 14px;
+      line-height: 22px;
+      margin-bottom: 15px; }
+    main#main div.help-form form.help-form textarea {
+      margin-top: 1rem; }
+
+  footer#footer div.top-footer {
+    height: unset; }
+    footer#footer div.top-footer div.top-footer-left {
+      padding: 15px 0px; }
+      footer#footer div.top-footer div.top-footer-left div.subscribe-info {
+        max-width: 100%;
+        padding: 0px 15px; }
+        footer#footer div.top-footer div.top-footer-left div.subscribe-info div.subscribe-desc {
+          text-align: left;
+          font-size: 16px; }
+          footer#footer div.top-footer div.top-footer-left div.subscribe-info div.subscribe-desc span {
+            font-size: 12px; }
+    footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form div.input {
+      padding: 0;
+      width: calc(100% - 60px); }
+      footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form div.input div.placeholder div.icon {
+        display: none; }
+      footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form div.input div.placeholder input {
+        width: 100%; }
+    footer#footer div.top-footer div.top-footer-right form.footer-subscribe-form button {
+      width: 60px;
+      height: 60px; }
+  footer#footer div.bottom-footer {
+    height: unset; }
+    footer#footer div.bottom-footer div.row {
+      flex-direction: column-reverse; }
+    footer#footer div.bottom-footer div.copyright {
+      padding: 0px 0px 30px 0px;
+      text-align: center; }
+    footer#footer div.bottom-footer div.social-icons {
+      padding: 30px 0px 30px 0px;
+      text-align: center; } }
+
+/*# sourceMappingURL=main.css.map */

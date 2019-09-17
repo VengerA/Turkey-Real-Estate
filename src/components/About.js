@@ -24,13 +24,13 @@ export default function About(props) {
 
 const styles = {
     container: {
-        width: '1440px',
+        width: '100%',
         position: 'relative',
         backgroundColor: '#f0f0f0',
-        paddingBottom: '30px'
+        paddingBottom: '30px',
     },
     coverImage: {
-        width: '1440px',
+        width: '100%',
         height: '450px'
     },
     coverTitle: {

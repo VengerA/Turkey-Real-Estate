@@ -48,7 +48,7 @@ export default function Guide(props) {
                 <div style={styles.coverTitleText}>A colossal mosaic of</div>
                 <div style={styles.coverTitleHeader}>Civilizations</div>
                 <div style={styles.coverTitleDesc}>A richly historical land with some of the best cuisine you will ever taste, scenery from beaches to mountains and the great city of İstanbul</div>
-                <div style={styles.coverTitleButton}>Cities of Turkey</div>
+                <div style={styles.coverTitleButton}><a href = "/city" className = "GuideButton">Cities of Turkey</a></div>
             </div>
             <div style={styles.welcomeContent}>
                 <div style={styles.welcomeContentHeader}>Welcome to Turkey</div>
@@ -102,12 +102,12 @@ export default function Guide(props) {
 
 const styles = {
     container: {
-        width: '1440px',
+        width: '100%',
         position: 'relative',
         backgroundColor: '#fff',
     },
     coverImage: {
-        width: '1440px',
+        width: '100%',
         height: '450px'
     },
     coverTitle: {

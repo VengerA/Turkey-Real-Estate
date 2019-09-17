@@ -44,6 +44,8 @@ class MainSection extends React.Component{
                 {item: "Land", selected: false}, 
                 {item: "All Property Types", selected: true} 
             ],
+            cityArr : ["Antalya", "Izmir", "Istanbul", "Trabzon", "Bursa"],
+            cCity: "Antalya",
             currentImageIndex: 0,
             imageSwitchTimer: undefined,
             cities : []
@@ -92,10 +94,13 @@ class MainSection extends React.Component{
 
         this.setState({
             currentImageIndex: indx,
+            cCity: this.state.cities[indx],
+            
             imageSwitchTimer: setInterval(() => {
                 vm.switchNextImage()
             }, 2000)
         })
+        console.log(this.state.cCity)
     }
 
     handlePropertyType = (item) => {
@@ -291,17 +296,18 @@ class MainSection extends React.Component{
                     />
                     <div className = "cityContent">
                         <p className= "cityContentHeader">WIDEN YOUR TURKEY</p>
-                        <p className = "cityContentHeader2">Antalya</p>
+                        <p className = "cityContentHeader2">{this.state.cCity}</p>
                     </div>
                     <p className = "cityContentText">Antalya's warm climate, beautiful beaches and luxury resorts make it the perfect place to spend a hard-earned break, which is why it’s the first place to spring to mind whenever Turks hear the words "summer holiday." With recent investments in golf courses bringing record numbers of visitors to the area, Antalya has a whole host of things to offer, making it an unbeatable holiday destination.</p>
                     <div className = "CityContentProperities">
-                        <p className = "CityContentProperitiesText"><span className = "CityContentProperitiesText1" >234</span> PROPERTIES</p>
+                        <a href ="/city" className = "CityContentProperitiesText"><span className = "CityContentProperitiesText1" >234</span> PROPERTIES</a>
                         <div>
                             <img className = "CityContentProperitiesIcon" src ={triangle_icon}/>
                         </div>
                     </div>
                     <div className="slider-imageslider" style={styles.slider}>
-                        {MainStore.cities.map((uri, index) => (
+                        {MainStore.cities.map((uri, index) =>
+                             (
                             <div className = "CitySearchIntroductionHeader">
                                 <div
                                     style={this.state.currentImageIndex == index ? styles.sliderItemSelected : styles.sliderItem}
@@ -327,8 +333,8 @@ const styles = {
     slider: {
         position: 'absolute',
         top: '209px',
-        left: '100px',
-        width : "400px",
+        right: '50px',
+        width : "100px",
         textAlign: 'center',
         height: '191px',
         display: 'flex',

@@ -16,10 +16,10 @@ class Featured2 extends React.Component{
     const arr = this.state.featureds.map(item => {
       let output = null
       output  = ((
-            <div className = "featured2Container">
+            <a href ="/property" className = "featured2Container">
                 <p className = "featured2Header">{item.header}</p>
                 <p className = "featureds2Content">{item.content}</p>
-            </div>
+            </a>
         ))            
       return (output) 
     })

@@ -155,10 +155,11 @@ become a Turkish Citizen with 250,000$</div>
 const styles = {
     container: {
         position: 'relative',
-        width: '1440px'
+        width: "100%",
+
     },
     coverImage: {
-        width: '1440px',
+        width: '100%',
         height: '450px'
     },
     header: {

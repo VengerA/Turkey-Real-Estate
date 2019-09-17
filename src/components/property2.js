@@ -19,8 +19,8 @@ class App extends React.Component{
       let output = null
       output = (
         <div className = "Property2Feature">
-          <img className ="Propert2FeatureHeader" src = {bed_icon}/>
-          <p className ="Propert2FeatureContent">Cafe & Restaurants</p>
+          <img className ="Property2FeatureHeader" src = {bed_icon}/>
+          <p className ="Property2FeatureContent">Cafe & Restaurants</p>
         </div>
       )
       return output;

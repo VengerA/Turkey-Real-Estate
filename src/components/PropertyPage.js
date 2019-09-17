@@ -27,9 +27,12 @@ class PropertyPage extends React.Component{
         <PropertyHelp/>
         <Property1/>
         <Property2/>
-        <Subscribe/>
-        <Footer/>
-        <Footer2/>
+        <div className = "PropertyPageFooter">
+          <Subscribe/>
+          <Footer/>
+          <Footer2/>
+        </div>
+        
       </div>
     );
   }
