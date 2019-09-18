@@ -2283,3 +2283,19 @@ input[type=range]:focus::-ms-fill-upper {
   align-items: center;
   width: 45px;
 }
+
+
+/* Sonraki tasarimda gelen eklentiler  */
+
+.slider-item{
+  height: 720px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+
+
+
+

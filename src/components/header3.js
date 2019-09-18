@@ -23,33 +23,84 @@ class Header3 extends React.Component{
   }
   render(){
     return (
-      <div className="Header3">  
-        <div className = "searchContainer3">
-            <div className = 'searchInput3'>
-                <img className= "locationLogo3" src = {location_logo}/>
-                <input className = "locationInput3" type="text" placeholder = "Izmir"/>
+      <div class="hero-search row">
+        <div class="location col-lg-3 col-9 row m-0 align-items-center">
+            <div class="input">
+                <div class="icon">
+                    <img src={require("./../assets/images/icons/map-marker.png")} alt="" />
+                </div>
+                <input type="text" placeholder="İzmir"></input>
             </div>
         </div>
-        <div className = "searchOptions4">
-            <div className = "searchOptions3">
-                <p className ="searchOptionText3">Property Types</p>
+
+        <div class="col-lg-9 col-3 row m-0 p-0 align-items-center">
+            <div class="form-box col-lg col-12 row m-0 align-items-center">
+                <div class="form-item">
+                    <div class="icon">
+                        <img src={require("./../assets/images/icons/home.png")} alt="" />
+                    </div>
+
+                    <div class="title">
+                        3 Properyty Types
+                    </div>
+
+                    <div class="icon">
+                        <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt="" />
+                    </div>
+                </div>
             </div>
-            <div className = "searchOptions3">
-                <p className ="searchOptionText3">Property Types</p>
+
+            <div class="form-box col-lg col-12 row m-0 align-items-center">
+                <div class="form-item">
+                    <div class="icon">
+                        <img src={require("./../assets/images/icons/wallet.png")} alt="" />
+                    </div>
+
+                    <div class="title">
+                        Any Price
+                    </div>
+
+                    <div class="icon">
+                        <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt=""/>
+                    </div>
+                </div>
             </div>
-            <div className = "searchOptions3">
-                <p className ="searchOptionText3">Property Types</p>
+            <div class="form-box col-lg col-12 row m-0 align-items-center">
+                <div class="form-item">
+                    <div class="icon">
+                        <img src={require("./../assets/images/icons/bedroom.png")}alt="" />
+                    </div>
+
+                    <div class="title">
+                        All Bedrooms
+                    </div>
+
+                    <div class="icon">
+                        <img src={require("./../assets/images/icons/chevron-arrow-down.png")}alt=""/>
+                    </div>
+                </div>
             </div>
-            <div className = "searchOptions3">
-                <p className ="searchOptionText3">Property Types</p>
+            
+            <div class="form-box col-lg col-12 row m-0 align-items-center">
+                <div class="form-item">
+                    <div class="icon">
+                        <img src={require("./../assets/images/icons/filter.png" )}alt="" />
+                    </div>
+
+                    <div class="title">
+                        Advanced Filter
+                    </div>
+
+                    <div class="icon">
+                        <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt=""/>
+                    </div>
+                </div>
             </div>
+            <button class="col-lg-2 col-12">
+                <span>2145</span> <img src={require("./../assets/images/icons/search.png")} class="img-fluid" alt="" />
+            </button>
         </div>
-        <div className = "searchBox3">
-            <p className = "searchBoxText3">2145</p>
-            <img className = "searchIcon3" src = {search_icon}/>
-        </div>
-       
-      </div>
+    </div>
     );
   }
 }

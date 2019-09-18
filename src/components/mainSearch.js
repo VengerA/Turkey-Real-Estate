@@ -257,45 +257,8 @@ class MainSection extends React.Component{
         }
 
         return (
-            <div className= "MainSearch">
-                
-                <div>
-                    <div className = "searchContainer">
-                        <p className = "Container1Text">Property Turkey For Sale</p>
-                        <div className = 'searchInput'>
-                            <img className= "locationLogo" src = {location_logo}/>
-                            <input className = "locationInput" type="text" value = "Start typing to select a location"/>
-                           
-                        </div>
-                    </div>
-                    <div className = "searchOptions2">
-                        <div className = "searchOptions" onClick = {this.showPropertyType}>
-                            <img src = {home_icon} className = "MainSearchIcons" />
-                            <p className ="searchOptionText">All Property Types</p>
-                            <img src = {down_arrow} className = "DownArrow"/>
-                        </div>
-                        <div className = "searchOptions" onClick = {() => this.showPrice()}>
-                            <img src = {wallet_icon} className = "MainSearchIcons" />
-                            <p className ="searchOptionText2" >Any Price</p>
-                            <img src = {down_arrow} className = "DownArrow"/>
-                        </div>
-                        <div className = "searchOptions">
-                            <img src = {bed_logo} className = "MainSearchIcons" />
-                            <p className ="searchOptionText">All Bed Rooms</p>
-                            <img src = {down_arrow} className = "DownArrow"/>
-                        </div>
-                        <div className = "searchOptions" onClick = {() =>this.showAdvanced()}>
-                            <img src = {klavye_logo} className = "MainSearchIcons" />
-                            <p className ="searchOptionText">Advanced Filter</p>
-                            <img src = {down_arrow} className = "DownArrow"/>
-                        </div>
-                    </div>
-                    <div className = "searchBox" >
-                        <p className = "searchBoxText">2145</p>
-                        <img className = "searchIcon" src = {search_icon}/>
-                    </div>
-                </div>
-                <div className="SliderGallery">
+            <div> 
+                {/* <div className="SliderGallery">
                     <img
                         className="slider-cover-image"
                         src={coverImages[this.state.currentImageIndex]}
@@ -326,10 +289,154 @@ class MainSection extends React.Component{
                             </div>
                         ))}
                     </div>
+                </div> */}
+                <div id="hero-placeholder">
+                    <div id="hero-slider" class="row">
+                        <div class="hero-slider owl-carousel col-12 p-0">
+                            <div class="item">
+                                <div class="slider-item row m-0 align-items-center" style= {{backgroundImage: `url(${coverImages[this.state.currentImageIndex]})`}}>
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="slider-details col-lg-8 col-12 p-0">
+                                                <div class="slider-header col-12">
+                                                    <div class="slider-title">
+                                                        WIDEN YOUR TURKEY
+                                                        <span>{this.state.cCity}</span>
+                                                    </div>
+
+                                                    <div class="slider-buttons">
+                                                        <a href="#" class="slider-button">
+                                                            <div class="count">
+                                                                <span>234</span>
+                                                                PROPERTIES
+                                                            </div>
+
+                                                            <div class="icon">
+                                                                <img src="assets/images/icons/caret-arrow-next.png" alt="" />
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="slider-desc col-12">
+                                                    Antalya's warm climate, beautiful beaches and luxury resorts make it the perfect place to spend a hard-earned break, which is why it’s the first place to spring to mind whenever Turks hear the words "summer holiday." With recent investments in golf courses bringing record numbers of visitors to the area, Antalya has a whole host of things to offer, making it an unbeatable holiday destination.
+                                                </div>
+
+                                                <div class="mobile-slider-buttons d-lg-none">
+                                                    <a href="#" class="slider-button">
+                                                        <div class="count">
+                                                            <span>234</span>
+                                                            PROPERTIES
+                                                        </div>
+
+                                                        <div class="icon">
+                                                            <img src="assets/images/icons/caret-arrow-next.png" alt="" />
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="slider-imageslider" style={styles.slider}>
+                        {MainStore.cities.map((uri, index) =>
+                             (
+                            <div className = "CitySearchIntroductionHeader">
+                                <div
+                                    style={this.state.currentImageIndex == index ? styles.sliderItemSelected : styles.sliderItem}
+                                    onClick={() => {this.switchToImageByIndex(index)}}
+                                    className="slider-imagesilder-item"
+                                >
+                                    {index + 1}
+                                    
+                                </div>
+                            </div>
+                        ))}
+                        </div>
+                    </div>
+                    <div class="hero-search row">
+                        <div class="location col-lg-3 col-9 row m-0 align-items-center">
+                            <div class="title">Property Turkey for sale</div>
+                            <div class="input">
+                                <div class="icon">
+                                    <img src={require("./../assets/images/icons/map-marker.png")} alt="" />
+                                </div>
+
+                                <input type="text" placeholder="Start typing to select a location"></input>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8 col-3 row m-0 p-0 align-items-center">
+                            <div class="form-box col-lg col-12 row m-0 align-items-center">
+                                <div class="form-item">
+                                    <div class="icon">
+                                        <img src={require("./../assets/images/icons/home.png")} alt="" />
+                                    </div>
+
+                                    <div class="title">
+                                        3 Properyty Types
+                                    </div>
+                                    <div class="icon">
+                                        <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt="" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-box col-lg col-12 row m-0 align-items-center">
+                                <div class="form-item">
+                                    <div class="icon">
+                                        <img src={require("./../assets/images/icons/wallet.png")} alt="" />
+                                    </div>
+
+                                    <div class="title">
+                                        Any Price
+                                    </div>
+
+                                    <div class="icon">
+                                        <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-box col-lg col-12 row m-0 align-items-center">
+                                <div class="form-item">
+                                    <div class="icon">
+                                        <img src={require("./../assets/images/icons/bedroom.png")} alt="" />
+                                    </div>
+
+                                    <div class="title">
+                                        All Bedrooms
+                                    </div>
+
+                                    <div class="icon">
+                                        <img src="./../assets/images/icons/chevron-arrow-down.png" alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-box col-lg col-12 row m-0 align-items-center">
+                                <div class="form-item">
+                                    <div class="icon">
+                                        <img src={require("./../assets/images/icons/filter.png")} alt="" />
+                                    </div>
+
+                                    <div class="title">
+                                        Advanced Filter
+                                    </div>
+
+                                    <div class="icon">
+                                        <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="col-lg col-12">
+                                <span>2145</span> <img src={require("./../assets/images/icons/search.png")} class="img-fluid" alt="" />
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                {PropertyTypesHover()}
-                {Price()}
-                {AdvancedFilter()}
             </div>
         );
     }
@@ -361,6 +468,7 @@ const styles = {
         fontWeight: 'bold',
         right: '64px',
     }
+    
 }
 
 export default MainSection;

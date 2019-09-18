@@ -1,0 +1,40 @@
+/* Min Width: 1199px */
+@media (min-width: 1199px)
+    main#main
+        div#top-cities
+            div.listing
+                div.city-block
+                    a.city-item
+                        &:hover
+                            figure.city-image
+                                img
+                                    transform: scale(1.2)
+                        figure.city-image
+                            width: 350px
+                            height: 208px
+                            overflow: hidden
+    /* City */
+    main#main.city
+        /* City Listing */
+        div#city-listing
+            /* City Lists */            
+            div.city-lists
+                /* List View */
+                div#list-view
+                    padding: 100px 15px
+                    /* Listing */
+                    div.listing
+                        /* Listing Block */
+                        div.listing-block
+                            /* Listing Item */
+                            div.listing-item
+                                /* Listing Image */
+                                figure.listing-image
+                                    width: 340px
+                                    height: 220px
+                                    overflow: hidden
+                                    img
+                                        transition: .5s 
+                                    &:hover
+                                        img
+                                            transform: scale(1.1)

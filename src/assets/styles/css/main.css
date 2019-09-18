@@ -31,14 +31,12 @@ body {
     opacity: 0.6;
     color: #FFF;
     font-size: ms(-2);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #DC3232; }
+    -webkit-text-stroke-width: 1px; }
   75% {
     opacity: 0.6;
     color: #FFF;
     font-size: ms(3);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #DC3232; }
+    -webkit-text-stroke-width: 1px; }
   100% {
     opacity: 1;
     font-size: ms(2);
@@ -312,10 +310,10 @@ header#header {
             header#header div.middle-header nav.header-menu ul li a:after {
               content: "";
               position: absolute;
-              bottom: -5px;
+              bottom: -29px;
               left: calc(50%);
               width: 0px;
-              height: 2px;
+              height: 4px;
               background-color: #1d1f42;
               border-radius: 100px;
               transition-duration: 0.5s; }
@@ -477,7 +475,10 @@ footer#footer {
 /* Pages */
 /* Main */
 main#main {
-  /* Help Form */ }
+  /* Help Form */
+  /* Hero Placeholder */
+  /* Top Cites */
+  /* Top Guides */ }
   main#main div.help-form {
     padding: 100px 0px;
     background-color: #fff;
@@ -552,74 +553,70 @@ main#main {
         text-transform: uppercase;
         color: #1d1f42;
         display: block; }
-
-/* Home */
-main#main.home {
-  /* Hero Placeholder */
-  /* Featured Projects 1 */
-  /* Featured Projects 2 */
-  /* Policy Area */ }
-  main#main.home div#hero-placeholder {
+  main#main div#hero-placeholder {
     position: relative;
     /* Hero Slider */
     /* Hero Search */ }
-    main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item {
+    main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item {
       height: 720px;
-      width: 100%; }
-      main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item img {
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%; }
+      main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item img {
         width: unset;
         display: unset; }
-      main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-title {
+      main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-title {
         font-family: "Gilroy Bold";
         font-size: 24px;
         color: #fff;
         display: inline-block;
         vertical-align: middle; }
-        main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-title span {
+        main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-title span {
           display: block;
           font-family: "Gilroy Regular";
           font-size: 60px; }
-      main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons {
+      main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons {
         display: inline-block;
         vertical-align: middle;
         padding-left: 15px; }
-        main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons a.slider-button {
+        main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons a.slider-button {
           background-color: rgba(227, 54, 84, 0.9);
           border-radius: 3px;
           font-size: 0;
           display: block; }
-          main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons a.slider-button div.count {
+          main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons a.slider-button div.count {
             display: inline-block;
             vertical-align: middle;
             padding: 0px 15px;
             font-family: "Gilroy Bold";
             font-size: 16px;
             color: #fff; }
-            main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons a.slider-button div.count span {
+            main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons a.slider-button div.count span {
               display: block;
               font-size: 41px;
               line-height: 41px; }
-          main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons a.slider-button div.icon {
+          main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons a.slider-button div.icon {
             display: inline-block;
             vertical-align: middle;
             padding: 30px 20px;
             border-left: 1px solid #c02540;
             font-size: 14px; }
-      main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-desc {
+      main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-desc {
         font-family: "Gilroy SemiBold";
         font-size: 14px;
         line-height: 23px;
         color: #ffffff; }
-    main#main.home div#hero-placeholder div#hero-slider .owl-dots {
+    main#main div#hero-placeholder div#hero-slider .owl-dots {
       position: absolute;
       top: calc(50% - 160px);
       right: 50px;
       counter-reset: section; }
-      main#main.home div#hero-placeholder div#hero-slider .owl-dots .owl-dot {
+      main#main div#hero-placeholder div#hero-slider .owl-dots .owl-dot {
         display: block;
         margin: 10px 0px;
         text-align: center; }
-        main#main.home div#hero-placeholder div#hero-slider .owl-dots .owl-dot:before {
+        main#main div#hero-placeholder div#hero-slider .owl-dots .owl-dot:before {
           counter-increment: section;
           content: counter(section);
           font-size: 14px;
@@ -627,41 +624,43 @@ main#main.home {
           font-size: 16px;
           color: #fff;
           text-align: center; }
-      main#main.home div#hero-placeholder div#hero-slider .owl-dots .active {
+      main#main div#hero-placeholder div#hero-slider .owl-dots .active {
         padding: 0px 10px; }
-        main#main.home div#hero-placeholder div#hero-slider .owl-dots .active:before {
+        main#main div#hero-placeholder div#hero-slider .owl-dots .active:before {
           font-size: 32px; }
-    main#main.home div#hero-placeholder div.hero-search {
+    main#main div#hero-placeholder div.hero-search {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
       z-index: 4;
       height: 160px; }
-      main#main.home div#hero-placeholder div.hero-search div.location {
+      main#main div#hero-placeholder div.hero-search div.location {
         background-color: #1d1f42;
         padding: 30px; }
-        main#main.home div#hero-placeholder div.hero-search div.location div.title {
+        main#main div#hero-placeholder div.hero-search div.location div.title {
           display: block;
           width: 100%;
           font-family: "Gilroy SemiBold";
           font-size: 16px;
           color: #fff; }
-        main#main.home div#hero-placeholder div.hero-search div.location div.input {
+        main#main div#hero-placeholder div.hero-search div.location div.input {
           width: 100%;
           display: block;
           background-color: rgba(255, 255, 255, 0.1);
           border-radius: 3px;
           height: 60px;
           font-size: 0; }
-          main#main.home div#hero-placeholder div.hero-search div.location div.input div.icon {
+          main#main div#hero-placeholder div.hero-search div.location div.input .easy-autocomplete {
+            display: inline-block;
+            width: calc(100% - 50px) !important; }
+          main#main div#hero-placeholder div.hero-search div.location div.input div.icon {
             width: 50px;
             text-align: center;
             line-height: 60px;
             display: inline-block;
             vertical-align: middle; }
-          main#main.home div#hero-placeholder div.hero-search div.location div.input input {
-            width: calc(100% - 75px);
+          main#main div#hero-placeholder div.hero-search div.location div.input input {
             display: inline-block;
             vertical-align: middle;
             height: 100%;
@@ -670,35 +669,36 @@ main#main.home {
             border: none;
             font-family: "Gilroy SemiBold";
             font-size: 14px;
-            color: #fff; }
-          main#main.home div#hero-placeholder div.hero-search div.location div.input input::placeholder {
+            color: #fff;
+            box-shadow: none; }
+          main#main div#hero-placeholder div.hero-search div.location div.input input::placeholder {
             opacity: 1;
             color: #fff; }
-      main#main.home div#hero-placeholder div.hero-search div.form-box {
+      main#main div#hero-placeholder div.hero-search div.form-box {
         background-color: #252851;
         height: 100%;
         text-align: center;
         cursor: pointer;
         position: relative;
         border-right: 2px solid #1d1f42; }
-        main#main.home div#hero-placeholder div.hero-search div.form-box:last-child {
+        main#main div#hero-placeholder div.hero-search div.form-box:last-child {
           border-right: none; }
-        main#main.home div#hero-placeholder div.hero-search div.form-box:nth-last-child(2) {
+        main#main div#hero-placeholder div.hero-search div.form-box:nth-last-child(2) {
           border-right: none; }
-        main#main.home div#hero-placeholder div.hero-search div.form-box div.form-item {
+        main#main div#hero-placeholder div.hero-search div.form-box div.form-item {
           text-align: center;
           display: block;
           margin: 0 auto; }
-          main#main.home div#hero-placeholder div.hero-search div.form-box div.form-item div.title {
+          main#main div#hero-placeholder div.hero-search div.form-box div.form-item div.title {
             font-family: "Gilroy SemiBold";
             font-size: 16px;
             color: #fff;
             margin-bottom: 10px; }
-          main#main.home div#hero-placeholder div.hero-search div.form-box div.form-item div.icon {
+          main#main div#hero-placeholder div.hero-search div.form-box div.form-item div.icon {
             margin-bottom: 15px; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-item div.icon:last-child {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-item div.icon:last-child {
               margin-bottom: 0; }
-        main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener {
+        main#main div#hero-placeholder div.hero-search div.form-box div.form-opener {
           position: absolute;
           top: calc(100% - 43px);
           left: -25px;
@@ -708,33 +708,33 @@ main#main.home {
           box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
           border-radius: 3px;
           display: none; }
-          main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener:before {
+          main#main div#hero-placeholder div.hero-search div.form-box div.form-opener:before {
             content: "";
             position: absolute;
             top: -24px;
             left: calc(50% - 12px);
             border: 12px solid transparent;
             border-bottom-color: #fff; }
-          main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox {
+          main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox {
             margin: 0;
             width: 100%;
             height: 60px;
             border-bottom: 1px solid rgba(54, 58, 108, 0.3); }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox:last-child {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox:last-child {
               border-bottom: none; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox input {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox input {
               display: none; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox input:checked ~ div.checkbox div.icon {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox input:checked ~ div.checkbox div.icon {
               border-color: #363a6c;
               background-color: #484b79;
               color: #fff; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox div.checkbox {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox div.checkbox {
               padding: 0px 15px;
               text-align: left;
               height: 60px;
               line-height: 60px;
               cursor: pointer; }
-              main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox div.checkbox div.icon {
+              main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox div.checkbox div.icon {
                 width: 22px;
                 height: 22px;
                 display: inline-block;
@@ -745,39 +745,39 @@ main#main.home {
                 text-align: center;
                 line-height: 18px;
                 margin-right: 5px; }
-              main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox div.checkbox div.text {
+              main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox div.checkbox div.text {
                 display: inline-block;
                 vertical-align: middle;
                 color: #484b79;
                 font-family: "Gilroy SemiBold";
                 font-size: 16px; }
-          main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider {
+          main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider {
             text-align: left;
             padding: 30px 30px 30px 30px; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider div.title {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider div.title {
               font-family: "Gilroy Bold";
               font-size: 16px;
               color: #484b79;
               margin-bottom: 20px;
               margin-top: 15px; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input {
               display: block;
               width: 100%; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type="range"] {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type="range"] {
               -webkit-appearance: none;
               width: 100%;
               background: transparent; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]::-webkit-slider-thumb {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]::-webkit-slider-thumb {
               -webkit-appearance: none; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]:focus {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]:focus {
               outline: none; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]::-ms-track {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]::-ms-track {
               width: 100%;
               cursor: pointer;
               background: transparent;
               border-color: transparent;
               color: transparent; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]::-webkit-slider-thumb {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]::-webkit-slider-thumb {
               -webkit-appearance: none;
               width: 20px;
               height: 20px;
@@ -786,46 +786,46 @@ main#main.home {
               background-image: url("../../images/icons/slider-bg.png");
               background-size: cover;
               background-repeat: no-repeat; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]::-webkit-slider-runnable-track {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider input[type=range]::-webkit-slider-runnable-track {
               width: 100%;
               height: 2px;
               cursor: pointer;
               background-color: #d8d8d8;
               border-radius: 2px; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider div.values {
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.slider div.values {
               margin-top: 20px;
               font-family: "Gilroy Bold";
               font-size: 16px;
               text-transform: uppercase;
               color: #484b79; }
-        main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple {
+        main#main div#hero-placeholder div.hero-search div.form-box div.multiple {
           right: -100%;
           left: unset;
           width: calc(100% * 5 + 5px); }
-          main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple:before {
+          main#main div#hero-placeholder div.hero-search div.form-box div.multiple:before {
             left: unset;
             right: 28.5%; }
-          main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms {
+          main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms {
             text-align: left; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block {
+            main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block {
               border-right: 1px solid rgba(54, 58, 108, 0.3);
               padding: 0; }
-              main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group {
+              main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group {
                 font-size: 0;
                 margin: 0;
                 padding: 15px; }
-                main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.title {
+                main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.title {
                   width: 160px;
                   display: inline-block;
                   vertical-align: middle;
                   font-family: "Gilroy Bold";
                   font-size: 16px;
                   color: #484b79; }
-                main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input {
+                main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input {
                   display: inline-block;
                   width: calc(100% - 160px);
                   vertical-align: middle; }
-                  main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input input {
+                  main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input input {
                     font-size: 14px;
                     width: 100%;
                     height: 40px;
@@ -835,10 +835,10 @@ main#main.home {
                     color: #3a3a3a;
                     font-family: "Gilroy SemiBold";
                     font-size: 14px; }
-                  main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input input::placeholder {
+                  main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input input::placeholder {
                     color: #3a3a3a;
                     opacity: 1; }
-                  main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input select {
+                  main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input select {
                     appearance: none;
                     -webkit-appearance: none;
                     -moz-appearance: none;
@@ -854,26 +854,26 @@ main#main.home {
                     background-image: url("../../images/icons/chevron-arrow-down-blue.png");
                     background-repeat: no-repeat;
                     background-position: 90% 50%; }
-                  main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input span.seperator {
+                  main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input span.seperator {
                     margin: 0 10px;
                     font-size: 14px; }
-                  main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox {
+                  main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox {
                     margin: 0;
                     width: 100%; }
-                    main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox:last-child {
+                    main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox:last-child {
                       border-bottom: none; }
-                    main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox input {
+                    main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox input {
                       display: none; }
-                    main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox input:checked ~ div.checkbox div.icon {
+                    main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox input:checked ~ div.checkbox div.icon {
                       border-color: #363a6c;
                       background-color: #484b79;
                       color: #fff; }
-                    main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox div.checkbox {
+                    main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox div.checkbox {
                       padding: 0px;
                       margin-top: 10px;
                       text-align: left;
                       cursor: pointer; }
-                      main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox div.checkbox div.icon {
+                      main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox div.checkbox div.icon {
                         width: 22px;
                         height: 22px;
                         display: inline-block;
@@ -884,23 +884,25 @@ main#main.home {
                         text-align: center;
                         line-height: 18px;
                         margin-right: 5px; }
-                      main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox div.checkbox div.text {
+                      main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.form-group div.input label.checkbox div.checkbox div.text {
                         display: inline-block;
                         vertical-align: middle;
                         color: #484b79;
                         font-family: "Gilroy SemiBold";
                         font-size: 16px; }
-              main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.select-group {
+              main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.select-group {
                 padding: 5px 15px; }
-                main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.select-group:first-child {
+                main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.select-group:first-child {
                   margin-top: 13px; }
-                main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.select-group:last-child {
+                main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.form-block div.select-group:last-child {
                   margin-top: 35px; }
-            main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.first-input div.form-group {
+            main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.first-input div.form-group {
               margin: 0; }
-              main#main.home div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.first-input div.form-group:first-child {
+              main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.first-input div.form-group:first-child {
                 border-bottom: 1px solid rgba(54, 58, 108, 0.3); }
-      main#main.home div#hero-placeholder div.hero-search button {
+        main#main div#hero-placeholder div.hero-search div.form-box div.form-opener.active {
+          display: block; }
+      main#main div#hero-placeholder div.hero-search button {
         width: 100%;
         height: 100%;
         display: block;
@@ -910,6 +912,90 @@ main#main.home {
         font-size: 20px;
         color: #fff;
         text-align: center; }
+  main#main div#top-cities {
+    padding: 150px 15px;
+    background-color: #f0f0f0;
+    /* Section Title */
+    /* Listing */ }
+    main#main div#top-cities div.section-title {
+      font-family: "Gilroy Bold";
+      font-size: 40px;
+      color: #1d1f42;
+      margin-bottom: 50px; }
+    main#main div#top-cities div.listing {
+      /* City Block */ }
+      main#main div#top-cities div.listing div.city-block a.city-item {
+        position: relative;
+        display: block; }
+        main#main div#top-cities div.listing div.city-block a.city-item figure.city-image img {
+          max-width: 100%;
+          height: auto;
+          transition: 0.5s; }
+        main#main div#top-cities div.listing div.city-block a.city-item div.city-info {
+          position: absolute;
+          bottom: 15px;
+          left: 20px;
+          color: #fff; }
+          main#main div#top-cities div.listing div.city-block a.city-item div.city-info div.city-name {
+            font-family: "Gilroy SemiBold";
+            font-size: 18px; }
+          main#main div#top-cities div.listing div.city-block a.city-item div.city-info div.city-count {
+            font-family: "Gilroy SemiBold";
+            font-size: 14px; }
+  main#main div#top-guides {
+    padding: 150px 15px;
+    background-color: #fff;
+    /* Section Title */
+    /* Listing */ }
+    main#main div#top-guides div.section-title {
+      font-family: "Gilroy Bold";
+      font-size: 40px;
+      color: #1d1f42;
+      margin-bottom: 50px; }
+    main#main div#top-guides div.listing {
+      padding-left: 15px; }
+      main#main div#top-guides div.listing a.guide-block {
+        display: block;
+        position: relative; }
+        main#main div#top-guides div.listing a.guide-block figure.guide-image {
+          height: 300px;
+          border-radius: 6px;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: cover; }
+        main#main div#top-guides div.listing a.guide-block span.details {
+          position: absolute;
+          bottom: 30px;
+          left: 0;
+          padding: 10px 15px 10px 20px;
+          background-color: #fff;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          font-family: "Gilroy SemiBold";
+          font-size: 16px;
+          color: #252627; }
+      main#main div#top-guides div.listing .owl-nav {
+        position: absolute;
+        top: -100px;
+        right: 15px; }
+        main#main div#top-guides div.listing .owl-nav button {
+          width: 48px;
+          height: 48px;
+          font-size: 0;
+          border: 4px solid #e3e5ed;
+          display: inline-block;
+          border-radius: 100px;
+          text-align: center;
+          line-height: 42px;
+          color: #252851; }
+        main#main div#top-guides div.listing .owl-nav button.owl-prev {
+          margin-right: 10px; }
+
+/* Home */
+main#main.home {
+  /* Featured Projects 1 */
+  /* Featured Projects 2 */
+  /* Policy Area */ }
   main#main.home div.featured-projects-1 {
     padding: 100px 0px;
     /* Section Title */
@@ -1082,7 +1168,631 @@ main#main.home {
         margin-bottom: 30px;
         line-height: 56px; }
 
+/* City */
+main#main.city {
+  /* Hero Placeholder */
+  /* City Listing */ }
+  main#main.city div#hero-placeholder {
+    /* Hero Search */
+    /* Hero City */ }
+    main#main.city div#hero-placeholder div.hero-search {
+      position: relative;
+      bottom: unset;
+      left: unset;
+      width: unset; }
+      main#main.city div#hero-placeholder div.hero-search div.form-box div.multiple {
+        right: 0; }
+        main#main.city div#hero-placeholder div.hero-search div.form-box div.multiple:before {
+          right: 10%; }
+    main#main.city div#hero-placeholder div#hero-city {
+      height: 550px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+      /* City Info */
+      /* City Buttons */ }
+      main#main.city div#hero-placeholder div#hero-city div.city-info h1.city-name {
+        font-family: "Gilroy Light";
+        font-size: 60px;
+        color: #fff;
+        margin-bottom: 20px; }
+      main#main.city div#hero-placeholder div#hero-city div.city-info div.city-details {
+        font-family: "Gilroy SemiBold";
+        font-size: 14px;
+        line-height: 23px;
+        color: #fff;
+        margin-bottom: 20px; }
+      main#main.city div#hero-placeholder div#hero-city div.city-info div.city-button a.button {
+        display: inline-block;
+        background-color: #e33654;
+        border-radius: 3px;
+        height: 50px;
+        display: inline-block;
+        padding: 0px 40px;
+        line-height: 50px;
+        font-family: "Gilroy SemiBold";
+        font-size: 16px;
+        color: #fff; }
+      main#main.city div#hero-placeholder div#hero-city div.city-buttons {
+        text-align: right; }
+        main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block {
+          display: inline-block;
+          padding: 5px 30px;
+          background-color: #e33654; }
+          main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.hearth {
+            display: inline-block; }
+            main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.hearth div.favorite {
+              display: inline-block;
+              vertical-align: middle; }
+              main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.hearth div.favorite .fav-btn {
+                display: inline;
+                vertical-align: middle;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                width: 60px;
+                height: 60px;
+                border-radius: 100px;
+                position: relative;
+                text-align: center;
+                line-height: 68px; }
+                main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.hearth div.favorite .fav-btn .favme {
+                  font-size: 14px;
+                  width: auto;
+                  height: auto;
+                  cursor: pointer;
+                  box-shadow: none;
+                  transition: all 0.2s ease;
+                  color: #fff;
+                  margin: 0;
+                  height: 100%;
+                  width: 100%; }
+                  main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.hearth div.favorite .fav-btn .favme:hover {
+                    animation: favme-hover 0.3s infinite alternate; }
+                  main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.hearth div.favorite .fav-btn .favme i {
+                    columns: #000;
+                    font-size: 28px; }
+                main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.hearth div.favorite .fav-btn .favme.active {
+                  color: #252851; }
+                main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.hearth div.favorite .fav-btn .favme.is_animating {
+                  animation: favme-anime 0.3s; }
+          main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.share {
+            display: inline-block;
+            position: relative; }
+            main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.share div.icon {
+              width: 60px;
+              height: 60px;
+              text-align: center;
+              line-height: 60px;
+              cursor: pointer; }
+            main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.share div.share-box {
+              position: absolute;
+              top: -65px;
+              right: -50px;
+              height: 42px;
+              background-color: #ffffff;
+              width: 150px;
+              font-size: 0;
+              border-radius: 5px; }
+              main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.share div.share-box:before {
+                content: "";
+                position: absolute;
+                bottom: -16px;
+                left: calc(50% - 8px);
+                border: 8px solid transparent;
+                border-top-color: #fff; }
+              main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.share div.share-box a.social {
+                display: inline-block;
+                width: 50px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                font-size: 16px; }
+          main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.email {
+            display: inline-block;
+            position: relative; }
+            main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.email div.send-mail-area {
+              position: absolute;
+              background-color: #fff;
+              top: -310px;
+              right: -30px;
+              width: 300px;
+              height: 290px;
+              text-align: center;
+              padding: 15px 30px; }
+              main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.email div.send-mail-area div.section-title {
+                font-family: "Gilroy Bold";
+                font-size: 20px;
+                color: #1d1f42;
+                margin-bottom: 15px; }
+              main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.email div.send-mail-area input {
+                height: 60px;
+                width: 100%;
+                display: block;
+                border: 1px solid #d5d7e2;
+                border-radius: 3px;
+                margin-bottom: 15px;
+                padding: 0px 20px;
+                font-family: "Gilroy Bold";
+                font-size: 16px;
+                color: #3a3a3a; }
+              main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.email div.send-mail-area input::placeholder {
+                color: #3a3a3a;
+                opacity: 1; }
+              main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.email div.send-mail-area button {
+                display: block;
+                width: 100%;
+                height: 60px;
+                background-color: #e33654;
+                border-radius: 3px;
+                border: none;
+                font-family: "Gilroy SemiBold";
+                font-size: 16px;
+                color: #fff; }
+              main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.email div.send-mail-area:before {
+                content: "";
+                position: absolute;
+                bottom: -16px;
+                right: 52px;
+                border: 8px solid transparent;
+                border-top-color: #fff; }
+            main#main.city div#hero-placeholder div#hero-city div.city-buttons div.buttons-block div.email div.icon {
+              width: 60px;
+              height: 60px;
+              text-align: center;
+              line-height: 60px;
+              cursor: pointer; }
+  main#main.city div#city-listing {
+    background-color: #f0f0f0;
+    /* Listing Header */
+    /* City Lists */
+    /* City Details */
+    /* Top Things */ }
+    main#main.city div#city-listing header#listing-header {
+      height: 100px;
+      border-bottom: 1px solid #d8d8d8;
+      /* Listing Info */
+      /* Listing Buttons */ }
+      main#main.city div#city-listing header#listing-header div.listing-info {
+        font-family: "Gilroy Light";
+        font-size: 20px;
+        color: #1d1f42; }
+        main#main.city div#city-listing header#listing-header div.listing-info span {
+          font-family: "Gilroy Bold"; }
+      main#main.city div#city-listing header#listing-header div.listing-buttons {
+        text-align: right; }
+        main#main.city div#city-listing header#listing-header div.listing-buttons a.change-view {
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 5px;
+          height: 40px;
+          border-radius: 3px;
+          background-color: #e33654;
+          padding: 0px 30px;
+          text-align: center;
+          line-height: 40px;
+          font-family: "Gilroy Bold";
+          font-size: 14px;
+          color: #fff; }
+        main#main.city div#city-listing header#listing-header div.listing-buttons select {
+          display: inline-block;
+          vertical-align: middle;
+          height: 40px;
+          border-radius: 3px;
+          background-color: #fff;
+          appearance: none;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          border: none;
+          padding: 0px 15px;
+          font-family: "Gilroy Bold";
+          font-size: 14px;
+          color: #18181d;
+          background-image: url("../../images/icons/arrow-down-dark.png");
+          background-repeat: no-repeat;
+          background-position: 90% 50%;
+          min-width: 200px; }
+    main#main.city div#city-listing div.city-lists {
+      /* List View */ }
+      main#main.city div#city-listing div.city-lists div#list-view {
+        padding: 100px 15px;
+        /* Listing */
+        /* Pagination */ }
+        main#main.city div#city-listing div.city-lists div#list-view div.listing {
+          /* Listing Block */ }
+          main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block {
+            margin-bottom: 20px;
+            /* Listing Item */ }
+            main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item {
+              /* Listing Image */
+              /* Listing Details */ }
+              main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image {
+                margin: 0;
+                position: relative; }
+                main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image a.category {
+                  position: absolute;
+                  top: 15px;
+                  left: 20px;
+                  background-color: rgba(29, 31, 66, 0.5);
+                  border-radius: 3px;
+                  height: 24px;
+                  line-height: 24px;
+                  padding: 0px 15px;
+                  font-family: "Gilroy Bold";
+                  font-size: 12px;
+                  color: #fff;
+                  transition-duration: 0.5s; }
+                  main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image a.category:hover {
+                    background-color: #1d1f42; }
+                main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image span.editor {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  height: 32px;
+                  background-color: #1d1f42;
+                  padding: 0px 15px;
+                  line-height: 32px;
+                  text-align: center;
+                  font-family: "Gilroy Bold";
+                  font-size: 10px;
+                  color: #fff; }
+                main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image div.favorite {
+                  position: absolute;
+                  bottom: 0;
+                  right: 0;
+                  z-index: 4;
+                  display: inline-block;
+                  vertical-align: middle; }
+                  main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image div.favorite .fav-btn {
+                    display: inline;
+                    vertical-align: middle;
+                    height: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100px;
+                    position: relative;
+                    text-align: center;
+                    line-height: 40px; }
+                    main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image div.favorite .fav-btn .favme {
+                      font-size: 14px;
+                      width: auto;
+                      height: auto;
+                      cursor: pointer;
+                      box-shadow: none;
+                      transition: all 0.2s ease;
+                      color: #CBCDCE;
+                      margin: 0;
+                      height: 100%;
+                      width: 100%; }
+                      main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image div.favorite .fav-btn .favme:hover {
+                        animation: favme-hover 0.3s infinite alternate; }
+                      main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image div.favorite .fav-btn .favme i {
+                        columns: #000;
+                        font-size: 18px; }
+                    main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image div.favorite .fav-btn .favme.active {
+                      color: #dc3232; }
+                    main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image div.favorite .fav-btn .favme.is_animating {
+                      animation: favme-anime 0.3s; }
+              main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details {
+                background-color: #fff; }
+                main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details div.listing-header {
+                  padding: 20px 30px; }
+                  main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details div.listing-header div.location {
+                    font-family: "Gilroy SemiBold";
+                    font-size: 14px;
+                    color: #5c5f81;
+                    margin-bottom: 10px; }
+                  main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details div.listing-header div.name {
+                    font-family: "Gilroy SemiBold";
+                    font-size: 16px;
+                    color: #1d1f42;
+                    line-height: 22px; }
+                main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details div.listing-body {
+                  padding: 15px 30px;
+                  border-bottom: 1px solid #f0f0f0;
+                  border-top: 1px solid #f0f0f0; }
+                  main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details div.listing-body div.price {
+                    font-family: "Gilroy SemiBold";
+                    font-size: 18px;
+                    color: #1d1f42; }
+                  main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details div.listing-body div.globe {
+                    text-align: right; }
+                main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details div.listing-footer {
+                  padding: 15px 30px; }
+                  main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details div.listing-footer div.area {
+                    font-family: "Gilroy SemiBold";
+                    font-size: 18px;
+                    color: #1d1f42; }
+                    main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details div.listing-footer div.area sup {
+                      font-size: 10px; }
+                    main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details div.listing-footer div.area img {
+                      margin-right: 5px; }
+                  main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details div.listing-footer div.beds {
+                    text-align: right;
+                    font-family: "Gilroy SemiBold";
+                    font-size: 18px;
+                    color: #1d1f42; }
+                    main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item div.listing-details div.listing-footer div.beds img {
+                      margin-right: 5px;
+                      display: inline-block; }
+        main#main.city div#city-listing div.city-lists div#list-view div.system_pagination {
+          justify-content: flex-end;
+          padding: 0px 30px;
+          margin-top: 30px; }
+          main#main.city div#city-listing div.city-lists div#list-view div.system_pagination a.arrow {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 3px;
+            background-color: #ffffff;
+            text-align: center;
+            line-height: 40px; }
+          main#main.city div#city-listing div.city-lists div#list-view div.system_pagination div.numbers {
+            height: 40px;
+            padding: 5px 10px;
+            background-color: #fff;
+            border-radius: 3px;
+            margin: 0px 10px;
+            font-family: "Gilroy SemiBold";
+            font-size: 16px;
+            color: #1d1f42; }
+            main#main.city div#city-listing div.city-lists div#list-view div.system_pagination div.numbers a.button {
+              display: inline-block;
+              height: 30px;
+              text-align: center;
+              line-height: 30px;
+              padding: 0px 10px; }
+            main#main.city div#city-listing div.city-lists div#list-view div.system_pagination div.numbers a.active {
+              background-color: #e33654;
+              color: #fff;
+              box-shadow: 0 0 8px rgba(227, 54, 84, 0.61);
+              border-radius: 3px;
+              margin: 0px 5px; }
+    main#main.city div#city-listing div#city-details {
+      background-color: #fff;
+      /* City Introduction */
+      /* Quick Information */
+      /* Average Temperature */ }
+      main#main.city div#city-listing div#city-details div.city-introduction {
+        padding: 75px 0px;
+        border-bottom: 1px solid #f0f0f0;
+        display: block;
+        width: 100%;
+        /* Introduction */
+        /* Tags */ }
+        main#main.city div#city-listing div#city-details div.city-introduction div.introduction {
+          /* Section Title */ }
+          main#main.city div#city-listing div#city-details div.city-introduction div.introduction div.section-title {
+            margin-bottom: 75px;
+            font-family: "Gilroy Bold";
+            font-size: 24px;
+            color: #252851; }
+          main#main.city div#city-listing div#city-details div.city-introduction div.introduction div.description {
+            font-family: "Gilroy Regular";
+            font-size: 16px;
+            color: #252851;
+            line-height: 25px; }
+        main#main.city div#city-listing div#city-details div.city-introduction div.tags {
+          /* Section Title */ }
+          main#main.city div#city-listing div#city-details div.city-introduction div.tags div.section-title {
+            margin-bottom: 75px;
+            font-family: "Gilroy Bold";
+            font-size: 24px;
+            color: #252851; }
+          main#main.city div#city-listing div#city-details div.city-introduction div.tags div.tag-list {
+            margin: 0px -7px; }
+            main#main.city div#city-listing div#city-details div.city-introduction div.tags div.tag-list a.tag {
+              margin: 0px 7px 10px 7px;
+              height: 43px;
+              border: 1px solid #f0f0f0;
+              border-radius: 26px;
+              line-height: 43px;
+              padding: 0px 30px;
+              font-family: "Gilroy Bold";
+              font-size: 16px;
+              color: #252851;
+              transition-duration: 0.5s; }
+              main#main.city div#city-listing div#city-details div.city-introduction div.tags div.tag-list a.tag:hover {
+                border-color: #252851;
+                background-color: #252851;
+                color: #fff; }
+      main#main.city div#city-listing div#city-details div.quick-information {
+        padding: 75px 0px;
+        border-bottom: 1px solid #f0f0f0;
+        display: block;
+        width: 100%;
+        /* Section Title */
+        /* Information List */ }
+        main#main.city div#city-listing div#city-details div.quick-information div.section-title {
+          margin-bottom: 75px;
+          font-family: "Gilroy Bold";
+          font-size: 24px;
+          color: #252851; }
+        main#main.city div#city-listing div#city-details div.quick-information div.information-list div.info-block div.block-title {
+          font-family: "Gilroy Bold";
+          font-size: 16px;
+          color: #5c5f81;
+          margin-bottom: 10px;
+          display: block; }
+        main#main.city div#city-listing div#city-details div.quick-information div.information-list div.info-block div.block {
+          display: block;
+          margin-bottom: 10px;
+          font-family: "Gilroy Regular";
+          font-size: 16px;
+          color: #252851; }
+      main#main.city div#city-listing div#city-details div#average-temperature {
+        padding: 75px 0px;
+        border-bottom: 1px solid #f0f0f0;
+        display: block;
+        width: 100%;
+        /* Section Title */
+        /* Listing */ }
+        main#main.city div#city-listing div#city-details div#average-temperature div.section-title {
+          margin-bottom: 75px;
+          font-family: "Gilroy Bold";
+          font-size: 24px;
+          color: #252851; }
+        main#main.city div#city-listing div#city-details div#average-temperature div.listing {
+          margin: 0px -5px;
+          /* Listing Block */ }
+          main#main.city div#city-listing div#city-details div#average-temperature div.listing div.listing-block {
+            padding: 0px 5px; }
+            main#main.city div#city-listing div#city-details div#average-temperature div.listing div.listing-block div.listing-item {
+              text-align: center; }
+              main#main.city div#city-listing div#city-details div#average-temperature div.listing div.listing-block div.listing-item div.date {
+                border-radius: 3px 3px 0 0;
+                background-color: #1d1f42;
+                height: 46px;
+                line-height: 46px;
+                font-family: "Gilroy Bold";
+                font-size: 16px;
+                color: #ffffff; }
+              main#main.city div#city-listing div#city-details div#average-temperature div.listing div.listing-block div.listing-item div.temperature {
+                height: 54px;
+                background-color: #f0f0f0;
+                border-radius: 3px 3px 0 0;
+                text-align: center;
+                line-height: 54px;
+                font-family: "Gilroy Bold";
+                font-size: 16px;
+                color: #1d1f42;
+                text-transform: uppercase; }
+                main#main.city div#city-listing div#city-details div#average-temperature div.listing div.listing-block div.listing-item div.temperature span {
+                  color: #e33654; }
+    main#main.city div#city-listing div#top-things {
+      padding: 200px 15px;
+      background-color: #1d1f42;
+      text-align: center;
+      /* Section Title */
+      /* Top Tab */ }
+      main#main.city div#city-listing div#top-things div.section-title {
+        font-family: "Gilroy Light";
+        font-size: 40px;
+        color: #fff;
+        margin-bottom: 50px; }
+      main#main.city div#city-listing div#top-things ul#top-tab {
+        text-align: center;
+        display: block;
+        width: 100%;
+        margin-bottom: 100px; }
+        main#main.city div#city-listing div#top-things ul#top-tab li {
+          display: inline-block;
+          float: none;
+          margin: 0px 10px; }
+          main#main.city div#city-listing div#top-things ul#top-tab li a {
+            height: 43px;
+            line-height: 43px;
+            border: 1px solid #fff;
+            padding: 0px 30px;
+            font-family: "Gilroy Bold";
+            font-size: 16px;
+            color: #fff;
+            border-radius: 3px; }
+          main#main.city div#city-listing div#top-things ul#top-tab li a.active {
+            background-color: #e33654;
+            border-color: #e33654;
+            position: relative; }
+            main#main.city div#city-listing div#top-things ul#top-tab li a.active:before {
+              content: "";
+              position: absolute;
+              border: 8px solid transparent;
+              border-top-color: #e33654;
+              bottom: -16px;
+              left: calc(50% - 8px); }
+      main#main.city div#city-listing div#top-things div#top-tabContent {
+        width: 100%; }
+        main#main.city div#city-listing div#top-things div#top-tabContent div.things-list div.list-block div.list-item figure.list-image {
+          height: 200px;
+          width: 100%;
+          position: relative;
+          margin: 0; }
+          main#main.city div#city-listing div#top-things div#top-tabContent div.things-list div.list-block div.list-item figure.list-image span.image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover; }
+        main#main.city div#city-listing div#top-things div#top-tabContent div.things-list div.list-block div.list-item div.list-details {
+          background-color: #fff;
+          padding: 30px; }
+          main#main.city div#city-listing div#top-things div#top-tabContent div.things-list div.list-block div.list-item div.list-details div.list-title {
+            font-family: "Gilroy Bold";
+            font-size: 18px;
+            color: #1d1f42;
+            margin-bottom: 10px; }
+          main#main.city div#city-listing div#top-things div#top-tabContent div.things-list div.list-block div.list-item div.list-details div.list-desc {
+            font-family: "Gilroy Regular";
+            font-size: 16px;
+            color: #1d1f42;
+            margin-bottom: 10px; }
+          main#main.city div#city-listing div#top-things div#top-tabContent div.things-list div.list-block div.list-item div.list-details div.list-buttons {
+            text-align: center; }
+            main#main.city div#city-listing div#top-things div#top-tabContent div.things-list div.list-block div.list-item div.list-details div.list-buttons a.button {
+              display: inline-block;
+              font-family: "Gilroy Bold";
+              font-size: 16px;
+              color: #e33654; }
+        main#main.city div#city-listing div#top-things div#top-tabContent div.things-list div.list-block div.list-item span.sp-button {
+          height: 50px;
+          width: 50px;
+          background-color: #007ddd;
+          text-align: center;
+          line-height: 50px;
+          font-family: "Gilroy Bold";
+          font-size: 16px;
+          color: #fff;
+          display: inline-block;
+          border-radius: 3px;
+          position: absolute;
+          top: -30px;
+          left: 30px; }
+          main#main.city div#city-listing div#top-things div#top-tabContent div.things-list div.list-block div.list-item span.sp-button:after {
+            content: "";
+            position: absolute;
+            bottom: -16px;
+            border: 8px solid transparent;
+            border-top-color: #007ddd;
+            left: calc(50% - 8px); }
+
 /* Responsive */
+/* Min Width: 1199px */
+@media (min-width: 1199px) {
+  main#main div#top-cities div.listing div.city-block a.city-item:hover figure.city-image img {
+    transform: scale(1.2); }
+  main#main div#top-cities div.listing div.city-block a.city-item figure.city-image {
+    width: 350px;
+    height: 208px;
+    overflow: hidden; }
+
+  /* City */
+  main#main.city {
+    /* City Listing */ }
+    main#main.city div#city-listing {
+      /* City Lists */ }
+      main#main.city div#city-listing div.city-lists {
+        /* List View */ }
+        main#main.city div#city-listing div.city-lists div#list-view {
+          padding: 100px 15px;
+          /* Listing */ }
+          main#main.city div#city-listing div.city-lists div#list-view div.listing {
+            /* Listing Block */ }
+            main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block {
+              /* Listing Item */ }
+              main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item {
+                /* Listing Image */ }
+                main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image {
+                  width: 340px;
+                  height: 220px;
+                  overflow: hidden; }
+                  main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image img {
+                    transition: 0.5s; }
+                  main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image:hover img {
+                    transform: scale(1.1); } }
 /* Max Width: 991px */
 @media (max-width: 991px) {
   div#app {
@@ -1095,29 +1805,67 @@ main#main.home {
   div#responsive-header div.header-layout {
     height: 60px;
     background-color: #f0f0f0; }
+    div#responsive-header div.header-layout div.menu img {
+      max-width: 26px; }
+    div#responsive-header div.header-layout div.buttons i {
+      font-size: 28px; }
+    div#responsive-header div.header-layout div.buttons .form img {
+      max-width: 26px; }
 
-  main#main.home div#hero-placeholder div#hero-slider div.hero-slider .owl-dots {
+  main#main div#hero-placeholder div#hero-slider div.hero-slider .owl-dots {
     display: none; }
-  main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item {
-    height: 240px; }
-    main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-title {
+  main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item {
+    height: unset;
+    padding: 45px 0px; }
+    main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-title {
       font-size: 14px; }
-      main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-title span {
+      main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-title span {
         font-size: 45px; }
-    main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons {
+    main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-header div.slider-buttons {
       display: none; }
-    main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-desc {
+    main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.slider-desc {
+      font-size: 14px;
+      line-height: 23px; }
+    main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.mobile-slider-buttons {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 15px;
+      margin-top: 15px; }
+      main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.mobile-slider-buttons a.slider-button {
+        background-color: rgba(227, 54, 84, 0.9);
+        border-radius: 3px;
+        font-size: 0;
+        display: block; }
+        main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.mobile-slider-buttons a.slider-button div.count {
+          display: inline-block;
+          vertical-align: middle;
+          padding: 0px 15px;
+          font-family: "Gilroy Bold";
+          font-size: 16px;
+          color: #fff; }
+          main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.mobile-slider-buttons a.slider-button div.count span {
+            display: block;
+            font-size: 41px;
+            line-height: 41px; }
+        main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-details div.mobile-slider-buttons a.slider-button div.icon {
+          display: inline-block;
+          vertical-align: middle;
+          padding: 30px 20px;
+          border-left: 1px solid #c02540;
+          font-size: 14px; }
+    main#main div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-navigation {
       display: none; }
-    main#main.home div#hero-placeholder div#hero-slider div.hero-slider div.slider-item div.slider-navigation {
-      display: none; }
-  main#main.home div#hero-placeholder div.hero-search {
+  main#main div#hero-placeholder div.hero-search {
     position: relative;
     bottom: unset;
     left: unset;
-    margin: 0; }
-    main#main.home div#hero-placeholder div.hero-search div.location {
-      padding: 30px 0px; }
-    main#main.home div#hero-placeholder div.hero-search:before {
+    margin: 0;
+    height: unset; }
+    main#main div#hero-placeholder div.hero-search div.location {
+      padding: 15px 15px; }
+      main#main div#hero-placeholder div.hero-search div.location div.title {
+        display: none; }
+    main#main div#hero-placeholder div.hero-search:before {
       content: "";
       position: absolute;
       top: 0;
@@ -1125,7 +1873,7 @@ main#main.home {
       width: 50%;
       height: 100%;
       background-color: #1d1f42; }
-    main#main.home div#hero-placeholder div.hero-search:after {
+    main#main div#hero-placeholder div.hero-search:after {
       content: "";
       position: absolute;
       top: 0;
@@ -1133,8 +1881,27 @@ main#main.home {
       width: 50%;
       height: 100%;
       background-color: #e33654; }
-    main#main.home div#hero-placeholder div.hero-search div.form-box {
+    main#main div#hero-placeholder div.hero-search div.form-box {
       display: none; }
+    main#main div#hero-placeholder div.hero-search button {
+      text-align: center; }
+      main#main div#hero-placeholder div.hero-search button span {
+        display: none; }
+  main#main div#top-cities {
+    padding: 50px 0px; }
+    main#main div#top-cities div.section-title {
+      font-size: 20px;
+      line-height: 1.35;
+      margin-bottom: 15px; }
+  main#main div#top-guides {
+    padding: 50px 0px; }
+    main#main div#top-guides div.section-title {
+      font-size: 20px;
+      line-height: 1.35;
+      margin-bottom: 15px; }
+    main#main div#top-guides div.listing .owl-nav {
+      display: none; }
+
   main#main.home div.featured-projects-1 {
     padding: 50px 0px; }
     main#main.home div.featured-projects-1 div.section-title {
@@ -1216,5 +1983,35 @@ main#main.home {
     footer#footer div.bottom-footer div.social-icons {
       padding: 30px 0px 30px 0px;
       text-align: center; } }
+/* Max Width: 767px */
+@media (max-width: 767px) {
+  main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image img {
+    width: 100%; } }
+/* Max Width: 575px */
+@media (max-width: 575px) {
+  main#main div#top-cities div.listing div.city-block a.city-item {
+    text-align: center; }
+    main#main div#top-cities div.listing div.city-block a.city-item div.city-info {
+      left: unset;
+      width: 100%; } }
+/* Min Width: 1400px */
+@media (min-width: 1400px) {
+  main#main div#hero-placeholder div.hero-search {
+    height: 100px; }
+    main#main div#hero-placeholder div.hero-search div.location {
+      padding: 10px 30px; }
+    main#main div#hero-placeholder div.hero-search div.form-box div.form-item div.icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+      font-size: 0; }
+    main#main div#hero-placeholder div.hero-search div.form-box div.form-item div.title {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0px 10px; }
+    main#main div#hero-placeholder div.hero-search div.form-box div.multiple {
+      right: 0; }
+      main#main div#hero-placeholder div.hero-search div.form-box div.multiple:before {
+        right: 10%; } }
 
 /*# sourceMappingURL=main.css.map */

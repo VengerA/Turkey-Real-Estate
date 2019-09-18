@@ -11,7 +11,7 @@ import Header3 from './header3';
 
 import './../App.css';
 
-class City extends React.Component{
+class ListPage extends React.Component{
   constructor(props){
     super(props);
     this.state = {  
@@ -24,10 +24,9 @@ class City extends React.Component{
         <div className = "general-container">
           <HeaderSection/>
           <main id = "main" class = 'city'>
-          <div id ="hero-placeholder">
-            <Header3/>
-            <CityIntroduction/>
-          </div>    
+            <div id ="hero-placeholder">
+                <Header3/>
+            </div>   
             <PropertyList/>
             <ContactFooter/>
           </main>
@@ -42,4 +41,4 @@ class City extends React.Component{
   }
 }
 
-export default City;
+export default ListPage;

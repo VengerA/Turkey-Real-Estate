@@ -9,14 +9,24 @@
         div.header-layout
             height: 60px
             background-color: #f0f0f0
-    main#main.home
+            div.menu
+                img
+                    max-width: 26px
+            div.buttons
+                i
+                    font-size: 28px
+                .form
+                    img
+                        max-width: 26px
+    main#main
         div#hero-placeholder
             div#hero-slider
                 div.hero-slider
                     .owl-dots
                         display: none
                     div.slider-item
-                        height: 240px
+                        height: unset
+                        padding: 45px 0px
                         div.slider-details
                             div.slider-header
                                 div.slider-title
@@ -26,7 +36,36 @@
                                 div.slider-buttons
                                     display: none
                             div.slider-desc
-                                display: none
+                                font-size: 14px
+                                line-height: 23px
+                            div.mobile-slider-buttons
+                                display: inline-block
+                                vertical-align: middle
+                                padding-left: 15px
+                                margin-top: 15px
+                                a.slider-button
+                                    background-color: rgba(227, 54, 84, 0.9)
+                                    border-radius: 3px
+                                    font-size: 0
+                                    display: block
+                                    div.count
+                                        display: inline-block
+                                        vertical-align: middle
+                                        padding: 0px 15px
+                                        font-family: $gb
+                                        font-size: 16px
+                                        color: #fff
+                                        span
+                                            display: block
+                                            font-size: 41px
+                                            line-height: 41px
+                                    div.icon
+                                        display: inline-block
+                                        vertical-align: middle
+                                        padding: 30px 20px
+                                        border-left: 1px solid #c02540
+                                        font-size: 14px
+                        
                         div.slider-navigation
                             display: none
             div.hero-search
@@ -34,8 +73,11 @@
                 bottom: unset
                 left: unset
                 margin: 0
+                height: unset
                 div.location
-                    padding: 30px 0px
+                    padding: 15px 15px
+                    div.title
+                        display: none
                 &:before
                     content: ""
                     position: absolute
@@ -54,6 +96,26 @@
                     background-color: #e33654
                 div.form-box
                     display: none
+                button
+                    text-align: center
+                    span
+                        display: none
+        div#top-cities
+            padding: 50px 0px
+            div.section-title
+                font-size: 20px
+                line-height: 1.35
+                margin-bottom: 15px
+        div#top-guides
+            padding: 50px 0px
+            div.section-title
+                font-size: 20px
+                line-height: 1.35
+                margin-bottom: 15px
+            div.listing
+                .owl-nav
+                    display: none
+    main#main.home
         div.featured-projects-1
             padding: 50px 0px
             div.section-title

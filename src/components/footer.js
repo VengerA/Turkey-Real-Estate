@@ -13,50 +13,90 @@ class Footer extends React.Component{
   }
   render(){
     return (
-        <div className= "Footer">
-            <div className = "FooterRow1">
-                <p className = "FooterHeader">USEFUL LINKS</p>
-                <p className = "FooterContent">Find My Home</p>
-                <p className = "FooterContent">Guide to Turkey</p>
-                <p className = "FooterContent">Finance & Law</p>
-                <p className = "FooterContent">Blog</p>
-                <p className = "FooterContent">FAQ</p>
-                <p className = "FooterContent">Terms & Conditions</p>
-                <p className = "FooterContent">Privacy Policy</p>
-            </div>
-            <div className = "FooterRow2">
-                <p className = "FooterHeader">TURKEY PROPERTIES</p>
-                <p className = "FooterContent">Properties for Sale in Turkey</p>
-                <p className = "FooterContent">Properties in İstanbul</p>
-                <p className = "FooterContent">Properties in İzmir</p>
-                <p className = "FooterContent">Properties in Yalova</p>
-                <p className = "FooterContent">Properties in Trabzon</p>
-                <p className = "FooterContent">Properties in Bodrum</p>
-                <p className = "FooterContent">Properties in Fethiye</p>
-                <p className = "FooterContent">Properties in Antalya</p>
-            </div>
-            <div className = "FooterRow3">
-                <p className = "FooterHeader">REAL ESTATE PROJECT IN TURKEY</p>
-                <p className = "FooterContent">Apartments for Sale in Turkey</p>
-                <p className = "FooterContent">Apartments for Sale in Istanbul</p>
-                <p className = "FooterContent">Installment Apartments for Sale in Turkey</p>
-                <p className = "FooterContent">Installment Apartments for Sale in Istanbul</p>
-                <p className = "FooterContent">Villas for sale in Turkey</p>
-                <p className = "FooterContent">Villas for Sale in Istanbul</p>
-                <p className = "FooterContent">Houses in Turkey</p>
-                <p className = "FooterContent">Houses for Sale in Turkey Istanbul</p>
-            </div>
-            <div className = "FooterRow4">
-                <p className = "FooterHeader">CONTACT INFORMATION</p>
-                <p className = "FooterContent">Turkey Real Estate <br/>your property, investment <br/>and lifestyle specialist.</p>
-                <div className = "FooterContact">
-                    <img src = {phone_icon} className = "FooterPhoneLogo"/>
-                    <p className = "FooterPhoneNumber">+90 212 293 1512</p>
+        <div class="middle-footer row align-items-center d-none d-lg-block">
+                    <div class="container">
+                        <div class="row align-items-start">
+                            <div class="col-lg-2 col-12">
+                                <nav class="footer-menu">
+                                    <div class="footer-title">
+                                        USEFUL LINKS
+                                    </div>
+
+                                    <ul>
+                                        <li><a href="#">Find My Home</a></li>
+                                        <li><a href="#">Guide to Turkey</a></li>
+                                        <li><a href="#">Finance & Law</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">FAQ</a></li>
+                                        <li><a href="#">Terms & Conditions</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <div class="col-lg-3 col-12">
+                                <nav class="footer-menu">
+                                    <div class="footer-title">
+                                        TURKEY PROPERTIES
+                                    </div>
+
+                                    <ul>
+                                        <li><a href="#">Properties for Sale in Turkey</a></li>
+                                        <li><a href="#">Properties for Sale in İstanbul</a></li>
+                                        <li><a href="#">Properties for Sale in İzmir</a></li>
+                                        <li><a href="#">Properties for Sale in Yalova</a></li>
+                                        <li><a href="#">Properties for Sale in Trabzon</a></li>
+                                        <li><a href="#">Properties for Sale in Bodrum</a></li>
+                                        <li><a href="#">Properties for Sale in Fethiye</a></li>
+                                        <li><a href="#">Properties for Sale in Antalya</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <div class="col-lg-4 col-12">
+                                <nav class="footer-menu">
+                                    <div class="footer-title">
+                                        REAL ESTATE PROJECT IN TURKEY
+                                    </div>
+
+                                    <ul>
+                                        <li><a href="#">Apartments for Sale in Turkey</a></li>
+                                        <li><a href="#">Apartments for Sale in İstanbul</a></li>
+                                        <li><a href="#">Installment Apartments for Sale in Turkey</a></li>
+                                        <li><a href="#">Installment Apartments for Sale in İstanbul</a></li>
+                                        <li><a href="#">Villas for Sale in Turkey</a></li>
+                                        <li><a href="#">Villas for Sale in İstanbul</a></li>
+                                        <li><a href="#">Houses in Turkey</a></li>
+                                        <li><a href="#">Houses for Sale in Turkey İstanbul</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <div class="col-lg-3 col-12">
+                                <div class="footer-title">
+                                    CONTACT INFORMATION
+                                </div>
+
+                                <div class="footer-desc">
+                                    Turkey Real Estate your property, investment and lifestyle specialist.
+                                </div>
+
+                                <div class="bold-block">
+                                    <i class="icon-phone"></i>
+                                    +90 212 293 1512
+                                </div>
+
+                                <div class="bold-block">
+                                    info@turkeyrealestate.com
+                                </div>
+
+                                <div class="footer-desc">
+                                    Ritz Carlton Residences Harbiye Mah. No:9/2107 34367 Elmadag, Sisli / IST.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p className ="FooterEmail">info@turkeyrealestate.com</p>
-                <p className = "FooterAdress">Ritz Carlton Residences <br/>Harbiye Mah. No:9/2107 <br/>34367 Elmadag, Sisli / IST.</p>
-            </div>
-        </div>
     );
   }
 }

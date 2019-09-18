@@ -23,9 +23,24 @@ class Footer2 extends React.Component{
     
 
     return (
-        <div className= "Footer3">
-            <p className = "Footer2Rigths">All Rights Reserved for Istsanbul Invetment Group - TurkeyRealEstate.com  © 2019 | Terms of Use - Privacy Policy</p>
+      <div class="bottom-footer row align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-9 col-12">
+                    <div class="copyright">All Rights Reserved for Istsanbul Invetment Group - TurkeyRealEstate.com  © 2019 | Terms of Use - Privacy Policy</div>
+                </div>
+
+                <div class="col-lg-3 col-12">
+                    <div class="social-icons">
+                        <a href="#" class="social"><i class="icon-facebook"></i></a>
+                        <a href="#" class="social"><i class="icon-twitter"></i></a>
+                        <a href="#" class="social"><i class="icon-instagram"></i></a>
+                        <a href="#" class="social"><i class="icon-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
     );
   }
 }

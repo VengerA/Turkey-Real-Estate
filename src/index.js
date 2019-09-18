@@ -13,10 +13,11 @@ import GastronomyPage from './components/GastronomyPage.js'
 import GuidePage from './components/GuidePage';
 import ContactUsPage from './components/ContactUsPage';
 import PropertyPage from './components/PropertyPage.js';
+import ListPage from './components/ListPage';
 
 const routing = (
     <Router>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route path="/city" component={City} />
         <Route path="/citizienship" component={CitizienshipPage} />
         <Route path="/property" component={PropertyPage} />
@@ -24,6 +25,7 @@ const routing = (
         <Route path="/Gastronomy" component={GastronomyPage} />
         <Route path="/Guide" component={GuidePage} />
         <Route path="/ContactUs" component={ContactUsPage} />
+        <Route path="/List" component={ListPage} />
     </Router>
 )
 

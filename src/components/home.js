@@ -9,13 +9,13 @@ import ContactFooter from './contactFooter.js';
 import Subscribe from './subscribe.js';
 import Footer from './footer.js';
 import Footer2 from './footer2.js';
-import SearchHover from './searchHover.js';
-import Header3 from './header3.js';
-import CityIntroduction from './cityIntroduction.js';
-import PropertyList from './propertyList.js';
-import SliderGallery from './SliderGallery.js';
-import Citizenship from './Citizenship.js';
-import About from './About.js';
+
+import "./../assets/styles/css/bootstrap.min.css";
+import "./../assets/styles/css/webfonts.css";
+import "./../assets/styles/css/icomoon.css";
+import "./../assets/styles/css/fontawesome.min.css";
+import "./../assets/styles/css/main.css";
+
 
 
 import './../App.css';
@@ -32,14 +32,18 @@ class Home extends React.Component{
       <div className = "container-fluid" id = "app">
         <div className ="general-container">
           <HeaderSection/>
-          <MainSearch/>
-          <Featured1/>
-          <Featured2/>
-          <Introduction/>
-          <ContactFooter/>
-          <Subscribe/>
-          <Footer/>
-          <Footer2/>
+          <main id="main" class="home">
+            <MainSearch/>
+            <Featured2/>
+            <Introduction/>
+            <ContactFooter/>
+          </main>
+          <footer id="footer">
+            <Subscribe/>
+            <Footer/>
+            <Footer2/>
+          </footer>
+          
         </div>
       </div>
     );
