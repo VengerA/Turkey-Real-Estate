@@ -7,16 +7,15 @@ class MainStore {
 
     @observable clickedCity = null
 
-    @observable propertyList = [
-        {type : "LUXURY  VILLA" ,location:"Izmir/Çeşme" , shortDescription:"Luxury Villa in Çeşme with private beacgh" , cost: "1.200.000" , m2: "140 m^2 / 520 m^2" , bed_count: 4 },
-        {type : "LUXURY  VILLA" ,location:"Izmir/Çeşme" , shortDescription:"Luxury Villa in Çeşme with private beacgh" , cost: "1.200.000" , m2: "140 m^2 / 520 m^2" , bed_count: 4 },
-        {type : "LUXURY  VILLA" ,location:"Izmir/Çeşme" , shortDescription:"Luxury Villa in Çeşme with private beacgh" , cost: "1.200.000" , m2: "140 m^2 / 520 m^2" , bed_count: 4 },
-        {type : "LUXURY  VILLA" ,location:"Izmir/Çeşme" , shortDescription:"Luxury Villa in Çeşme with private beacgh" , cost: "1.200.000" , m2: "140 m^2 / 520 m^2" , bed_count: 4 },
-        {type : "LUXURY  VILLA" ,location:"Izmir/Çeşme" , shortDescription:"Luxury Villa in Çeşme with private beacgh" , cost: "1.200.000" , m2: "140 m^2 / 520 m^2" , bed_count: 4 },
-        {type : "LUXURY  VILLA" ,location:"Izmir/Çeşme" , shortDescription:"Luxury Villa in Çeşme with private beacgh" , cost: "1.200.000" , m2: "140 m^2 / 520 m^2" , bed_count: 4 },
-        {type : "LUXURY  VILLA" ,location:"Izmir/Çeşme" , shortDescription:"Luxury Villa in Çeşme with private beacgh" , cost: "1.200.000" , m2: "140 m^2 / 520 m^2" , bed_count: 4 },
-        {type : "LUXURY  VILLA" ,location:"Izmir/Çeşme" , shortDescription:"Luxury Villa in Çeşme with private beacgh" , cost: "1.200.000" , m2: "140 m^2 / 520 m^2" , bed_count: 4 }
-    ]
+    @observable clickedProperty = null
+
+    @observable searchedDistrict = undefined
+
+    @observable searchedCity = undefined
+
+    @observable searchResults = []
+
+    @observable searchResultCount = undefined
 
     
 }

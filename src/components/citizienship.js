@@ -17,7 +17,7 @@ import PropertyList from './propertyList.js';
 import SliderGallery from './SliderGallery.js';
 import Citizenship from './Citizenship.js';
 import About from './About.js';
-
+import HeaderSection from './headersSection';
 
 import './../App.css';
 
@@ -31,14 +31,21 @@ class CitizienshipPage extends React.Component{
     
     return (
       <div>
-        <Header/>
-        <Header2/>
-        <Header3/>
-        <Citizenship/>
-        <ContactFooter/>
-        <Subscribe/>
-        <Footer/>
-        <Footer2/>
+        <div className = "general-container">
+          <HeaderSection/>
+          <main id = "main" class = 'city'>
+          <div id ="hero-placeholder">
+            <Header3/>
+          </div>    
+          <Citizenship/>
+            <ContactFooter/>
+          </main>
+          <footer id = "footer">
+            <Subscribe/>
+            <Footer/>
+            <Footer2/>
+          </footer>
+        </div>
       </div>
     );
   }

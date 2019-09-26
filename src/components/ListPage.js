@@ -11,6 +11,8 @@ import Header3 from './header3';
 
 import './../App.css';
 
+import queryString from 'query-string'
+
 class ListPage extends React.Component{
   constructor(props){
     super(props);
@@ -27,7 +29,11 @@ class ListPage extends React.Component{
             <div id ="hero-placeholder">
                 <Header3/>
             </div>   
-            <PropertyList/>
+            <PropertyList
+              cityId={queryString.parse(this.props.location.search).city}
+              districtId={queryString.parse(this.props.location.search).district}
+              pageNumber={queryString.parse(this.props.location.search).page}
+            />
             <ContactFooter/>
           </main>
           <footer id = "footer">

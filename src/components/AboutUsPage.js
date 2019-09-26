@@ -9,7 +9,7 @@ import Footer2 from './footer2.js';
 import Header3 from './header3.js';
 import PropertyList from './propertyList.js';
 import About from './About.js';
-
+import HeaderSection from './headersSection';
 
 import './../App.css';
 
@@ -23,14 +23,21 @@ class AboutUs extends React.Component{
     
     return (
       <div>
-        <Header/>
-        <Header2/>
-        <Header3/>
-        <About/>
-        <ContactFooter/>
-        <Subscribe/>
-        <Footer/>
-        <Footer2/>
+        <div className = "general-container">
+          <HeaderSection/>
+          <main id = "main" class = 'city'>
+          <div id ="hero-placeholder">
+            <Header3/>
+          </div>    
+          <About/>
+            <ContactFooter/>
+          </main>
+          <footer id = "footer">
+            <Subscribe/>
+            <Footer/>
+            <Footer2/>
+          </footer>
+        </div>
       </div>
     );
   }

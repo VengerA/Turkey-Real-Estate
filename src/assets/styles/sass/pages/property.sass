@@ -1,0 +1,314 @@
+/* Property */
+main#main.property
+    overflow: hidden
+    /* Property Details */
+    div.property-details
+        padding: 0
+        /* Property Image */
+        figure.property-image
+            margin: 0
+            display: block
+            width: 100%
+            height: 500px
+            background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 56%, rgba(29, 31, 66, 0.73) 100%)
+            background-repeat: no-repeat
+            background-position: 50% 50%
+            background-size: cover
+            position: relative
+            div.property-buttons
+                position: absolute
+                bottom: 30px
+                left: 30px
+                z-index: 4
+                width: calc(100% - 60px)
+                div.property-lightbox
+                    font-size: 0
+                    a.little-image
+                        margin-right: 10px
+                        display: inline-block
+                        vertical-align: middle
+                        img
+                            width: 90px
+                            height: 60px
+                            border-radius: 4px
+                        &:last-child
+                            margin-right: 0
+                    a.more
+                        width: 45px
+                        height: 60px
+                        border-radius: 3px
+                        background-color: rgba(216, 216, 216, 0)
+                        text-align: center
+                        line-height: 60px
+                        font-family: $gb
+                        font-size: 19px
+                        color: #fff
+                div.property-actions
+                    position: absolute
+                    bottom: 0
+                    right: 0
+                    div.hearth
+                        display: inline-block
+                        div.favorite
+                            display: inline-block
+                            vertical-align: middle
+                            .fav-btn
+                                display: inline
+                                vertical-align: middle
+                                height: 100%
+                                justify-content: center
+                                align-items: center
+                                width: 60px
+                                height: 60px
+                                border-radius: 100px
+                                position: relative
+                                text-align: center
+                                line-height: 68px
+                                .favme
+                                    font-size: 14px
+                                    width: auto
+                                    height: auto
+                                    cursor: pointer
+                                    box-shadow: none
+                                    transition: all .2s ease
+                                    color: #fff
+                                    margin: 0
+                                    height: 100%
+                                    width: 100%
+                                    &:hover
+                                        animation: favme-hover .3s infinite alternate
+                                    i
+                                        columns: #000
+                                        font-size: 28px
+                                .favme.active
+                                    color: #e33654
+                                .favme.is_animating
+                                    animation: favme-anime .3s
+                    div.share
+                        display: inline-block
+                        position: relative
+                        div.icon
+                            width: 60px
+                            height: 60px
+                            text-align: center
+                            line-height: 60px
+                            cursor: pointer
+                        div.share-box
+                            position: absolute
+                            top: -65px
+                            right: -50px
+                            height: 42px
+                            background-color: #ffffff
+                            width: 150px
+                            font-size: 0
+                            border-radius: 5px
+                            &:before
+                                content: ""
+                                position: absolute
+                                bottom: -16px
+                                left: calc(50% - 8px)
+                                border: 8px solid transparent
+                                border-top-color: #fff
+
+                            a.social
+                                display: inline-block
+                                width: 50px
+                                height: 40px
+                                text-align: center
+                                line-height: 40px
+                                font-size: 16px
+                    div.email
+                        display: inline-block
+                        position: relative
+                        div.send-mail-area
+                            position: absolute
+                            background-color: #fff
+                            top: -310px
+                            right: -30px
+                            width: 300px
+                            height: 290px
+                            text-align: center
+                            padding: 15px 30px
+                            div.section-title
+                                font-family: $gb
+                                font-size: 20px
+                                color: #1d1f42
+                                margin-bottom: 15px
+                            input
+                                height: 60px
+                                width: 100%
+                                display: block
+                                border: 1px solid #d5d7e2
+                                border-radius: 3px
+                                margin-bottom: 15px
+                                padding: 0px 20px
+                                font-family: $gb
+                                font-size: 16px
+                                color: #3a3a3a
+                            input::placeholder
+                                color: #3a3a3a
+                                opacity: 1
+                            button
+                                display: block
+                                width: 100%
+                                height: 60px
+                                background-color: #e33654
+                                border-radius: 3px
+                                border: none
+                                font-family: $gs
+                                font-size: 16px
+                                color: #fff
+                            &:before
+                                content: ""
+                                position: absolute
+                                bottom: -16px
+                                right: 52px
+                                border: 8px solid transparent
+                                border-top-color: #fff
+
+                        div.icon
+                            width: 60px
+                            height: 60px
+                            text-align: center
+                            line-height: 60px
+                            cursor: pointer
+                    div.print
+                        display: inline-block
+                        position: relative
+                        div.icon
+                            width: 60px
+                            height: 60px
+                            text-align: center
+                            line-height: 60px
+                            cursor: pointer
+        /* Property Info */
+        div.property-info
+            background-color: #1d1f42
+            height: 140px
+            padding: 20px 15px
+            color: #fff
+            div.property-area
+                div.location
+                    font-family: $gm
+                    font-size: 14px
+                    color: rgba(255, 255, 255, .7)
+                div.name
+                    font-family: $gb
+                    font-size: 24px
+                    color: #ffffff
+            div.property-price
+                text-align: right
+                div.block
+                    display: inline-block
+                    text-align: left
+                    div.title
+                        font-family: $gm
+                        font-size: 14px
+                        color: rgba(255, 255, 255, .7)
+                    div.price
+                        font-family: $gb
+                        font-size: 24px
+                        color: #ffffff
+        /* Property Blocks */
+        div.property-blocks
+            padding: 0px 30px
+            position: relative
+            top: -40px
+            /* Blocks */
+            div.blocks
+                box-shadow: 0 2px 24px rgba(29, 31, 66, 0.11)
+                background-color: #ffffff
+                border-radius: 3px
+                height: 80px
+                div.block
+                    padding: 0px 30px
+                    position: relative
+                    &:last-child
+                        &:before
+                            display: none
+                    &:before
+                        content: ""
+                        position: absolute
+                        top: -27px
+                        right: 0
+                        width: 1px
+                        height: 80px
+                        background-color: #d8d8d8
+                    &:last-child
+                        div.icon
+                            img
+                                opacity: 1
+                    div.icon
+                        display: inline-block
+                        vertical-align: middle
+                        margin-right: 10px
+                        img
+                            opacity: .5
+                    div.count
+                        display: inline-block
+                        vertical-align: middle
+                        font-family: $gb
+                        font-size: 16px
+                        color: #1d1f42
+                    div.name
+                        display: inline-block
+                        vertical-align: middle
+                        font-family: $gm
+                        font-size: 16px
+                        color: #1d1f42
+        /* Property Description */
+        div.property-description
+            padding: 0px 30px 20px 30px
+            h1.property-title
+                font-family: $gm
+                font-size: 24px
+                color: #1d1f42
+                margin-bottom: 30px
+            p
+                margin-left: 50px
+                font-family: $gr
+                font-size: 16px
+                line-height: 30px
+                color: #1d1f42
+        /* Property Amenities */
+        div.property-amenities
+            padding: 0px 30px
+            margin-bottom: 30px
+            div.section-title
+                font-family: $gm
+                font-size: 24px
+                color: #1d1f42
+                margin-bottom: 30px
+            div.amenity-blocks
+                margin-left: 35px
+                div.block
+                    margin-bottom: 15px
+                    div.block-item
+                        height: 50px
+                        border-radius: 3px
+                        background-color: #fff
+                        font-size: 0
+                        div.icon
+                            width: 40px
+                            display: inline-block
+                            vertical-align: middle
+                            text-align: center
+                            line-height: 50px
+                            img
+                                max-width: 100%
+                                height: auto
+                        div.content
+                            width: calc(100% - 40px)
+                            display: inline-block
+                            vertical-align: middle
+                            padding: 0px 0px 0px 5px
+                            font-size: 14px
+                            font-family: $gm
+                            color: #252851
+                            overflow: hidden
+                            white-space: nowrap
+                            text-overflow: ellipsis
+
+
+
+

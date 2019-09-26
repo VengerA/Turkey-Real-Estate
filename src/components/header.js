@@ -18,13 +18,75 @@ class Header extends React.Component{
   } 
 
   render(){
+    const changeLanCur = () => {
+        let output = null 
+        if(this.state.showCurrency){
+            output = (
+            <div class="landc-box">
+                <div class="form-group language-group">
+                    <label class="title">Choose Language</label>
+
+                    <div class="select">
+                        <div class="choice active" data-flag="assets/images/icons/flags/english.png">
+                            <span class="icon">
+                                <img src="assets/images/icons/flags/english.png" alt="" />
+                            </span>
+                            <span class="name">English</span>
+                            <span class="arrow"><i class="fa fa-chevron-down"></i></span>
+                        </div>
+                        <div class="choice" data-flag="assets/images/icons/flags/turkish.png">
+                            <span class="icon">
+                                <img src="assets/images/icons/flags/turkish.png" alt="" />
+                            </span>
+                            <span class="name">Turkish</span>
+                            <span class="arrow"><i class="fa fa-chevron-down"></i></span>
+                        </div>
+                        <div class="choice" data-flag="assets/images/icons/flags/dutch.png">
+                            <span class="icon">
+                                <img src="assets/images/icons/flags/dutch.png" alt="" />
+                            </span>
+                            <span class="name">Deutch</span>
+                            <span class="arrow"><i class="fa fa-chevron-down"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group currency-group">
+                    <label class="title">Choose Currency</label>
+
+                    <div class="select">
+                        <div class="choice active" data-value="$ USD">
+                            <span class="currency">
+                                $
+                            </span>
+                            <span class="name">Dolar</span>
+                            <span class="arrow"><i class="fa fa-chevron-down"></i></span>
+                        </div>
+
+                        <div class="choice" data-value='₺ TRY'>
+                            <span class="currency">
+                                ₺
+                            </span>
+                            <span class="name">TRY</span>
+                            <span class="arrow"><i class="fa fa-chevron-down"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit">CHANGE</button>
+                </div>
+            </div>
+            )
+        }
+        return output
+    }
     return (
       <div class="top-header row align-items-center" href ="./home">
             <div class="container-fluid">
                 <div class="row align-items-center m-0">
                     <div class="col-lg-3 col-12">
                         <div class="logo">
-                            <a href="#">
+                            <a href="/">
                                 <img src={require("./../assets/images/logo.png")} class="img-fluid" alt="" /> TURKEY REALESTATE
                             </a>
                         </div>
@@ -55,8 +117,8 @@ class Header extends React.Component{
                                 </a>
                             </div>
 
-                            <div class="buttons lac-buttons">
-                                <div class="placeholder">
+                            <div class="buttons lac-buttons" >
+                                <div class="placeholder" onClick = {() => {this.showCurrency()}}>
                                     <div class="current-language">
                                         <img src= {require("./../assets/images/icons/flags/english.png")} alt=""></img>
                                     </div>
@@ -69,64 +131,8 @@ class Header extends React.Component{
                                         <i class="fa fa-chevron-down"></i>
                                     </span>
                                 </div>
-
-                                <div class="landc-box">
-                                    <div class="form-group language-group">
-                                        <label class="title">Choose Language</label>
-
-                                        <div class="select">
-                                            <div class="choice active" data-flag="assets/images/icons/flags/english.png">
-                                                <span class="icon">
-                                                    <img src="assets/images/icons/flags/english.png" alt="" />
-                                                </span>
-                                                <span class="name">English</span>
-                                                <span class="arrow"><i class="fa fa-chevron-down"></i></span>
-                                            </div>
-                                            <div class="choice" data-flag="assets/images/icons/flags/turkish.png">
-                                                <span class="icon">
-                                                    <img src="assets/images/icons/flags/turkish.png" alt="" />
-                                                </span>
-                                                <span class="name">Turkish</span>
-                                                <span class="arrow"><i class="fa fa-chevron-down"></i></span>
-                                            </div>
-                                            <div class="choice" data-flag="assets/images/icons/flags/dutch.png">
-                                                <span class="icon">
-                                                    <img src="assets/images/icons/flags/dutch.png" alt="" />
-                                                </span>
-                                                <span class="name">Deutch</span>
-                                                <span class="arrow"><i class="fa fa-chevron-down"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group currency-group">
-                                        <label class="title">Choose Currency</label>
-
-                                        <div class="select">
-                                            <div class="choice active" data-value="$ USD">
-                                                <span class="currency">
-                                                    $
-                                                </span>
-                                                <span class="name">Dolar</span>
-                                                <span class="arrow"><i class="fa fa-chevron-down"></i></span>
-                                            </div>
-
-                                            <div class="choice" data-value='₺ TRY'>
-                                                <span class="currency">
-                                                    ₺
-                                                </span>
-                                                <span class="name">TRY</span>
-                                                <span class="arrow"><i class="fa fa-chevron-down"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <button type="submit">CHANGE</button>
-                                    </div>
-                                </div>
+                                {changeLanCur()}
                             </div>
-
                             <div class="favorite">
                                 <div class="row m-0">
                                     <div class="fav-btn">

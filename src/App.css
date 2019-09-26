@@ -904,31 +904,38 @@ input[type=range]:focus::-ms-fill-upper {
 
 .featured2 {
   margin-left: 6.94%;
-  height: 607px;
+  height: 450px;
 }
 
 .featured2Container{
-  width: 27%;
+  width: 370px;
   height: 240px;
   border-radius: 6px;
-  background-color: #25d366;
   float: left;
   margin-left: 30px;
-  background-image: url('./static/antalya_night.jpg');
   background-size: 100% 100%;
   text-decoration: none;
 }
 
+.featured2Image {
+  position: absolute;
+  z-index: -1;
+}
+
+.featured2CC {
+  margin-left: 30px;
+  margin-top: 174px;
+}
+
 .featured2Container2{
-  margin-left: 7.3%;
-  margin-top:106px;
-  margin-bottom: 170px;
+  margin-left: 60px;
+  margin-top:30px;
+  margin-bottom: 70px;
 }
 
 .featured2Header2 {
-  margin-left: 9.37%;
+  margin-left: 88px;
   margin-top: 80px;
-  width: 553px;
   height: 66px;
   font-family: Gilroy-SemiBold;
   font-size: 40px;
@@ -941,23 +948,16 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .featured2Header {
-  margin-left: 1.87%;
-  margin-top: 171px;
+  font-size: 18px;
   color: white;
+  margin: 0;
 }
 
 .featureds2Content{
-  width: 7.7%;
-  height: 30px;
   font-family: Gilroy-Regular;
   font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 2.14;
-  letter-spacing: normal;
   color: #ffffff;
-  margin-left: 2.08%;
+  margin: 0;
 }
 
 /* INTRODUCTION */
@@ -2295,7 +2295,20 @@ input[type=range]:focus::-ms-fill-upper {
   background-position: 50% 50%;
 }
 
+.search-input-results {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  max-height: 200px;
+  overflow: scroll;
+  background-color:#1d1f42;
+  color:#fff;
+  width: 25%;
+  padding: 0 30px;
+  font-family: "Gilroy SemiBold";
+  font-size: 16px;
+}
 
-
-
-
+.form-opener {
+  display: block !important;
+}

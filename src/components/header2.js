@@ -44,12 +44,12 @@ class Header2 extends React.Component{
                         <ul>
                             <li><a href="#">Property</a></li>
                             <li><a href="#">Find My Home</a></li>
-                            <li><a href="#">Guide To Turkey</a></li>
-                            <li><a href="#">Finance & Law</a></li>
-                            <li><a href="#">Citizenship</a></li>
+                            <li><a href="/Guide">Guide To Turkey</a></li>
+                            <li><a href="/Guide">Finance & Law</a></li>
+                            <li><a href="/citizenship">Citizenship</a></li>
                             <li><a href="#">Blog</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="/AboutUs">About Us</a></li>
+                            <li><a href="/ContactUs">Contact</a></li>
                         </ul>
                     </nav>
                 </div>

@@ -8,6 +8,7 @@ import Footer from './footer.js';
 import Footer2 from './footer2.js';
 import Header3 from './header3.js';
 import Guide from './Guide.js';
+import HeaderSection from './headersSection';
 
 
 import './../App.css';
@@ -22,14 +23,21 @@ class GuidePage extends React.Component{
     
     return (
       <div>
-        <Header/>
-        <Header2/>
-        <Header3/>
-        <Guide/>
-        <ContactFooter/>
-        <Subscribe/>
-        <Footer/>
-        <Footer2/>
+        <div className = "general-container">
+          <HeaderSection/>
+          <main id = "main" class = 'city'>
+          <div id ="hero-placeholder">
+            <Header3/>
+          </div>    
+            <Guide/>
+            <ContactFooter/>
+          </main>
+          <footer id = "footer">
+            <Subscribe/>
+            <Footer/>
+            <Footer2/>
+          </footer>
+        </div>
       </div>
     );
   }

@@ -24,7 +24,7 @@ class Footer extends React.Component{
 
                                     <ul>
                                         <li><a href="#">Find My Home</a></li>
-                                        <li><a href="#">Guide to Turkey</a></li>
+                                        <li><a href="Guide">Guide to Turkey</a></li>
                                         <li><a href="#">Finance & Law</a></li>
                                         <li><a href="#">Blog</a></li>
                                         <li><a href="#">FAQ</a></li>
@@ -41,14 +41,14 @@ class Footer extends React.Component{
                                     </div>
 
                                     <ul>
-                                        <li><a href="#">Properties for Sale in Turkey</a></li>
-                                        <li><a href="#">Properties for Sale in İstanbul</a></li>
-                                        <li><a href="#">Properties for Sale in İzmir</a></li>
-                                        <li><a href="#">Properties for Sale in Yalova</a></li>
-                                        <li><a href="#">Properties for Sale in Trabzon</a></li>
-                                        <li><a href="#">Properties for Sale in Bodrum</a></li>
-                                        <li><a href="#">Properties for Sale in Fethiye</a></li>
-                                        <li><a href="#">Properties for Sale in Antalya</a></li>
+                                        <li><a href="/">Properties for Sale in Turkey</a></li>
+                                        <li><a href="/City?city=4&amp;page=1">Properties for Sale in İstanbul</a></li>
+                                        <li><a href="/City?city=2&amp;page=1">Properties for Sale in Ankara</a></li>
+                                        <li><a href="/City?city=1&amp;page=1">Properties for Sale in Antalya</a></li>
+                                        <li><a href="/City?city=5&amp;page=1">Properties for Sale in Bolu</a></li>
+                                        <li><a href="/City?city=3&amp;page=1">Properties for Sale in Bursa</a></li>
+                                        <li><a href="/">Properties for Sale in İzmir</a></li>
+                                        <li><a href="/">Properties for Sale in Fethiye</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -60,14 +60,14 @@ class Footer extends React.Component{
                                     </div>
 
                                     <ul>
-                                        <li><a href="#">Apartments for Sale in Turkey</a></li>
-                                        <li><a href="#">Apartments for Sale in İstanbul</a></li>
-                                        <li><a href="#">Installment Apartments for Sale in Turkey</a></li>
-                                        <li><a href="#">Installment Apartments for Sale in İstanbul</a></li>
-                                        <li><a href="#">Villas for Sale in Turkey</a></li>
-                                        <li><a href="#">Villas for Sale in İstanbul</a></li>
-                                        <li><a href="#">Houses in Turkey</a></li>
-                                        <li><a href="#">Houses for Sale in Turkey İstanbul</a></li>
+                                        <li><a href="/">Apartments for Sale in Turkey</a></li>
+                                        <li><a href="/City?city=4&amp;page=1">Apartments for Sale in İstanbul</a></li>
+                                        <li><a href="/">Installment Apartments for Sale in Turkey</a></li>
+                                        <li><a href="/City?city=4&amp;page=1">Installment Apartments for Sale in İstanbul</a></li>
+                                        <li><a href="/">Villas for Sale in Turkey</a></li>
+                                        <li><a href="/City?city=4&amp;page=1">Villas for Sale in İstanbul</a></li>
+                                        <li><a href="/">Houses in Turkey</a></li>
+                                        <li><a href="/City?city=4&amp;page=1">Houses for Sale in Turkey İstanbul</a></li>
                                     </ul>
                                 </nav>
                             </div>

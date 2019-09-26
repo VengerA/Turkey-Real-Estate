@@ -13,31 +13,77 @@ class PropertyHelp extends React.Component{
   render(){
     
     return (
-      <div className = "PropertyHelper">
-        <p className = "PropertyHelperHeader">How can we help you?</p>
-        <p className = "PropertyHelperContent">We are ready to support you with our expert team for all your questions </p>
+      <aside id="sidebar" class="col-lg-3 col-12">
+          <div class="sidebar-block">
+              <form action="#" class="sidebar-form">
+                  <div class="form-title">
+                      How we can help you?
+                  </div>
 
-        <input type = "text" className = "PropertyHelperInput" placeholder = "Full Name"/>
-        <input type = "text" className = "PropertyHelperInput" placeholder = "Email"/>
-        <input type = "text" className = "PropertyHelperInput" placeholder = "Phone Number"/>
-        <textarea className = "PropertyHelperTextArea" placeholder = "Message" />
-        
-        <button className = "PropertyHelperButton">SEND MESSAGE</button>
+                  <div class="form-desc">
+                      We are ready to support you with our expert team for all your questions
+                  </div>
 
-        <div className = "PropertyHelperContainer">
-            <div className = "PropertyHelperRow1">
-                <img src = {helper_girl} className ="PropertyHelperImg"/>
-            </div>
-            <div className = "PropertyHelperRow1">
-                <img src = {whatsapp_icon} className = "PropertyHelperIcon" />
-                <p className = "PropertyHelperNum">+90 532 321 4321</p>
-                <div className = "PropertyHelperBottom">
-                    <p className = "PropertyHelperName">Tyra Willey</p>
-                    <p className = "PropertyHelperTitle">Managing Director</p>
-                </div> 
-            </div>
-        </div>
-      </div>
+                  <div class="row mb-3">
+                      <div class="col-lg-6 col-12">
+                          <div class="form-group">
+                              <input type="text" placeholder="Full Name"/>
+                          </div>
+                      </div>
+
+                      <div class="col-lg-6 col-12">
+                          <div class="form-group">
+                              <input type="text" placeholder="Email"/>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <input type="text" placeholder="Phone Number"/>
+                  </div>
+
+                  <div class="form-group">
+                      <input type="text" placeholder="Message"/>
+                  </div>
+
+                  <div class="form-group">
+                      <button type="submit">SEND</button>
+                  </div>
+              </form>
+              
+              <div class="info-blocks">
+                  <div class="block">
+                      <div class="title">
+                          Project Area
+                      </div>
+
+                      <div class="content">
+                          {this.props.property === undefined ? '...' : (this.props.property.project_area == null ? 'unknown' : this.props.property.project_area)}
+                      </div>
+                  </div>
+
+                  <div class="block">
+                      <div class="title">
+                          Construction Area
+                      </div>
+
+                      <div class="content">
+                          {this.props.property === undefined ? '...' : (this.props.property.construction_area == null ? 'unknown' : this.props.property.construction_area)}
+                      </div>
+                  </div>
+
+                  <div class="block">
+                      <div class="title">
+                          Green Area
+                      </div>
+
+                      <div class="content"> 
+                        {this.props.property === undefined ? '...' : (this.props.property.green_area == null ? 'unknown' : this.props.property.green_area)}
+                      </div>
+                  </div>
+                </div>
+          </div>
+      </aside>
     );
   }
 }

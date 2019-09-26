@@ -5,6 +5,9 @@ import bed_icon from "./../static/bed_logo.svg";
 import bathroom_icon from "./../static/bathroom_logo.svg";
 import border_home_icon from "./../static/cerceveEv_logo.png";
 
+import MainStore from './store';
+import {observer} from 'mobx-react';
+
 import './../App.css';
 
 class App extends React.Component{

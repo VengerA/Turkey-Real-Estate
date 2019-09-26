@@ -14,21 +14,26 @@ class CityInroduction extends React.Component{
   constructor(props){
     super(props);
     this.state = {  
-      city : null,
+      city : undefined,
       showMail: false,
       showSocial: false
     }
   }
 
-  componentWillMount(){
+  componentWillMount(){    
+    if (this.props.cityId === undefined) {
+      console.log("[!] CityID:", this.props.cityId, "DistrictID:", this.props.districtId)
+      return
+    }
+
     this.getCity()
   }
 
   getCity = () => {
-    axios.get("http://138.201.16.232/properties/search/?city=" + MainStore.clickedCity)
+    var vm = this
+    axios.get("http://138.201.16.232/properties/cities/" + this.props.cityId + '/')
     .then(res => {
-      this.state.city = res.data
-      console.log(res)
+      vm.setState({city: res.data})
     })
   }
 
@@ -43,6 +48,9 @@ class CityInroduction extends React.Component{
   }
 
   render(){
+    if (this.state.city === undefined)
+      return null
+
     const sendEmail = () => {
       let output = null
       if(this.state.showMail){
@@ -87,20 +95,20 @@ class CityInroduction extends React.Component{
     }
 
     return (
-      <div id="hero-city" class="row align-items-center" style= {{backgroundImage: `url(${background})`}}>
+      <div id="hero-city" class="row align-items-center" style= {{backgroundImage: 'url('+'http://138.201.16.232'+this.state.city.gallery[0]+')'}}>
         <div class="container">
             <div class="row align-items-end">
                 <div class="city-info col-lg-8 col-12">
                     <h1 class="city-name">
-                        İzmir
+                        {this.state.city.name}
                     </h1>
 
                     <div class="city-details">
-                        The Aegean coastal city of Izmir, Turkey's third largest ity, has been home to many ancient civilizations throughout the millenia. Today it gives you the chance to get up close to its archaeological history while offering all the accouterments of a modern, vibrant city.
+                        {this.state.city.description}
                     </div>
 
                     <div class="city-button">
-                        <a href="#" class="button">Introducing İzmir</a>
+                        <a href="#" class="button">Introducing {this.state.city.name}</a>
                     </div>
                 </div>
                 <div class="city-buttons col-lg-4 col-12">

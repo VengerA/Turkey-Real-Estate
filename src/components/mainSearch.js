@@ -21,6 +21,7 @@ import cover3 from '../static/istanbul.jpg'
 import cover4 from '../static/izmi4.jpg'
 import cover5 from '../static/ankara.jpg'
 
+
 const coverImages = [
     cover1,
     cover2,
@@ -48,7 +49,8 @@ class MainSection extends React.Component{
             cCity: "Antalya",
             currentImageIndex: 0,
             imageSwitchTimer: undefined,
-            cities : []
+            cities : undefined,
+            searchLocationResults: [],
         }
     }
     componentDidMount() {
@@ -56,7 +58,7 @@ class MainSection extends React.Component{
         console.log(MainStore.showProperty)
         this.setState({ imageSwitchTimer: setInterval(() => {
             vm.switchNextImage()
-        }, 2000) })
+        }, 4000) })
     }
 
     componentWillMount() {
@@ -67,21 +69,45 @@ class MainSection extends React.Component{
         var vm = this;
         axios.get("http://138.201.16.232/properties/cities/")
         .then(res => {
-             MainStore.cities = [
-                 ...res.data
-                ]
-                let _cities = [];
-                res.data.forEach(c => {
-                    _cities.push(c.name)
+            MainStore.cities = [
+                ...res.data
+            ]
+            
+            vm.setState({cities: res.data})
+        })
+    }
+
+    getSearchResults = (event) => {
+        var vm = this
+        var query = event.target.value.trim()
+
+        console.log('query: "' + query + '"')
+
+        if (query == "") {
+            this.setState({ searchLocationResults: [] })
+            return
+        }
+
+        axios.get("http://138.201.16.232/properties/search-locations/?q="+query)
+        .then(res => {
+            let results = []
+
+            res.data.results.forEach(district => {
+                results.push({
+                    repr: district.city_name + ", " + district.name,
+                    cityId: district.city_id,
+                    id: district.id
                 })
-                vm.setState({cities: _cities})
-             console.log(res)}
-             )
+            })
+
+            vm.setState({ searchLocationResults: results })
+            console.log(results)
+        })
     }
 
     switchNextImage = () => {
         let currentImageIndex = (this.state.currentImageIndex + 1) % coverImages.length
-        this.setState({ currentImageIndex, cCity: this.state.cities[currentImageIndex] })
+        this.setState({ currentImageIndex, cCity: this.state.cities[currentImageIndex].name })
     }
 
     switchToImageByIndex = (indx) => {
@@ -100,11 +126,11 @@ class MainSection extends React.Component{
 
         this.setState({
             currentImageIndex: indx,
-            cCity: this.state.cities[indx],
+            cCity: this.state.cities[indx].name,
             
             imageSwitchTimer: setInterval(() => {
                 vm.switchNextImage()
-            }, 2000)
+            }, 4000)
         })
         console.log(this.state.cCity)
     }
@@ -117,28 +143,15 @@ class MainSection extends React.Component{
     showPropertyType =() =>{
         let show2 = this.state.showPropertyTypes
         this.setState({showPropertyTypes: !show2})
-        this.setState({showAdvanced: false})
-        this.setState({showPropertyTypes: false})
     } 
     showPrice = () =>{
         let show1 = this.state.showPrice
-        console.log(!show1)
         this.setState({showPrice: !show1})
-        setTimeout(() => {
-            console.log(this.state)
-        }, 1000)
-        this.setState({showAdvanced: false})
-        this.setState({showPrice: false})
     } 
 
     showAdvanced = () => {
         let show = this.state.showAdvanced
         this.setState({showAdvanced: !show})
-        this.setState({showPrice: false})
-        this.setState({showPropertyTypes: false})
-        setTimeout(() => {
-            console.log(this.state)
-        }, 1000)
     }
 
     render(){
@@ -146,14 +159,51 @@ class MainSection extends React.Component{
             let output = null
             if(this.state.showPrice){
                 output = (
-                    <div className = "PriceTags">
-                        <div className = "PriceTag1">
-                            <p className = "PriceTagHeader">Maximum Price</p>
-                            <input type="range" className = "RangeInput"></input>
-                        </div>
-                        <div className = "PriceTag2">
-                            <p className = "PriceTagHeader">Maximum Price</p>
-                            <input type="range" className = "RangeInput"></input>
+                    <div class="form-opener">
+                        <div class="slider">
+                            <div class="title">
+                                Minimum Price
+                            </div>
+
+                            <div class="input">
+                                <input type="range" class="min-range" step="10000" value="0" max="1000000" />
+
+                                <div class="values row">
+                                    <div class="col-6 text-left">
+                                        <i class="fa fa-lira-sign"></i>
+                                        <span class="min">
+                                            0
+                                        </span>
+                                    </div>
+
+                                    <div class="col-6 text-right">
+                                        <i class="fa fa-lira-sign"></i>
+                                        <span class="max">5M</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="title">
+                                Maksimum Price
+                            </div>
+
+                            <div class="input">
+                                <input type="range" class="max-range" step="200000" min="200000" value="200000" max="1000000" />
+
+                                <div class="values row">
+                                    <div class="col-6 text-left">
+                                        <i class="fa fa-lira-sign"></i>
+                                        <span class="min">
+                                            200000
+                                        </span>
+                                    </div>
+
+                                    <div class="col-6 text-right">
+                                        <i class="fa fa-lira-sign"></i>
+                                        <span class="max">5M</span>+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 )   
@@ -164,38 +214,37 @@ class MainSection extends React.Component{
         const PropertyTypes = () => {
             let output = null
             if(this.state.showPropertyTypes){
-                output = this.state.PropertyTypes.map(item => {
-                    console.log(item.selected);
-                    if(!item.selected){
-                        return (
-                            <button className = "PropertyTag" onClick = {() => {this.handlePropertyType(item)}}>
-                                <img className = "checkIcon" src = {check_icon}/>
-                                <p className = "PropertyTagText">{item.item}</p>
-                            </button>
-                        )
-                    }
-                    else {
-                        return (
-                            <button className = "PropertyTag" onClick = {() => {this.handlePropertyType(item)}}>
-                                <img className = "checkIcon" src = {checked_icon}  />
-                                <p className = "PropertyTagText">{item.item}</p>
-                            </button>
-                        )
-                    }
-                })
-                
-            }
-            return output
-        }
+                output = (
+                    <div class="form-opener">
+                        <div class="select">
+                            <label for="villa" class="checkbox">
+                                <input type="checkbox" name="villa" id="villa"/>
+                                <div class="checkbox">
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
 
-        const PropertyTypesHover = () => {
-            let output = null 
-            if(this.state.showPropertyTypes){
-              output = ((
-                  <div className = "PropertyTags">
-                      {PropertyTypes()}
-                  </div>
-              ))
+                                    <div class="text">
+                                        Villa
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label for="apartment" class="checkbox">
+                                <input type="checkbox" name="apartment" id="apartment"/>
+                                <div class="checkbox">
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+
+                                    <div class="text">
+                                        Apartment
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                )
             }
             return output
         }
@@ -204,53 +253,272 @@ class MainSection extends React.Component{
             let output = null 
             if(this.state.showAdvanced){
                 output = (
-                    <div className ="AdvancedFilter">
-                        <div className = "AdvancedFilterRow1">
-                            <div className = "AdvancedContainer1">
-                                <p className = "AdvancedFilterText"> Property Reference</p>
-                                <input type = "text" className = "AdvancedInput"/>
-                            </div>
-                            <div className = "AdvancedContainer1">
-                                <p className = "AdvancedFilterText">Keywords</p>
-                                <input type = "text" placeholder = "Poll, Sea, View etc." className = "AdvancedInput"/>
-                            </div>
-                            <div className = "AdvancedContainer1">
-                                <p className = "AdvancedFilterText">Net m2:</p>
-                                <select className = "AdvancedSelector">
-                                    <option>OPTION1</option>
-                                    <option>OPTION</option>
-                                    <option>OPTION</option>
-                                    <option>OPTION</option>
-                                </select>
-                                <select className = "AdvancedSelector">
-                                    <option>OPTION</option>
-                                    <option>OPTION</option>
-                                    <option>OPTION</option>
-                                    <option>OPTION</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className = "AdvancedFilterRow2">
-                            
-                            <div className = "AdvancedContainer1">
-                                <p className = "AdvancedFilterText">Gross m2:</p>
-                                <select className = "AdvancedSelector">
-                                    <option></option>
-                                </select>
-                            </div>
-                            <div className = "AdvancedContainer1">
-                                <p className = "AdvancedFilterText">Net ₺/m2:</p>
-                                <select className = "AdvancedSelector">
-                                    <option></option>
-                                </select>
-                            </div>
-                            <div className = "AdvancedContainer1">
-                                <p className = "AdvancedFilterText">Sort By:</p>
-                                <input type = "text" className = "AdvancedInput" />
+                    <div class="form-opener multiple">
+                    <div class="multiple-forms row m-0">
+                        <div class="form-block first-input col-lg-6 col-12">
+                            <div class="form-group">
+                                <div class="title">
+                                    Property Reference
+                                </div>
+
+                                <div class="input">
+                                    <input type="text" />
+                                </div>
                             </div>
 
+                            <div class="form-group">
+                                <div class="title align-top mt-2">Property Reference</div>
+
+                                <div class="input">
+                                    <label for="private" class="checkbox">
+                                        <input type="checkbox" name="private" id="private" checked />
+                                        <div class="checkbox">
+                                            <div class="icon">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+
+                                            <div class="text">
+                                                Private
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <label for="company" class="checkbox">
+                                        <input type="checkbox" name="company" id="company" checked />
+                                        <div class="checkbox">
+                                            <div class="icon">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+
+                                            <div class="text">
+                                                Company
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <label for="offshore" class="checkbox">
+                                        <input type="checkbox" name="offshore" id="offshore" checked />
+                                        <div class="checkbox">
+                                            <div class="icon">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+
+                                            <div class="text">
+                                                Offshore
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <label for="developer" class="checkbox">
+                                        <input type="checkbox" name="developer" id="developer" checked />
+                                        <div class="checkbox">
+                                            <div class="icon">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+
+                                            <div class="text">
+                                                Developer
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <label for="other" class="checkbox">
+                                        <input type="checkbox" name="other" id="other" checked />
+                                        <div class="checkbox">
+                                            <div class="icon">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+
+                                            <div class="text">
+                                                Other
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="title">
+                                    Property Reference
+                                </div>
+
+                                <div class="input">
+                                    <select>
+                                        <option value="#">No Min</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+
+                                    <span class="seperator">-</span>
+
+                                    <select>
+                                        <option value="#">No Max</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="title">
+                                    Property Reference
+                                </div>
+
+                                <div class="input">
+                                    <input type="text" placeholder=" Poll, Sea View etc."/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-block col-lg-6 col-12">
+                            <div class="form-group select-group">
+                                <div class="title">
+                                    Build Size
+                                </div>
+
+                                <div class="input">
+                                    <select>
+                                        <option value="#">No Min</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+
+                                    <span class="seperator">-</span>
+
+                                    <select>
+                                        <option value="#">No Max</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group select-group">
+                                <div class="title">
+                                    Plot Size
+                                </div>
+
+                                <div class="input">
+                                    <select>
+                                        <option value="#">No Min</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+
+                                    <span class="seperator">-</span>
+
+                                    <select>
+                                        <option value="#">No Max</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group select-group">
+                                <div class="title">
+                                    <i class="fa fa-lira-sign"></i> / m2 build
+                                </div>
+
+                                <div class="input">
+                                    <select>
+                                        <option value="#">No Min</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+
+                                    <span class="seperator">-</span>
+
+                                    <select>
+                                        <option value="#">No Max</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group select-group">
+                                <div class="title">
+                                    <i class="fa fa-lira-sign"></i> / m2 plot
+                                </div>
+
+                                <div class="input">
+                                    <select>
+                                        <option value="#">No Min</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+
+                                    <span class="seperator">-</span>
+
+                                    <select>
+                                        <option value="#">No Max</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group select-group">
+                                <div class="title">
+                                    <i class="fa fa-lira-sign"></i> / m2 plot
+                                </div>
+
+                                <div class="input">
+                                    <select>
+                                        <option value="#">No Min</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+
+                                    <span class="seperator">-</span>
+
+                                    <select>
+                                        <option value="#">No Max</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group select-group">
+                                <div class="title">
+                                    Bathroom
+                                </div>
+
+                                <div class="input">
+                                    <select>
+                                        <option value="#">No Min</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+
+                                    <span class="seperator">-</span>
+
+                                    <select>
+                                        <option value="#">No Max</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group select-group">
+                                <div class="title">
+                                    Property Reference
+                                </div>
+
+                                <div class="input">
+                                    <select class="w-100">
+                                        <option value="#">Show highest price fist</option>
+                                        <option value="#">100</option>
+                                        <option value="#">200</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
                 )
             }
             return output;
@@ -294,7 +562,7 @@ class MainSection extends React.Component{
                     <div id="hero-slider" class="row">
                         <div class="hero-slider owl-carousel col-12 p-0">
                             <div class="item">
-                                <div class="slider-item row m-0 align-items-center" style= {{backgroundImage: `url(${coverImages[this.state.currentImageIndex]})`}}>
+                                <div class="slider-item row m-0 align-items-center" style= {{backgroundImage: this.state.cities === undefined ? '' : 'url('+'http://138.201.16.232'+this.state.cities[this.state.currentImageIndex].gallery[0]+')'}}>
                                     <div class="container">
                                         <div class="row align-items-center">
                                             <div class="slider-details col-lg-8 col-12 p-0">
@@ -305,21 +573,35 @@ class MainSection extends React.Component{
                                                     </div>
 
                                                     <div class="slider-buttons">
-                                                        <a href="#" class="slider-button">
-                                                            <div class="count">
-                                                                <span>234</span>
-                                                                PROPERTIES
-                                                            </div>
+                                                        
+                                                            {this.state.cities === undefined ? (
+                                                                <a href="#" class="slider-button">
+                                                                    <div class="count">
+                                                                        <span>234</span>
+                                                                        PROPERTIES
+                                                                    </div>
+                                                                    <div class="icon">
+                                                                        <img src="assets/images/icons/caret-arrow-next.png" alt="" />
+                                                                    </div>
+                                                                </a>
+                                                            ) : (
+                                                                <a href={"/City?city="+this.state.cities[this.state.currentImageIndex].id+"&page=1"} class="slider-button">
+                                                                    <div class="count">
+                                                                        <span>{this.state.cities[this.state.currentImageIndex].property_count}</span>
+                                                                        PROPERTIES
+                                                                    </div>
+                                                                    <div class="icon">
+                                                                    <img src={require("./../assets/images/icons/caret-arrow-next.png")} alt="" />
+                                                                    </div>
+                                                                </a>
+                                                            )}
 
-                                                            <div class="icon">
-                                                                <img src="assets/images/icons/caret-arrow-next.png" alt="" />
-                                                            </div>
-                                                        </a>
+                                                            
                                                     </div>
                                                 </div>
 
                                                 <div class="slider-desc col-12">
-                                                    Antalya's warm climate, beautiful beaches and luxury resorts make it the perfect place to spend a hard-earned break, which is why it’s the first place to spring to mind whenever Turks hear the words "summer holiday." With recent investments in golf courses bringing record numbers of visitors to the area, Antalya has a whole host of things to offer, making it an unbeatable holiday destination.
+                                                    {this.state.cities === undefined ? '' : this.state.cities[this.state.currentImageIndex].description}
                                                 </div>
 
                                                 <div class="mobile-slider-buttons d-lg-none">
@@ -364,28 +646,29 @@ class MainSection extends React.Component{
                                     <img src={require("./../assets/images/icons/map-marker.png")} alt="" />
                                 </div>
 
-                                <input type="text" placeholder="Start typing to select a location"></input>
+                                <input style={{width: '80%'}} type="text" placeholder="Start typing to select a location" onChange={this.getSearchResults}></input>
                             </div>
                         </div>
 
                         <div class="col-lg-8 col-3 row m-0 p-0 align-items-center">
                             <div class="form-box col-lg col-12 row m-0 align-items-center">
-                                <div class="form-item">
+                                <div class="form-item" onClick ={()=>this.showPropertyType()}>
                                     <div class="icon">
                                         <img src={require("./../assets/images/icons/home.png")} alt="" />
                                     </div>
 
                                     <div class="title">
-                                        3 Properyty Types
+                                        3 Property Types
                                     </div>
                                     <div class="icon">
                                         <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt="" />
                                     </div>
                                 </div>
+                                {PropertyTypes()}
                             </div>
 
                             <div class="form-box col-lg col-12 row m-0 align-items-center">
-                                <div class="form-item">
+                                <div class="form-item" onClick = {() => {this.showPrice()}}>
                                     <div class="icon">
                                         <img src={require("./../assets/images/icons/wallet.png")} alt="" />
                                     </div>
@@ -398,10 +681,11 @@ class MainSection extends React.Component{
                                         <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt=""/>
                                     </div>
                                 </div>
+                                {Price()}
                             </div>
 
                             <div class="form-box col-lg col-12 row m-0 align-items-center">
-                                <div class="form-item">
+                                <div class="form-item" >
                                     <div class="icon">
                                         <img src={require("./../assets/images/icons/bedroom.png")} alt="" />
                                     </div>
@@ -411,13 +695,15 @@ class MainSection extends React.Component{
                                     </div>
 
                                     <div class="icon">
-                                        <img src="./../assets/images/icons/chevron-arrow-down.png" alt=""/>
+                                        <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt=""/>
                                     </div>
+                                    
                                 </div>
+                                
                             </div>
                             
                             <div class="form-box col-lg col-12 row m-0 align-items-center">
-                                <div class="form-item">
+                                <div class="form-item" onClick = {()=>{this.showAdvanced()}}>
                                     <div class="icon">
                                         <img src={require("./../assets/images/icons/filter.png")} alt="" />
                                     </div>
@@ -430,12 +716,22 @@ class MainSection extends React.Component{
                                         <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt=""/>
                                     </div>
                                 </div>
+                                {AdvancedFilter()}
                             </div>
                             <button class="col-lg col-12">
                                 <span>2145</span> <img src={require("./../assets/images/icons/search.png")} class="img-fluid" alt="" />
                             </button>
                         </div>
                     </div>
+
+                    {this.state.searchLocationResults.length == 0 ? null : (
+                        <div class="search-input-results">
+                            {this.state.searchLocationResults.map(res => (
+                                <div onClick={() => {window.location = '/List?city='+res.cityId+'&district='+res.id+"&page=1"}}>{res.repr}</div>
+                            ))}
+                        </div>
+                    )}
+
                 </div>
             </div>
         );

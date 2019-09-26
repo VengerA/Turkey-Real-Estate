@@ -1,0 +1,82 @@
+/* Sidebar */
+aside#sidebar
+    padding: 0
+    div.sidebar-block
+        width: 100%
+        display: block
+        background-color: #fff    
+        padding: 20px 30px
+        div.info-blocks
+            border-radius: 4px
+            border: 1px solid #d5d7e2
+            background-color: #ffffff
+            padding: 10px 20px
+            div.block
+                font-size: 0
+                div.title
+                    display: inline-block
+                    width: 140px
+                    vertical-align: middle
+                    font-family: $gb
+                    font-size: 16px
+                    position: relative
+                    color: #1d1f42
+                    &:after
+                        content: ":"
+                        position: absolute
+                        top: 0px
+                        right: 0
+                div.content
+                    display: inline-block
+                    width: calc(100% - 140px)
+                    display: inline-block
+                    vertical-align: middle
+                    padding: 10px
+                    font-family: $gr
+                    font-size: 16px
+                    color: #1d1f42
+                    position: relative
+                    top: 2px
+        form.sidebar-form
+            border-radius: 4px
+            border: 1px solid #d5d7e2
+            background-color: #ffffff
+            padding: 20px
+            margin-bottom: 10px
+            div.form-title
+                font-family: $gs
+                font-size: 20px
+                color: #1d1f42
+                margin-bottom: 5px
+            div.form-desc
+                font-family: $gr
+                font-size: 16px
+                color: #848e99
+                line-height: 24px
+                margin-bottom: 10px
+            div.form-group
+                &:last-child
+                    margin-bottom: 0
+                input
+                    width: 100%
+                    height: 45px
+                    border: 1px solid #d5d7e2
+                    border-radius: 3px
+                    padding: 0px 15px
+                    font-family: $gs
+                    font-size: 14px
+                    color: #848e99
+                input::placeholder
+                    color: #848e99
+                    opacity: 1
+                button
+                    height: 45px
+                    width: 100%
+                    display: block
+                    background-color: #e33654
+                    border-radius: 3px
+                    border: none
+                    font-family: $gb
+                    font-size: 14px
+                    color: #fff
+

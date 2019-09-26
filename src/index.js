@@ -17,9 +17,9 @@ import ListPage from './components/ListPage';
 
 const routing = (
     <Router>
-        <Route exact path="/home" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/city" component={City} />
-        <Route path="/citizienship" component={CitizienshipPage} />
+        <Route path="/citizenship" component={CitizienshipPage} />
         <Route path="/property" component={PropertyPage} />
         <Route path="/AboutUs" component={AboutUs} />
         <Route path="/Gastronomy" component={GastronomyPage} />

@@ -9,6 +9,14 @@ import MainStore from './store'
 import axios from 'axios';
 import {observer } from 'mobx-react';
 
+function _get_array(c) {
+    let arr = []
+
+    for (let i = 1; i <= c + 1; i++)
+        arr.push(i)
+
+    return arr
+}
 
 //SAZAK ASAGIDAKI TAKEPROPERTY LISTI DUZELTIRSEN DIREK RENDER DUZELIYOR SADECE PAGING EKLEMEDIM KANKA ONU GOREMEDIM SENIN DOCS DA ONU EKLEYINCE CLICK EVENT EKLEMEN LAZIM ONU DA YINE AYNI SEKILDE SADECE PROPERTY LIST FONKSIYONUNU YAZSAN YETERLI OLUCAK KANKA CLICK EVENT DE TEKRARDAN CAGIRMAN LAZIM O KAFA
 // KANKA BIR DE BACKEND DEN FOTOGRAFLAR VAR MI YOK MU EMIN OLAMADIM O SEBEP ILE BACKEND DEN FOTOGRAFLAR GELICEGI ZAMAN DYNAMIC URL VERMEN GEREKICEK PROPERTYLERIN HEAD KISMINA
@@ -18,39 +26,94 @@ class CityPropertyList extends React.Component{
   constructor(props){
     super(props);
     this.state = {  
-        city: {
-        },
     }
   }
 
   componentWillMount () {
     // SAZAK TAKE PROPERTY LIST FONKSIYONU CLAISTIKTAN SONRA ASAGIADKI KODU DUZELTIRSEN KANKA DIREK ACILISTA ALICAK DATAYI SONRASINDA MAINSTORE ATICAK O DA ACILDIGINDA 1 KERE RENDER EDICEK TEMIIIIZZZ
-    // this.takePropertyList()
+    this.takePropertyList()
   }
 
   takePropertyList = () =>{
     // SAZAK BURDA NE GELMESI LAZIM GOREMEDIM FAKAT PROPERTY LIST I ALMAYI AMACLIYORUM BURADA 
     // BURDAKI RES.DATA YI ALMAK PROPERTY LISTI ALIP MAINSTORE A ATMAK ICIN 
     // BURADA CITY ID DE STORE DAN ALINIYOR ONCEKI SAYFADA CLICK EVENT E GORE ID YI MAINSTORE A ATMAYI PLANLAMISTIM FARKLI BIR SEKILDE DE OLABILIR SANA BIRAKIORUM O KISMI
-    axios.get("http://138.201.16.232/properties/search/?city=" + MainStore.clickedCity)
-    .then(res => {
-      MainStore.propertyList = res.data
-      console.log(MainStore.propertyList)
-    })
+    if (this.props.cityId === undefined) {
+        console.log("[!] CityID:", this.props.cityId, "DistrictID:", this.props.districtId)
+        return
+    }
+
+    if (MainStore.searchedDistrict === undefined || MainStore.searchedDistrict.id != Number(this.props.districtId)) {
+        axios.get("http://138.201.16.232/properties/districts/"+this.props.districtId+"/")
+            .then(res => {
+                MainStore.searchedDistrict = res.data
+                MainStore.searchedCity = undefined
+            })
+    }
+
+    let query = "?city=" + this.props.cityId
+
+    if (this.props.districtId !== undefined) {
+        query += "&district=" + this.props.districtId
+    } 
+
+    if (this.props.pageNumber !== undefined) {
+        query += "&page=" + this.props.pageNumber
+    }
+
+    axios.get("http://138.201.16.232/properties/search/"+query)
+        .then(res => {
+            MainStore.searchResults = res.data.results
+            MainStore.searchResultCount = res.data.count
+            console.log(MainStore.searchResults)
+        })
   }
 
+  goPrevious = () => {
+    if (this.props.pageNumber === undefined)
+        return
+    
+    if (Number(this.props.pageNumber) > 1)
+        window.location = "/List?city=" + this.props.cityId + "&district=" + this.props.districtId + "&page=" + (Number(this.props.pageNumber) - 1)
+  }
+
+  goNext = () => {
+    if (this.props.pageNumber === undefined)
+        window.location = "/List?city=" + this.props.cityId + "&district=" + this.props.districtId + "&page=2"
+
+    if (Number(this.props.pageNumber) > 1)
+        window.location = "/List?city=" + this.props.cityId + "&district=" + this.props.districtId + "&page=" + (Number(this.props.pageNumber) + 1)
+  }
+
+  createPaginatorArrows = () => {
+    let arrows = []
+
+    if (MainStore.searchResultCount === undefined)
+        return arrows
+    
+    for (let i = 1; i <= MainStore.searchResultCount/20 + 1; i++)
+        arrows.push((<a
+            href={"/List?city="+this.props.cityId+"&district="+this.props.districtId+"&page="+i}
+            class={Number(this.props.pageNumber) == i ? "button active" : "button"}
+        >{i}</a>))
+
+    return arrows
+  }  
+
   render(){
-    const propertyArr = MainStore.propertyList.map(item =>{
+    const propertyArr = MainStore.searchResults.map(item =>{
       let output = null 
       output = ((
         <div class="listing-block col-lg-4 col-md-6 col-12">
           <div class="listing-item">
               <figure class="listing-image">
-                  <a href="#i">
-                      <img src={require("./../assets/images/mockup-1.png")} class="img-fluid" alt="" />
+                  <a href={'/property?pid='+item.id}>
+                      <img src={item.cover_image} class="img-fluid" alt="" />
                   </a>
                   <a href="#cat" class="category">LUXURY VILLA</a>
-                  <span class="editor">EDITOR CHOICE</span>
+                  {item.is_editor_choice ? (
+                      <span class="editor">EDITOR CHOICE</span>
+                  ) : null}
                   <div class="favorite">
                       <div class="row m-0">
                           <div class="fav-btn">
@@ -63,31 +126,38 @@ class CityPropertyList extends React.Component{
               </figure>
               <div class="listing-details">
                   <div class="listing-header">
-                      <div class="location">Izmir/Çeşme</div>
+                      <div class="location">{item.district_name}/{item.subdistrict_name}</div>
                       <div class="name">
-                          <a href="#">Luxury Villa in Çeşme with private beach</a>
+                          <a href={'/property?pid='+item.id}>{item.bed_count} Bedroom {item.project_area} m<sup>2</sup> Apartment in {item.district_name}</a>
                       </div>
                   </div>
 
                   <div class="listing-body row align-items-center">
                       <div class="price col-6">
-                          $ 1.200.000
+                        {item.price_start.toLocaleString()} TRY
                       </div>
 
                       <div class="globe col-6">
-                          <img src={require("./../assets/images/icons/passport-icon.png")} alt="" />
+                          {item.is_citizenship_friendly ? <img src={require("./../assets/images/icons/passport-icon.png")} alt="" /> : null}
                       </div>
                   </div>
 
                   <div class="listing-footer row align-items-center">
-                      <div class="area col-8">
-                          <img src={require("./../assets/images/icons/home-area.png")} alt="" />
-                          140 m<sup>2</sup> / 550 m<sup>2</sup>
-                      </div>
+                      {item.construction_area === null ? (
+                        <div class="area col-8">
+                            <img src={require("./../assets/images/icons/home-area.png")} alt="" />
+                            {item.project_area} m<sup>2</sup>
+                        </div>
+                      ) : (
+                        <div class="area col-8">
+                            <img src={require("./../assets/images/icons/home-area.png")} alt="" />
+                            {item.construction_area} m<sup>2</sup> / {item.project_area} m<sup>2</sup>
+                        </div>
+                      )}
 
                       <div class="beds col-4">
                           <img src={require("./../assets/images/icons/bed-for-listing.png")} alt="" />
-                          4
+                          {item.bed_count === null ? '?' : item.bed_count}
                       </div>
                   </div>
               </div>
@@ -103,7 +173,11 @@ class CityPropertyList extends React.Component{
           <div class="container">
               <div class="row align-items-center">
                   <div class="listing-info col-lg-6 col-12">
-                      <span>Izmir</span> offers 234 properties
+                      {MainStore.searchedDistrict === undefined ? null : (
+                          <div>
+                            <span>{MainStore.searchedDistrict.city_name}, {MainStore.searchedDistrict.name}</span> offers {MainStore.searchedDistrict.property_count} properties
+                          </div>
+                      )}
                   </div>
                   <div class="listing-buttons col-lg-6 col-12">
                       <a href="#" class="change-view">Map View</a>
@@ -125,22 +199,22 @@ class CityPropertyList extends React.Component{
                       <div class="listing col-12 row">
                         {propertyArr}
                           <div class="system_pagination row align-items-center col-12">
-                                        <a href="#" class="arrow prev">
-                                            <img src={require("./../assets/images/icons/arrow-chevron-prev.png")} alt="" />
+                                        <a href="#" onClick={this.goPrevious} class="arrow prev">
+                                            <img
+                                                src={require("./../assets/images/icons/arrow-chevron-prev.png")}
+                                                alt="" 
+                                            />
                                         </a>
 
                                         <div class="numbers">
-                                            <a href="#" class="button">1</a>
-                                            <a href="#" class="button">2</a>
-                                            <a href="#" class="button active">3</a>
-                                            <a href="#" class="button">4</a>
-                                            <a href="#" class="button">5</a>
-                                            <a href="#" class="button">...</a>
-                                            <a href="#" class="button">20</a>
+                                            {this.createPaginatorArrows()}
                                         </div>
 
-                                        <a href="#" class="arrow next">
-                                            <img src={require("./../assets/images/icons/arrow-chevron-next.png")} alt="" />
+                                        <a href="#" onClick={this.goNext} class="arrow next">
+                                            <img 
+                                                src={require("./../assets/images/icons/arrow-chevron-next.png")} 
+                                                alt="" 
+                                            />
                                         </a>
                                     </div>
                                 </div>

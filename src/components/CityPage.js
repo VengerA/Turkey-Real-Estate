@@ -5,11 +5,12 @@ import Subscribe from './subscribe.js';
 import Footer from './footer.js';
 import Footer2 from './footer2.js';
 import CityIntroduction from './cityIntroduction.js';
-import PropertyList from './propertyList.js';
+import PropertyList from './propertyListCity.js';
 import HeaderSection from './headersSection';
 import Header3 from './header3';
 
 import './../App.css';
+import queryString from 'query-string'
 
 class City extends React.Component{
   constructor(props){
@@ -26,9 +27,12 @@ class City extends React.Component{
           <main id = "main" class = 'city'>
           <div id ="hero-placeholder">
             <Header3/>
-            <CityIntroduction/>
+            <CityIntroduction cityId={queryString.parse(this.props.location.search).city} />
           </div>    
-            <PropertyList/>
+            <PropertyList
+              cityId={queryString.parse(this.props.location.search).city}
+              pageNumber={queryString.parse(this.props.location.search).page}
+            />
             <ContactFooter/>
           </main>
           <footer id = "footer">
