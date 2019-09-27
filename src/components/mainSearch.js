@@ -15,21 +15,6 @@ import MainStore from './store.js';
 import {observer} from 'mobx-react';
 import axios from 'axios';
 
-import cover1 from '../static/antalya.jpg'
-import cover2 from '../static/bursa.jpg'
-import cover3 from '../static/istanbul.jpg'
-import cover4 from '../static/izmi4.jpg'
-import cover5 from '../static/ankara.jpg'
-
-
-const coverImages = [
-    cover1,
-    cover2,
-    cover3,
-    cover4,
-    cover5,
-]
-
 @observer
 class MainSection extends React.Component{
   constructor(props){
@@ -108,15 +93,15 @@ class MainSection extends React.Component{
 
     switchNextImage = () => {
         console.log(this.state.currentImageIndex)
-        let currentImageIndex = (this.state.currentImageIndex + 1) % coverImages.length
+        let currentImageIndex = (this.state.currentImageIndex + 1) % this.state.cities.length
         this.setState({ currentImageIndex, cCity: this.state.cities[currentImageIndex].name })
     }
 
     switchToImageByIndex = (indx) => {
         console.log('switch called with', indx)
 
-        if (indx < 0 || indx >= coverImages.length) {
-            console.log("Invalid image index:", indx, ", ( coverImages.length =", coverImages.length, ")")
+        if (indx < 0 || indx >= this.state.cities.length) {
+            console.log("Invalid image index:", indx, ", ( this.state.cities.length =", this.state.cities.length, ")")
             return
         }
 
@@ -610,7 +595,7 @@ class MainSection extends React.Component{
                 {/* <div className="SliderGallery">
                     <img
                         className="slider-cover-image"
-                        src={coverImages[this.state.currentImageIndex]}
+                        src={this.state.cities[this.state.currentImageIndex]}
                     />
                     <div className = "cityContent">
                         <p className= "cityContentHeader">WIDEN YOUR TURKEY</p>

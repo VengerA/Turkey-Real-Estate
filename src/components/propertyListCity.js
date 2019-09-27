@@ -9,10 +9,10 @@ import MainStore from './store'
 import axios from 'axios';
 import {observer } from 'mobx-react';
 
-function _get_array(c) {
+function _get_array(s, e) {
     let arr = []
 
-    for (let i = 1; i <= c + 1; i++)
+    for (let i = s; i <= e; i++)
         arr.push(i)
 
     return arr
@@ -81,12 +81,40 @@ class CityPropertyList extends React.Component{
     if (MainStore.searchResultCount === undefined)
         return arrows
     
-    for (let i = 1; i <= MainStore.searchResultCount/20 + 1; i++)
-        arrows.push((<a
-            href={"/City?city="+this.props.cityId+"&page="+i}
-            class={Number(this.props.pageNumber) == i ? "button active" : "button"}
-        >{i}</a>))
+    let numPages = (MainStore.searchResultCount / 20) + 1
+    let currentPage = Number(this.props.pageNumber)
 
+    if (numPages <= 5) {
+        for (let i = 1; i <= numPages; i++)
+            arrows.push((<a
+                href={"/city?city="+this.props.cityId+"&page="+i}
+                class={currentPage == i ? "button active" : "button"}
+            >{i}</a>))
+    } else {
+        if (currentPage >= numPages) {
+            _get_array(currentPage - 3, currentPage).forEach(i => {
+                arrows.push((<a
+                    href={"/city?city="+this.props.cityId+"&page="+i}
+                    class={currentPage == i ? "button active" : "button"}
+                >{i}</a>))
+            })
+        } else if (currentPage <= 1) {
+            _get_array(currentPage, currentPage + 3).forEach(i => {
+                arrows.push((<a
+                    href={"/city?city="+this.props.cityId+"&page="+i}
+                    class={currentPage == i ? "button active" : "button"}
+                >{i}</a>))
+            })
+        } else {
+            _get_array(currentPage - 1, currentPage + 1).forEach(i => {
+                arrows.push((<a
+                    href={"/city?city="+this.props.cityId+"&page="+i}
+                    class={currentPage == i ? "button active" : "button"}
+                >{i}</a>))
+            })
+        }
+    }
+    
     return arrows
   }  
 
