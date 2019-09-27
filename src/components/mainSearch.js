@@ -36,6 +36,7 @@ class MainSection extends React.Component{
         super(props);
         this.state = {  
             showPropertyTypes: false,
+            showBedroomTypes: false,
             showPrice: false,
             showAdvanced: false,
             PropertyTypes :[
@@ -106,6 +107,7 @@ class MainSection extends React.Component{
     }
 
     switchNextImage = () => {
+        console.log(this.state.currentImageIndex)
         let currentImageIndex = (this.state.currentImageIndex + 1) % coverImages.length
         this.setState({ currentImageIndex, cCity: this.state.cities[currentImageIndex].name })
     }
@@ -144,6 +146,12 @@ class MainSection extends React.Component{
         let show2 = this.state.showPropertyTypes
         this.setState({showPropertyTypes: !show2})
     } 
+
+    showBedroomType =() =>{
+        let show2 = this.state.showBedroomTypes
+        this.setState({showBedroomTypes: !show2})
+    } 
+
     showPrice = () =>{
         let show1 = this.state.showPrice
         this.setState({showPrice: !show1})
@@ -242,6 +250,79 @@ class MainSection extends React.Component{
                                     </div>
                                 </div>
                             </label>
+                        </div>
+                    </div>
+                )
+            }
+            return output
+        }
+        const BedroomTypes = () => {
+            let output = null
+            if(this.state.showBedroomTypes){
+                output = (
+                    <div class="form-opener">
+                        <div class="select">
+                            <label for="villa" class="checkbox">
+                                <input type="checkbox" name="villa" id="villa"/>
+                                <div class="checkbox">
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+
+                                    <div class="text">
+                                        1 Bedroom
+                                    </div>
+                                </div>
+                            </label>
+                            <label for="villa" class="checkbox">
+                                <input type="checkbox" name="villa" id="villa"/>
+                                <div class="checkbox">
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+
+                                    <div class="text">
+                                        2 Bedroom
+                                    </div>
+                                </div>
+                            </label>
+                            <label for="villa" class="checkbox">
+                                <input type="checkbox" name="villa" id="villa"/>
+                                <div class="checkbox">
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+
+                                    <div class="text">
+                                        3 Bedroom
+                                    </div>
+                                </div>
+                            </label>
+                            <label for="villa" class="checkbox">
+                                <input type="checkbox" name="villa" id="villa"/>
+                                <div class="checkbox">
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+
+                                    <div class="text">
+                                        4 Bedroom
+                                    </div>
+                                </div>
+                            </label>
+                            <label for="villa" class="checkbox">
+                                <input type="checkbox" name="villa" id="villa"/>
+                                <div class="checkbox">
+                                    <div class="icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+
+                                    <div class="text">
+                                        5+ Bedroom
+                                    </div>
+                                </div>
+                            </label>
+
                         </div>
                     </div>
                 )
@@ -685,7 +766,7 @@ class MainSection extends React.Component{
                             </div>
 
                             <div class="form-box col-lg col-12 row m-0 align-items-center">
-                                <div class="form-item" >
+                                <div class="form-item" onClick ={()=>this.showBedroomType()}>
                                     <div class="icon">
                                         <img src={require("./../assets/images/icons/bedroom.png")} alt="" />
                                     </div>
@@ -697,12 +778,12 @@ class MainSection extends React.Component{
                                     <div class="icon">
                                         <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt=""/>
                                     </div>
-                                    
+                                    {BedroomTypes()}
                                 </div>
                                 
                             </div>
                             
-                            <div class="form-box col-lg col-12 row m-0 align-items-center">
+                            {/* <div class="form-box col-lg col-12 row m-0 align-items-center">
                                 <div class="form-item" onClick = {()=>{this.showAdvanced()}}>
                                     <div class="icon">
                                         <img src={require("./../assets/images/icons/filter.png")} alt="" />
@@ -717,7 +798,7 @@ class MainSection extends React.Component{
                                     </div>
                                 </div>
                                 {AdvancedFilter()}
-                            </div>
+                            </div> */}
                             <button class="col-lg col-12">
                                 <span>2145</span> <img src={require("./../assets/images/icons/search.png")} class="img-fluid" alt="" />
                             </button>

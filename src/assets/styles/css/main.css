@@ -153,7 +153,7 @@ header#header {
           box-shadow: 0 2px 24px rgba(0, 0, 0, 0.2);
           border-radius: 3px;
           text-align: left;
-          z-index: 8;
+          z-index: 4;
           /* Form Group */ }
           header#header div.top-header div.header-buttons div.buttons div.landc-box:before {
             content: "";
@@ -302,15 +302,19 @@ header#header {
           font-size: 16px;
           color: #1d1f42;
           margin-left: 40px; }
+          header#header div.middle-header nav.header-menu ul li:hover div.opener-menu {
+            display: block; }
           header#header div.middle-header nav.header-menu ul li:first-child {
             margin-left: 0; }
           header#header div.middle-header nav.header-menu ul li a {
             display: block;
-            position: relative; }
+            position: relative;
+            line-height: 80px;
+            height: 80px; }
             header#header div.middle-header nav.header-menu ul li a:after {
               content: "";
               position: absolute;
-              bottom: -29px;
+              bottom: 0px;
               left: calc(50%);
               width: 0px;
               height: 4px;
@@ -320,6 +324,129 @@ header#header {
             header#header div.middle-header nav.header-menu ul li a:hover:after {
               left: 0;
               width: 100%; }
+          header#header div.middle-header nav.header-menu ul li div.opener-menu {
+            padding: 30px 0px;
+            position: absolute;
+            /* top: 160px; */
+            right: 0px;
+            width: 100%;
+            background-color: #fff;
+            z-index: 55;
+            display: none;
+            line-height: unset;
+            animation: frombottom 0.5s;
+            text-align: left;
+            overflow: hidden; }
+            header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area {
+              padding: 0px 30px !important; }
+              header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.section-title {
+                font-family: "Gilroy Bold";
+                font-size: 16px;
+                color: #1d1f42;
+                margin-bottom: 20px; }
+              header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.properties {
+                max-width: 300px; }
+                header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.properties ul {
+                  padding: 0;
+                  margin: 0;
+                  font-family: "Gilroy Medium";
+                  font-size: 0; }
+                  header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.properties ul li {
+                    margin: 0;
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                    display: block; }
+                    header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.properties ul li a {
+                      display: block;
+                      height: unset;
+                      line-height: unset; }
+                      header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.properties ul li a:after {
+                        display: none; }
+              header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.prices {
+                max-width: 300px; }
+                header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.prices ul {
+                  padding: 0;
+                  margin: 0; }
+                  header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.prices ul li {
+                    margin: 0;
+                    font-size: 14px;
+                    margin-bottom: 15px;
+                    width: 100%; }
+                    header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.prices ul li a {
+                      display: block;
+                      height: unset;
+                      line-height: unset;
+                      height: 40px;
+                      background-color: rgba(92, 95, 129, 0.5);
+                      border-radius: 3px;
+                      width: 100%;
+                      line-height: 40px;
+                      text-align: center;
+                      font-family: "Gilroy Bold";
+                      color: #fff;
+                      transition-duration: 0.5s; }
+                      header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.prices ul li a:hover {
+                        background-color: #252851;
+                        box-shadow: 0 8px 14px rgba(29, 31, 66, 0.5); }
+                      header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.prices ul li a:after {
+                        display: none; }
+                  header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-list div.prices ul li.active a {
+                    background-color: #252851;
+                    box-shadow: 0 8px 14px rgba(29, 31, 66, 0.5); }
+              header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.blog-title {
+                margin-bottom: 30px; }
+              header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-blogs div.blog-block a.blog-item {
+                display: block;
+                height: 175px;
+                background-image: linear-gradient(180deg, rgba(29, 31, 66, 0) 0%, rgba(29, 31, 66, 0.66) 100%);
+                border-radius: 3px;
+                position: relative;
+                line-height: unset;
+                background-size: cover; }
+                header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-blogs div.blog-block a.blog-item:after {
+                  display: none; }
+                header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-blogs div.blog-block a.blog-item figure.blog-image {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                  background-position: 50% 50%;
+                  border-radius: 3px; }
+                header#header div.middle-header nav.header-menu ul li div.opener-menu div.property-area div.property-blogs div.blog-block a.blog-item div.item-title {
+                  position: absolute;
+                  width: calc(100% - 60px);
+                  bottom: 20px;
+                  left: 20px;
+                  font-size: 14px;
+                  z-index: 4px;
+                  color: #fff; }
+            header#header div.middle-header nav.header-menu ul li div.opener-menu div.guide-list a.guide-block {
+              display: block;
+              position: relative;
+              height: unset; }
+              header#header div.middle-header nav.header-menu ul li div.opener-menu div.guide-list a.guide-block:after {
+                display: none; }
+              header#header div.middle-header nav.header-menu ul li div.opener-menu div.guide-list a.guide-block figure.guide-image {
+                height: 195px;
+                border-radius: 6px;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: cover; }
+              header#header div.middle-header nav.header-menu ul li div.opener-menu div.guide-list a.guide-block span.details {
+                position: absolute;
+                bottom: 30px;
+                left: 0;
+                padding: 10px 15px 10px 20px;
+                background-color: #fff;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                font-family: "Gilroy SemiBold";
+                font-size: 16px;
+                line-height: 16px;
+                color: #252627; }
   header#header div.middle-header.active {
     position: fixed;
     top: 0;
@@ -796,7 +923,7 @@ main#main {
           z-index: 4;
           box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
           border-radius: 3px;
-          display: block; }
+          display: none; }
           main#main div#hero-placeholder div.hero-search div.form-box div.form-opener:before {
             content: "";
             position: absolute;
@@ -835,6 +962,42 @@ main#main {
                 line-height: 18px;
                 margin-right: 5px; }
               main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.checkbox div.checkbox div.text {
+                display: inline-block;
+                vertical-align: middle;
+                color: #484b79;
+                font-family: "Gilroy SemiBold";
+                font-size: 16px; }
+          main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.radio {
+            margin: 0;
+            width: 100%;
+            height: 60px;
+            border-bottom: 1px solid rgba(54, 58, 108, 0.3); }
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.radio:last-child {
+              border-bottom: none; }
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.radio input {
+              display: none; }
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.radio input:checked ~ div.radio div.icon {
+              border-color: #363a6c;
+              background-color: #484b79;
+              color: #fff; }
+            main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.radio div.radio {
+              padding: 0px 15px;
+              text-align: left;
+              height: 60px;
+              line-height: 60px;
+              cursor: pointer; }
+              main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.radio div.radio div.icon {
+                width: 22px;
+                height: 22px;
+                display: inline-block;
+                vertical-align: middle;
+                border: 2px solid #9197b6;
+                border-radius: 100px;
+                font-size: 10px;
+                text-align: center;
+                line-height: 18px;
+                margin-right: 5px; }
+              main#main div#hero-placeholder div.hero-search div.form-box div.form-opener div.select label.radio div.radio div.text {
                 display: inline-block;
                 vertical-align: middle;
                 color: #484b79;
@@ -888,9 +1051,7 @@ main#main {
               text-transform: uppercase;
               color: #484b79; }
         main#main div#hero-placeholder div.hero-search div.form-box div.multiple {
-          right: -100%;
-          left: unset;
-          width: calc(100% * 5 + 5px); }
+          width: calc(100% * 3); }
           main#main div#hero-placeholder div.hero-search div.form-box div.multiple:before {
             left: unset;
             right: 28.5%; }
@@ -989,6 +1150,63 @@ main#main {
               margin: 0; }
               main#main div#hero-placeholder div.hero-search div.form-box div.multiple div.multiple-forms div.first-input div.form-group:first-child {
                 border-bottom: 1px solid rgba(54, 58, 108, 0.3); }
+        main#main div#hero-placeholder div.hero-search div.form-box div.advanced {
+          width: 500px;
+          left: -160px;
+          padding: 15px; }
+          main#main div#hero-placeholder div.hero-search div.form-box div.advanced div.block {
+            width: 100%;
+            display: block;
+            font-size: 0;
+            margin-bottom: 15px; }
+            main#main div#hero-placeholder div.hero-search div.form-box div.advanced div.block:last-child {
+              margin-bottom: 0; }
+            main#main div#hero-placeholder div.hero-search div.form-box div.advanced div.block div.title {
+              font-family: "Gilroy Bold";
+              font-size: 16px;
+              color: #484b79;
+              text-align: left;
+              width: 160px;
+              display: inline-block;
+              vertical-align: middle; }
+            main#main div#hero-placeholder div.hero-search div.form-box div.advanced div.block div.content {
+              vertical-align: middle;
+              display: inline-block;
+              width: calc(100% - 160px); }
+              main#main div#hero-placeholder div.hero-search div.form-box div.advanced div.block div.content div.seperator:after {
+                content: "-";
+                font-size: 14px;
+                display: inline-block;
+                position: absolute;
+                top: 9px;
+                right: -4px; }
+              main#main div#hero-placeholder div.hero-search div.form-box div.advanced div.block div.content select {
+                height: 40px;
+                border-radius: 4px;
+                border: 1px solid #e3e5ed;
+                width: 100%;
+                font-family: "Gilroy SemiBold";
+                font-size: 14px;
+                padding: 0px 15px;
+                color: #3a3a3a;
+                background-image: url("../../images/icons/blue-arrow-down.png");
+                background-repeat: no-repeat;
+                background-position: 95% 50%;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none; }
+              main#main div#hero-placeholder div.hero-search div.form-box div.advanced div.block div.content input {
+                height: 40px;
+                border-radius: 4px;
+                border: 1px solid #e3e5ed;
+                width: 100%;
+                font-family: "Gilroy SemiBold";
+                font-size: 14px;
+                color: #3a3a3a;
+                padding: 0px 15px; }
+              main#main div#hero-placeholder div.hero-search div.form-box div.advanced div.block div.content input::placeholder {
+                color: #3a3a3a;
+                opacity: 1; }
         main#main div#hero-placeholder div.hero-search div.form-box div.form-opener.active {
           display: block; }
       main#main div#hero-placeholder div.hero-search button {
@@ -2153,6 +2371,148 @@ main#main.property {
               white-space: nowrap;
               text-overflow: ellipsis; }
 
+/* Blog */
+main#main.blog {
+  /* Blog Header */
+  /* Blog Options */
+  /* Blog Listing */
+  /* Blog Content */
+  /* Pagination */ }
+  main#main.blog header#blog-header {
+    height: 450px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    padding: 45px 0px;
+    /* Page Title */
+    /* Blog Title */ }
+    main#main.blog header#blog-header .page-title {
+      color: #ffffff;
+      font-family: "Gilroy Light";
+      font-size: 60px;
+      font-weight: 300; }
+    main#main.blog header#blog-header .blog-title {
+      color: #ffffff;
+      font-family: "Gilroy Light";
+      font-size: 40px;
+      font-weight: 300; }
+  main#main.blog div.blog-options {
+    height: 100px;
+    border-bottom: 1px solid #d8d8d8;
+    /* Section Title */ }
+    main#main.blog div.blog-options div.section-title {
+      font-family: "Gilroy Bold";
+      font-size: 24px;
+      color: #1d1f42; }
+    main#main.blog div.blog-options div.section-options .nice-select {
+      float: none;
+      display: inline-block;
+      border: none;
+      border-radius: 3px;
+      max-width: 200px;
+      width: 100%; }
+      main#main.blog div.blog-options div.section-options .nice-select ul.list {
+        left: unset;
+        right: 0;
+        max-with: 200%;
+        width: 100%; }
+  main#main.blog div.blog-listing {
+    padding: 50px 0px !important; }
+    main#main.blog div.blog-listing div.blog-block div.blog-item {
+      margin-bottom: 30px; }
+      main#main.blog div.blog-listing div.blog-block div.blog-item figure.blog-image {
+        width: 100%;
+        height: 240px;
+        position: relative;
+        margin: 0; }
+        main#main.blog div.blog-listing div.blog-block div.blog-item figure.blog-image span.image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          border-radius: 3px 3px 0 0; }
+        main#main.blog div.blog-listing div.blog-block div.blog-item figure.blog-image a.tag {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          background-color: rgba(29, 31, 66, 0.5);
+          border-radius: 3px;
+          display: inline-block;
+          font-family: "Gilroy Bold";
+          font-size: 12px;
+          color: #fff;
+          padding: 8px 15px; }
+      main#main.blog div.blog-listing div.blog-block div.blog-item div.blog-details {
+        background-color: #fff;
+        border-radius: 3px 3px 0 0;
+        padding: 25px; }
+        main#main.blog div.blog-listing div.blog-block div.blog-item div.blog-details div.date {
+          font-family: "Gilroy SemiBold";
+          font-size: 14px;
+          color: #5c5f81;
+          margin-bottom: 10px; }
+        main#main.blog div.blog-listing div.blog-block div.blog-item div.blog-details h2.blog-title {
+          font-family: "Gilroy Bold";
+          font-size: 18px;
+          color: #1d1f42;
+          line-height: 30px; }
+        main#main.blog div.blog-listing div.blog-block div.blog-item div.blog-details div.name {
+          font-family: "Gilroy Bold";
+          font-size: 18px;
+          margin-bottom: 5px;
+          color: #1d1f42; }
+        main#main.blog div.blog-listing div.blog-block div.blog-item div.blog-details div.desc {
+          font-family: "Gilroy Regular";
+          font-size: 14px;
+          line-height: 24px;
+          color: #1d1f42; }
+  main#main.blog div.blog-content {
+    padding: 50px 0px !important;
+    font-family: "Gilroy Regular";
+    font-size: 18px;
+    line-height: 30px;
+    color: #1d1f42; }
+    main#main.blog div.blog-content strong {
+      font-family: "Gilroy Medium"; }
+    main#main.blog div.blog-content h1, main#main.blog div.blog-content h2, main#main.blog div.blog-content h3, main#main.blog div.blog-content h4, main#main.blog div.blog-content h5, main#main.blog div.blog-content h6 {
+      font-weight: bold; }
+  main#main.blog div.system_pagination {
+    justify-content: flex-end;
+    margin-bottom: 50px !important; }
+    main#main.blog div.system_pagination a.arrow {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 3px;
+      background-color: #ffffff;
+      text-align: center;
+      line-height: 40px; }
+    main#main.blog div.system_pagination div.numbers {
+      height: 40px;
+      padding: 5px 10px;
+      background-color: #fff;
+      border-radius: 3px;
+      margin: 0px 10px;
+      font-family: "Gilroy SemiBold";
+      font-size: 16px;
+      color: #1d1f42; }
+      main#main.blog div.system_pagination div.numbers a.button {
+        display: inline-block;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        padding: 0px 10px; }
+      main#main.blog div.system_pagination div.numbers a.active {
+        background-color: #e33654;
+        color: #fff;
+        box-shadow: 0 0 8px rgba(227, 54, 84, 0.61);
+        border-radius: 3px;
+        margin: 0px 5px; }
+
 /* Responsive */
 /* Min Width: 1199px */
 @media (min-width: 1199px) {
@@ -2345,6 +2705,13 @@ main#main.property {
     main#main div.help-form form.help-form textarea {
       margin-top: 1rem; }
 
+  main#main.blog header#blog-header {
+    height: 310px;
+    padding: 30px 0px; }
+    main#main.blog header#blog-header .page-title, main#main.blog header#blog-header .blog-title {
+      font-size: 22px;
+      line-height: 32px; }
+
   footer#footer div.top-footer {
     height: unset; }
     footer#footer div.top-footer div.top-footer-left {
@@ -2381,13 +2748,19 @@ main#main.property {
 @media (max-width: 767px) {
   main#main.city div#city-listing div.city-lists div#list-view div.listing div.listing-block div.listing-item figure.listing-image img {
     width: 100%; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  main#main.blog div.blog-listing div.blog-block div.blog-item figure.blog-image {
+    height: 200px; } }
 /* Max Width: 575px */
 @media (max-width: 575px) {
   main#main div#top-cities div.listing div.city-block a.city-item {
     text-align: center; }
     main#main div#top-cities div.listing div.city-block a.city-item div.city-info {
       left: unset;
-      width: 100%; } }
+      width: 100%; }
+
+  main#main.blog div.blog-listing div.blog-block {
+    padding: 0; } }
 /* Min Width: 1400px */
 @media (min-width: 1400px) {
   main#main div#hero-placeholder div.hero-search {

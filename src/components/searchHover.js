@@ -65,54 +65,75 @@ class SearchHover extends React.Component{
 
     
     render(){
-        const propertiesArr = this.state.cities.map(item => {
+        const propertiesArr = MainStore.cities.map(item => {
             console.log(item)
             let output = null 
             output = ((
-                <div onClick = {() => this.clickedCity(item)}>
-                    <a href = "/city" className = "propertiesTag">{item.name}</a>
-                </div>
-                
-                
+                <li><a href={"/City?city="+ item.id.toString() + "&page=1" }>Properties for Sale in {item.name}</a></li>     
             ))
             return output;
         })
-        const recommendArr = this.state.recomended.map(item => {
-            let output = null
+
+        const PriceArr = this.state.priceArr.map(item => {
+            console.log(item)
+            let output = null 
             output = ((
-                <div className = "RecommendedContainer">
-                    <p className = "RecommendedContent">{item.name}</p>
-                </div>
+                <li><a href="#">$ {item}</a></li>   
             ))
+            return output;
+        })
+        const recomandedArr = MainStore.cities.map(item => {
+            console.log(item)
+            let output = null 
+            output = ((
+                    <div class="blog-block col-lg col-12">
+                        <a href={"/City?city="+ item.id.toString() + "&page=1" } class="blog-item" style={{backgroundImage: 'url('+'http://138.201.16.232'+item.gallery[0]+')'}}>
+                            <figure class="blog-image" >
+                                </figure>
+                            <div class="item-title" >
+                                Best Luxury Property for sale in {item.name}
+                            </div>
+                        </a>
+                    </div>
+                ))
             return output;
         })
         
         return (
-            <div className= "SearchHover">
-                <div>
-                    <div className = "SearchHoverRow1">
-                        <p className ="SearchHoverHeader">TURKEY PROPERTIES</p>
-                        {propertiesArr}
-                    </div>
-                    <div className = "SearchHoverRow2">
-                        <p  className = "SearchHoverHeader">BY PRICE</p>
-                        <button className = "TagInput">750.000 - 950.000</button>
-                        <button  className = "TagInput">950.000 - 1.150.000</button>
-                        <button  className = "TagInput">1.150.000 - 1.350.000</button>
-                        <button  className = "TagInput">1.550.000 - 1.750.000</button>
-                        <button className = "TagInput">1.750.000 - 1.950.000</button>
-                    </div>
-                    <div className ="SearchHover4">
-                        <p className = "FutureHeader">MAP WILL BE ADDED HERE</p>
-                    </div>
-                </div>
-                <div className = "SearchHoverRow3">
-                    <p className = "SearchHoverHeader2">WE RECOMMEND</p>
-                    <div className = "SearchHoverContainer">
-                        {recommendArr}
+            <div class="opener-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="property-area col-12 p-0">
+                        <div class="property-list row col-12 p-0 m-0">
+                            <div class="properties col-lg-3 col-12">
+                                <div class="section-title">
+                                    TURKEY PROPERTIES
+                                </div>
+
+                                <ul>
+                                   {propertiesArr}
+                                </ul>
+                            </div>
+
+                            <div class="prices col-lg-3 col-12">
+                                <div class="section-title">
+                                    BY PRICE
+                                </div>
+
+                                <ul>
+                                    {PriceArr}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-title col-12">WE RECOMMEND</div>
+                            <div class="property-blogs row col-12 p-0 m-0">
+                                {recomandedArr}
+                            </div>
                     </div>
                 </div>
             </div>
+        </div>
         );
     }
 }

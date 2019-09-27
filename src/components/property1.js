@@ -13,13 +13,14 @@ import background from './../assets/images/big-property-image.png';
 import MainStore from './store';
 
 @observer
-class App extends React.Component{
+class Property1 extends React.Component{
   constructor(props){
     super(props);
     this.state = { 
         showEmail: false,
         showShare: false,
-        imgArr : [{item1:1},{tem2:2},{item3:3},{item:4}]
+        imgArr : [{item:0},{item:1},{item:2},{item:3},{item:4},{item:5}],
+        i: 0
     }
   }
 
@@ -104,19 +105,27 @@ class App extends React.Component{
                         </div>
     
                         <div class="content">
-                            {item}
+                            {item.name}
                         </div>
                     </div>
                 </div>
             )
             return output
           })
+          
+        //   this.props.property.gallery.map((path, index) => 
 
-        LittleImages = this.props.property.gallery.map((path, index) => (
-                <a href="#" class="little-image" data-lightbox="property-images" data-title={'Image ' + index}>
-                    <img src={'http://138.201.16.232' + path} alt="" />
+        LittleImages = () => { this.state.imgArr.map((item) => { 
+                
+                let output = ((<a href="#" class="little-image" data-lightbox="property-images" data-title={'Image ' + this.props.property.gallery[item.item].index}>
+                    <img src={'http://138.201.16.232' + this.props.property.gallery[item.item].path} alt="" />
                 </a>
-            ))
+                ))  
+                let current = this.state.i
+                this.setState({i: current + 1})
+                return output 
+            })
+        }
     }
 
     return (
@@ -124,7 +133,7 @@ class App extends React.Component{
             <figure class="property-image" style={{backgroundImage: 'url('+this.props.property.cover_image+')'}}>
                 <div class="property-buttons">
                     <div class="property-lightbox">
-                        {LittleImages}
+                        {LittleImages()}
                     </div>
 
                     <div class="property-actions">
@@ -247,4 +256,4 @@ class App extends React.Component{
   }
 }
 
-export default App;
+export default Property1;

@@ -17,6 +17,8 @@ class MainStore {
 
     @observable searchResultCount = undefined
 
+    @observable currentCurrency = "TRY"
+
     
 }
 

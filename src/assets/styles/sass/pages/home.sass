@@ -192,6 +192,7 @@ main#main
                         display: inline-block
                         vertical-align: middle
                     input
+                        width: calc(100%)
                         display: inline-block
                         vertical-align: middle
                         height: 100%
@@ -283,6 +284,42 @@ main#main
                                     color: #484b79
                                     font-family: $gs
                                     font-size: 16px
+                        label.radio
+                            margin: 0
+                            width: 100%
+                            height: 60px
+                            border-bottom: 1px solid rgba(54, 58, 108, 0.3)
+                            &:last-child
+                                border-bottom: none
+                            input
+                                display: none
+                            input:checked ~ div.radio div.icon
+                                border-color: #363a6c
+                                background-color: #484b79
+                                color: #fff
+                            div.radio
+                                padding: 0px 15px
+                                text-align: left
+                                height: 60px
+                                line-height: 60px
+                                cursor: pointer
+                                div.icon
+                                    width: 22px
+                                    height: 22px
+                                    display: inline-block
+                                    vertical-align: middle
+                                    border: 2px solid #9197b6
+                                    border-radius: 100px
+                                    font-size: 10px
+                                    text-align: center
+                                    line-height: 18px
+                                    margin-right: 5px
+                                div.text
+                                    display: inline-block
+                                    vertical-align: middle
+                                    color: #484b79
+                                    font-family: $gs
+                                    font-size: 16px
                     
                     div.slider
                         text-align: left
@@ -331,10 +368,9 @@ main#main
                             font-size: 16px
                             text-transform: uppercase
                             color: #484b79
+                    
                 div.multiple
-                    right: -100%
-                    left: unset
-                    width: calc(100% * 5 + 5px)
+                    width: calc(100% * 3)
                     &:before
                         left: unset
                         right: 28.5%
@@ -434,6 +470,64 @@ main#main
                                 margin: 0
                                 &:first-child
                                     border-bottom: 1px solid rgba(54, 58, 108, 0.3)
+                div.advanced
+                    width: 500px
+                    left: -160px
+                    padding: 15px
+                    div.block
+                        width: 100%
+                        display: block
+                        font-size: 0
+                        margin-bottom: 15px
+                        &:last-child
+                            margin-bottom: 0
+                        div.title
+                            font-family: $gb
+                            font-size: 16px
+                            color: #484b79
+                            text-align: left
+                            width: 160px
+                            display: inline-block
+                            vertical-align: middle
+                        div.content
+                            vertical-align: middle
+                            display: inline-block
+                            width: calc(100% - 160px)
+                            div.seperator
+                                &:after
+                                    content: "-"
+                                    font-size: 14px
+                                    display: inline-block
+                                    position: absolute
+                                    top: 9px
+                                    right: -4px
+                            select
+                                height: 40px
+                                border-radius: 4px
+                                border: 1px solid #e3e5ed
+                                width: 100%
+                                font-family: $gs
+                                font-size: 14px
+                                padding: 0px 15px
+                                color: #3a3a3a
+                                background-image: url('../../images/icons/blue-arrow-down.png')
+                                background-repeat: no-repeat
+                                background-position: 95% 50%
+                                appearance: none
+                                -webkit-appearance: none
+                                -moz-appearance: none
+                            input
+                                height: 40px
+                                border-radius: 4px
+                                border: 1px solid #e3e5ed
+                                width: 100%
+                                font-family: $gs
+                                font-size: 14px
+                                color: #3a3a3a
+                                padding: 0px 15px
+                            input::placeholder
+                                color: #3a3a3a
+                                opacity: 1
                 div.form-opener.active
                     display: block
             button

@@ -255,15 +255,20 @@ header#header
                     font-size: 16px
                     color: #1d1f42
                     margin-left: 40px
+                    &:hover
+                        div.opener-menu
+                            display: block
                     &:first-child
                         margin-left: 0
                     a
                         display: block
                         position: relative
+                        line-height: 80px
+                        height: 80px
                         &:after
                             content: ""
                             position: absolute
-                            bottom: -29px
+                            bottom: 0px
                             left: calc(50%)
                             width: 0px
                             height: 4px
@@ -274,6 +279,134 @@ header#header
                             &:after
                                 left: 0
                                 width: 100%
+                    div.opener-menu
+                        padding: 30px 0px
+                        position: absolute
+                        top: 160px
+                        right: 0px
+                        width: 100%
+                        background-color: #fff
+                        z-index: 55
+                        display: none
+                        line-height: unset
+                        animation: frombottom .5s
+                        text-align: left
+                        overflow: hidden
+                        div.property-area
+                            padding: 0px 30px !important
+                            div.property-list
+                                div.section-title
+                                    font-family: $gb
+                                    font-size: 16px
+                                    color: #1d1f42
+                                    margin-bottom: 20px
+                                div.properties
+                                    max-width: 300px
+                                    ul
+                                        padding: 0
+                                        margin: 0
+                                        font-family: $gm
+                                        font-size: 0
+                                        li
+                                            margin: 0
+                                            font-size: 16px
+                                            margin-bottom: 10px
+                                            display: block
+                                            a
+                                                display: block
+                                                height: unset
+                                                line-height: unset
+                                                &:after
+                                                    display: none
+                                div.prices
+                                    max-width: 300px
+                                    ul
+                                        padding: 0
+                                        margin: 0
+                                        li
+                                            margin: 0
+                                            font-size: 14px
+                                            margin-bottom: 15px
+                                            width: 100%
+                                            a
+                                                display: block
+                                                height: unset
+                                                line-height: unset
+                                                height: 40px
+                                                background-color: rgba(92, 95, 129, 0.5)
+                                                border-radius: 3px
+                                                width: 100%
+                                                line-height: 40px
+                                                text-align: center
+                                                font-family: $gb
+                                                color: #fff
+                                                transition-duration: .5s
+                                                &:hover
+                                                    background-color: #252851
+                                                    box-shadow: 0 8px 14px rgba(29, 31, 66, 0.5)
+                                                &:after
+                                                    display: none
+                                        li.active
+                                            a
+                                                background-color: #252851
+                                                box-shadow: 0 8px 14px rgba(29, 31, 66, 0.5)
+                            div.blog-title
+                                margin-bottom: 30px
+                            div.property-blogs
+                                div.blog-block
+                                    a.blog-item
+                                        display: block
+                                        height: 175px
+                                        background-image: linear-gradient(180deg, rgba(29, 31, 66, 0) 0%, rgba(29, 31, 66, 0.66) 100%)
+                                        border-radius: 3px
+                                        position: relative
+                                        line-height: unset
+                                        &:after
+                                            display: none
+                                        figure.blog-image
+                                            position: absolute
+                                            top: 0
+                                            left: 0
+                                            width: 100%
+                                            height: 100%
+                                            background-size: cover
+                                            background-repeat: no-repeat
+                                            background-position: 50% 50%
+                                            border-radius: 3px
+                                        div.item-title
+                                            position: absolute
+                                            width: calc(100% - 60px)
+                                            bottom: 20px
+                                            left: 20px
+                                            font-size: 14px
+                                            z-index: 4px
+                                            color: #fff
+                        div.guide-list
+                            a.guide-block
+                                display: block
+                                position: relative
+                                height: unset
+                                &:after
+                                    display: none
+                                figure.guide-image
+                                    height: 195px
+                                    border-radius: 6px
+                                    background-repeat: no-repeat
+                                    background-position: 50% 50%
+                                    background-size: cover
+                                span.details
+                                    position: absolute
+                                    bottom: 30px
+                                    left: 0
+                                    padding: 10px 15px 10px 20px
+                                    background-color: #fff
+                                    border-top-right-radius: 5px
+                                    border-bottom-right-radius: 5px
+                                    font-family: $gs
+                                    font-size: 16px
+                                    line-height: 16px
+                                    color: #252627
+
     div.middle-header.active
         position: fixed
         top: 0
