@@ -34,7 +34,7 @@ class Home extends React.Component{
           <HeaderSection/>
           <main id="main" class="home">
             <MainSearch/>
-            <Featured2/>
+            <Featured1/>
             <Introduction/>
             <ContactFooter/>
           </main>

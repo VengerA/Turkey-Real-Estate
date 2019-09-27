@@ -218,5 +218,40 @@
         }, 1000);
         return false;
     });
+
+    $(".nice-select").niceSelect();
+    
+    var middle_header = $("header#header div.middle-header");
+
+    var sidebarBLOCK = $("aside#sidebar div.sidebar-block");
+
+    // SIDEBAR BLOCK
+    $.sidebarB = function(){
+        var windowH      = $(window).height();
+        sidebarBLOCK.css("height", windowH + "px");
+    }
+
+    $.sidebarB();
+    
+    $(window).bind("scroll", function(){
+        $.sidebarB();
+        if ($("body").hasClass('property')) {
+            var all_height = $("header#header").height() + $("main#main.property").height();
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > 200) {
+                middle_header.addClass('active');
+                sidebarBLOCK.css({
+                    "position": "absolute",
+                    "top": scrollTop + "px"
+                });
+            } else {
+                middle_header.removeClass('active');
+                sidebarBLOCK.css({
+                    "position": "relative",
+                    "top": 0 + "px"
+                });
+            }
+        }
+    });
       
 })( jQuery );

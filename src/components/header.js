@@ -4,20 +4,148 @@ import React from 'react';
 import './../App.css';
 
 class Header extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {  
-      chosenLan: "USD",
-      showCurrency : false
+    constructor(props){
+        super(props);
+        this.state = {  
+        chosenLan: "USD",
+        showCurrency : false,
+        showDollar: false,
+        showTukishLira: true, 
+        showEuro: false,
+        isFirst: true 
+        }
     }
-  }
 
-  showCurrency = () => {
+    showCurrency = () => {
     let current = this.state.showCurrency 
     this.setState({showCurrency : !current})
-  } 
+    } 
+
+    changeToDollar = (id) => {
+        console.log(id)
+        console.log(this.state.isFirst)
+        if(!this.state.isFirst){
+            this.setState({isFirst: true})
+        }
+        else {
+            if(id === 1){
+                this.setState({showDollar: true })
+                this.setState({showTukishLira: false })
+                this.setState({showEuro: false})
+                this.setState({isFirst: false})
+            }
+            else if(id === 2){
+                this.setState({showDollar: false })
+                this.setState({showTukishLira: true })
+                this.setState({showEuro: false })
+                this.setState({isFirst: false})
+            }
+            else {
+                this.setState({showDollar: false })
+                this.setState({showTukishLira: false })
+                this.setState({showEuro: true })
+                this.setState({isFirst: false})
+            }
+        }
+    }
+    
+    // sendActivate = (id) => {
+    //     let output = null
+    //     if(id === 1){
+    //         if(this.state.showDollar){
+    //             output = "choice activate"
+    //         }
+    //         return output
+    //     }
+    //     else if(id === 2){
+    //         if(this.state.showTukishLira){
+    //             output = "choice activate"
+    //             console.log(output)
+    //         }
+    //         return output
+    //     }
+    //     else {
+    //         if(this.state.showEuro){
+    //             output = "choice activate"
+    //         }
+    //         return output
+    //     }
+    // }
 
   render(){
+    const showCurrency = () => {
+        let output = null
+        if(this.state.isFirst){
+            output  =((
+                <div class="select">
+                    <div class= "choice active" onClick ={() => this.changeToDollar(1)}  data-value="$ USD">
+                        <span class="currency" >
+                            $
+                        </span>
+                        <span class="name" onClick ={() => this.changeToDollar(3)}>Dolar</span>
+                        <span class="arrow"><i class="fa fa-chevron-down"></i></span>
+                    </div>
+
+                    <div class="choice active" onClick ={() => this.changeToDollar(2)}  data-value='₺ TRY'>
+                        <span class="currency">
+                            ₺
+                        </span>
+                        <span class="name" onClick ={() => this.changeToDollar(3)}>TRY</span>
+                        <span class="arrow"><i class="fa fa-chevron-down"></i></span>
+                    </div>
+                    <div class="choice active"   data-value='£ EURO'>
+                        <span class="currency">
+                            £
+                        </span>
+                        <span  class="name" onClick ={() => this.changeToDollar(3)}>EURO</span>
+                        <span class="arrow"><i class="fa fa-chevron-down"></i></span>
+                    </div>
+                </div>
+            ))
+        }
+        else{
+            if(this.state.showDollar){
+                output = ((
+                    <div class="select">
+                        <div class= "choice active" onClick ={() => this.changeToDollar()}  data-value="$ USD">
+                            <span class="currency" >
+                                $
+                            </span>
+                            <span class="name">Dolar</span>
+                            <span class="arrow"><i class="fa fa-chevron-down"></i></span>
+                        </div>
+                    </div>
+                ))
+            }
+            else if(this.state.showTukishLira){
+                output = ((
+                    <div class="select">
+                         <div class="choice active" onClick ={() => this.changeToDollar()}  data-value='₺ TRY'>
+                            <span class="currency">
+                                ₺
+                            </span>
+                            <span class="name">TRY</span>
+                            <span class="arrow"><i class="fa fa-chevron-down"></i></span>
+                        </div>
+                    </div>
+                ))
+            }
+            else if(this.state.showEuro) {
+                output = ((
+                    <div class="select">
+                        <div class="choice active" onClick ={() => this.changeToDollar()}  data-value='£ EURO'>
+                            <span class="currency">
+                                £
+                            </span>
+                            <span class="name">EURO</span>
+                            <span class="arrow"><i class="fa fa-chevron-down"></i></span>
+                        </div>
+                    </div>
+                ))
+            }
+        }
+        return output
+    }
     const changeLanCur = () => {
         let output = null 
         if(this.state.showCurrency){
@@ -27,16 +155,16 @@ class Header extends React.Component{
                     <label class="title">Choose Language</label>
 
                     <div class="select">
-                        <div class="choice active" data-flag="assets/images/icons/flags/english.png">
+                        <div class="choice active" data-flag={require("./../assets/images/icons/flags/english.png")}>
                             <span class="icon">
-                                <img src="assets/images/icons/flags/english.png" alt="" />
+                                <img src={require("./../assets/images/icons/flags/english.png")}alt="" />
                             </span>
                             <span class="name">English</span>
                             <span class="arrow"><i class="fa fa-chevron-down"></i></span>
                         </div>
-                        <div class="choice" data-flag="assets/images/icons/flags/turkish.png">
+                        <div class="choice" data-flag={require("./../assets/images/icons/flags/turkish.png")}>
                             <span class="icon">
-                                <img src="assets/images/icons/flags/turkish.png" alt="" />
+                                <img src={require("./../assets/images/icons/flags/turkish.png")} alt="" />
                             </span>
                             <span class="name">Turkish</span>
                             <span class="arrow"><i class="fa fa-chevron-down"></i></span>
@@ -53,24 +181,8 @@ class Header extends React.Component{
 
                 <div class="form-group currency-group">
                     <label class="title">Choose Currency</label>
-
-                    <div class="select">
-                        <div class="choice active" data-value="$ USD">
-                            <span class="currency">
-                                $
-                            </span>
-                            <span class="name">Dolar</span>
-                            <span class="arrow"><i class="fa fa-chevron-down"></i></span>
-                        </div>
-
-                        <div class="choice" data-value='₺ TRY'>
-                            <span class="currency">
-                                ₺
-                            </span>
-                            <span class="name">TRY</span>
-                            <span class="arrow"><i class="fa fa-chevron-down"></i></span>
-                        </div>
-                    </div>
+                    {showCurrency()}
+                   
                 </div>
                 <div class="form-group">
                     <button type="submit">CHANGE</button>

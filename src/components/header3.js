@@ -500,7 +500,7 @@ class Header3 extends React.Component{
                     </div>
                 </div>
                 
-                <div class="form-box col-lg col-12 row m-0 align-items-center">
+                {/* <div class="form-box col-lg col-12 row m-0 align-items-center">
                     <div class="form-item" onClick = {() => {this.showAdvanced()}}>
                         <div class="icon">
                             <img src={require("./../assets/images/icons/filter.png")} alt="" />
@@ -515,7 +515,7 @@ class Header3 extends React.Component{
                         </div>
                     </div>
                     {showAdvanced()}
-                </div>
+                </div> */}
 
                 <button class="col-lg-2 col-12">
                     <span>2145</span> <img src={require("./../assets/images/icons/search.png")} class="img-fluid" alt="" />
