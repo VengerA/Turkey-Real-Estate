@@ -26,6 +26,7 @@ class CityPropertyList extends React.Component{
   constructor(props){
     super(props);
     this.state = {  
+        resultSortMethod: undefined,
     }
   }
 
@@ -61,11 +62,48 @@ class CityPropertyList extends React.Component{
         query += "&page=" + this.props.pageNumber
     }
 
+    query += '&dateSorting=desc'
+
     axios.get("http://138.201.16.232/properties/search/"+query)
         .then(res => {
             MainStore.searchResults = res.data.results
             MainStore.searchResultCount = res.data.count
-            console.log(MainStore.searchResults)
+        })
+  }
+
+  updateSorting = (e) => {
+    this.setState({resultSortMethod: e.target.value})
+  }
+
+  updatePropertyListOnSortingChange = (tag) => {
+    let query = "?city=" + this.props.cityId
+
+    if (this.props.districtId !== undefined) {
+        query += "&district=" + this.props.districtId
+    } 
+
+    if (this.props.pageNumber !== undefined) {
+        query += "&page=" + this.props.pageNumber
+    }
+
+    if (tag == 'new')
+        query += '&dateSorting=desc'
+    else if (tag == 'new_last')
+        query += '&dateSorting=asc'
+    else if (tag == 'cheap')
+        query += '&priceSorting=asc'
+    else if (tag == 'exp')
+        query += '&priceSorting=desc'
+    else
+        return
+
+    MainStore.searchResultCount = 0
+    MainStore.searchResults = []
+
+    axios.get("http://138.201.16.232/properties/search/"+query)
+        .then(res => {
+            MainStore.searchResults = res.data.results
+            MainStore.searchResultCount = res.data.count
         })
   }
 
@@ -210,11 +248,11 @@ class CityPropertyList extends React.Component{
                   <div class="listing-buttons col-lg-6 col-12">
                       <a href="#" class="change-view">Map View</a>
 
-                      <select name="" id="">
-                          <option value="#">Show New First</option>
-                          <option value="#">Show Latest First</option>
-                          <option value="#">Show Cheapest First</option>
-                          <option value="#">Show Cheapest Last</option>
+                      <select value={this.state.resultSortMethod} onChange={this.updateSorting}>
+                          <option value="new" onClick={this.updatePropertyListOnSortingChange.bind(this, 'new')}>Show Latest First</option>
+                          <option value="new_last" onClick={this.updatePropertyListOnSortingChange.bind(this, 'new_last')}>Show Latest Last</option>
+                          <option value="cheap" onClick={this.updatePropertyListOnSortingChange.bind(this, 'cheap')}>Show Cheapest First</option>
+                          <option value="exp" onClick={this.updatePropertyListOnSortingChange.bind(this, 'exp')}>Show Cheapest Last</option>
                       </select>
                   </div>
               </div>
