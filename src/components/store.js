@@ -25,6 +25,11 @@ class MainStore {
 
     @observable EuroBase = null
 
+    @observable showDollar = false
+    @observable showTukishLira = true
+    @observable showEuro = false 
+
+
     
 }
 

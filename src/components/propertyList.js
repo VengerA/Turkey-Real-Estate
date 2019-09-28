@@ -30,10 +30,20 @@ class CityPropertyList extends React.Component{
     }
   }
 
-  componentWillMount () {
+    takeCurrencyRates = () => {
+        axios.get("https://api.exchangeratesapi.io/latest?base=TRY ")
+        .then(res => {
+            console.log(res.data.rates.USD)
+            MainStore.DolarBase = res.data.rates.USD
+            MainStore.EuroBase = res.data.rates.EUR
+        })
+    }
+
+    componentWillMount () {
     // SAZAK TAKE PROPERTY LIST FONKSIYONU CLAISTIKTAN SONRA ASAGIADKI KODU DUZELTIRSEN KANKA DIREK ACILISTA ALICAK DATAYI SONRASINDA MAINSTORE ATICAK O DA ACILDIGINDA 1 KERE RENDER EDICEK TEMIIIIZZZ
-    this.takePropertyList()
-  }
+        this.takePropertyList()
+        this.takeCurrencyRates()
+    }
 
   takePropertyList = () =>{
     // SAZAK BURDA NE GELMESI LAZIM GOREMEDIM FAKAT PROPERTY LIST I ALMAYI AMACLIYORUM BURADA 
@@ -164,7 +174,23 @@ class CityPropertyList extends React.Component{
     }
     
     return arrows
-  }  
+    }  
+    Currency = (currency) => {
+        let output = null 
+        if(MainStore.currentCurrency === "TRY"){
+            output  = currency.toLocaleString() + " " + MainStore.currentCurrency
+        }
+        else if(MainStore.currentCurrency === "USD"){
+            output  = (currency*MainStore.DolarBase).toLocaleString() + " " + MainStore.currentCurrency
+        }
+        else{
+            output  = (currency*MainStore.EuroBase).toLocaleString() + " " + MainStore.currentCurrency
+        }
+        console.log(currency)
+        console.log(MainStore.DolarBase)
+        console.log(currency*MainStore.DolarBase)
+        return output
+    }
 
   render(){
     const propertyArr = MainStore.searchResults.map(item =>{
@@ -200,7 +226,7 @@ class CityPropertyList extends React.Component{
 
                   <div class="listing-body row align-items-center">
                       <div class="price col-6">
-                        {item.price_start.toLocaleString()} TRY
+                        {this.Currency(item.price_start)}
                       </div>
 
                       <div class="globe col-6">

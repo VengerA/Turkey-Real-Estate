@@ -3,15 +3,17 @@ import React from 'react';
 
 import './../App.css';
 
+import {observer} from 'mobx-react';
+
+import MainStore from './store';
+
+@observer
 class Header extends React.Component{
     constructor(props){
         super(props);
         this.state = {  
         chosenLan: "USD",
         showCurrency : false,
-        showDollar: false,
-        showTukishLira: true, 
-        showEuro: false,
         isFirst: false 
         }
     }
@@ -29,22 +31,25 @@ class Header extends React.Component{
         }
         else {
             if(id === 1){
-                this.setState({showDollar: true })
-                this.setState({showTukishLira: false })
-                this.setState({showEuro: false})
+                MainStore.showDollar =true
+                MainStore.showTukishLira= false
+                MainStore.showEuro= false
                 this.setState({isFirst: false})
+                MainStore.currentCurrency = "USD"
             }
             else if(id === 2){
-                this.setState({showDollar: false })
-                this.setState({showTukishLira: true })
-                this.setState({showEuro: false })
+                MainStore.showDollar = false
+                MainStore.showTukishLira= true
+                MainStore.showEuro= false
                 this.setState({isFirst: false})
+                MainStore.currentCurrency = "TRY"
             }
             else {
-                this.setState({showDollar: false })
-                this.setState({showTukishLira: false })
-                this.setState({showEuro: true })
+                MainStore.showDollar = false
+                MainStore.showTukishLira= false
+                MainStore.showEuro= true
                 this.setState({isFirst: false})
+                MainStore.currentCurrency = "EUR"
             }
         }
     }
@@ -104,7 +109,7 @@ class Header extends React.Component{
             ))
         }
         else{
-            if(this.state.showDollar){
+            if(MainStore.showDollar){
                 output = ((
                     <div class="select">
                         <div class= "choice active" onClick ={() => this.changeToDollar()}  data-value="$ USD">
@@ -117,7 +122,7 @@ class Header extends React.Component{
                     </div>
                 ))
             }
-            else if(this.state.showTukishLira){
+            else if(MainStore.showTukishLira){
                 output = ((
                     <div class="select">
                          <div class="choice active" onClick ={() => this.changeToDollar()}  data-value='₺ TRY'>
@@ -130,7 +135,7 @@ class Header extends React.Component{
                     </div>
                 ))
             }
-            else if(this.state.showEuro) {
+            else if(MainStore.showEuro) {
                 output = ((
                     <div class="select">
                         <div class="choice active" onClick ={() => this.changeToDollar()}  data-value='£ EURO'>
@@ -184,9 +189,9 @@ class Header extends React.Component{
                     {showCurrency()}
                    
                 </div>
-                <div class="form-group">
+                {/* <div class="form-group">
                     <button type="submit">CHANGE</button>
-                </div>
+                </div> */}
             </div>
             )
         }
