@@ -37,6 +37,10 @@ class MainSection extends React.Component{
             imageSwitchTimer: undefined,
             cities : undefined,
             searchLocationResults: [],
+            selectedCityID: undefined,
+            selectedDistrictID: undefined,
+            selectedPlaceholder: undefined,
+            __searchbarinput: '',
         }
     }
     componentDidMount() {
@@ -49,6 +53,25 @@ class MainSection extends React.Component{
 
     componentWillMount() {
         this.getCities()
+    }
+
+    constructLocationObjectArray = () => {
+        let results = []
+
+        if (this.state.cities === undefined)
+            return []
+
+        this.state.cities.forEach(city => {
+            city.districts.forEach(district => {
+                results.push({
+                    repr: city.name + ", " + district[1],
+                    cityId: city.id,
+                    id: district[0]
+                })
+            })
+        })
+
+        return results
     }
 
     getCities = () => {
@@ -64,13 +87,15 @@ class MainSection extends React.Component{
     }
 
     getSearchResults = (event) => {
+        this.setState({__searchbarinput: event.target.value})
+
         var vm = this
         var query = event.target.value.trim()
 
         console.log('query: "' + query + '"')
 
         if (query == "") {
-            this.setState({ searchLocationResults: [] })
+            this.setState({ searchLocationResults: this.constructLocationObjectArray() })
             return
         }
 
@@ -91,15 +116,50 @@ class MainSection extends React.Component{
         })
     }
 
+    updateSearchResults = (event) => {
+        var query = event.target.value.trim()
+
+        if (query == "") {
+            this.setState({ searchLocationResults: this.constructLocationObjectArray() })
+        } else {
+            this.getSearchResults(event)
+        }
+    }
+
+    clearSearchResults = () => {
+        this.setState({ searchLocationResults: [] })
+    }
+
+    updateSelectedLocation = (cid, did, ph) => {
+        console.log(cid, did,ph)
+
+        this.setState({
+            selectedCityID: cid,
+            selectedDistrictID: did,
+            selectedPlaceholder: ph,
+            __searchbarinput: ''
+        })
+
+        this.clearSearchResults()
+        console.log(this.state.selectedPlaceholder)
+    }
+
+    onSearchHandler = () => {
+        if (this.state.selectedCityID !== undefined) {
+            if (this.state.selectedDistrictID !== undefined) {
+                window.location = '/List?city='+this.state.selectedCityID+'&district='+this.state.selectedDistrictID+'&page=1'
+            } else {
+                window.location = '/City?city='+this.state.selectedCityID+'&page=1'
+            }
+        }
+    }
+
     switchNextImage = () => {
-        console.log(this.state.currentImageIndex)
         let currentImageIndex = (this.state.currentImageIndex + 1) % this.state.cities.length
         this.setState({ currentImageIndex, cCity: this.state.cities[currentImageIndex].name })
     }
 
     switchToImageByIndex = (indx) => {
-        console.log('switch called with', indx)
-
         if (indx < 0 || indx >= this.state.cities.length) {
             console.log("Invalid image index:", indx, ", ( this.state.cities.length =", this.state.cities.length, ")")
             return
@@ -119,7 +179,6 @@ class MainSection extends React.Component{
                 vm.switchNextImage()
             }, 4000)
         })
-        console.log(this.state.cCity)
     }
 
     handlePropertyType = (item) => {
@@ -709,10 +768,14 @@ class MainSection extends React.Component{
                             <div class="title">Property Turkey for sale</div>
                             <div class="input">
                                 <div class="icon">
-                                    <img src={require("./../assets/images/icons/map-marker.png")} alt="" />
+                                    {this.state.searchLocationResults.length == 0 ? (
+                                        <img src={require("./../assets/images/icons/map-marker.png")} alt="" />
+                                    ) : (
+                                        <div onClick={this.clearSearchResults} style={{fontSize: '16px', color: '#fff', width: '30px', height: '30px', borderRadius: '15px', border: '2px solid #fff', display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '20px'}} >^</div>
+                                    )} 
                                 </div>
 
-                                <input style={{width: '80%'}} type="text" placeholder="Start typing to select a location" onChange={this.getSearchResults}></input>
+                                <input style={{width: '80%'}} value={this.state.__searchbarinput} type="text" placeholder={this.state.selectedPlaceholder === undefined ? "Start typing to select a location" : this.state.selectedPlaceholder} onChange={this.getSearchResults} onFocus={this.updateSearchResults} ></input>
                             </div>
                         </div>
 
@@ -784,7 +847,7 @@ class MainSection extends React.Component{
                                 </div>
                                 {AdvancedFilter()}
                             </div> */}
-                            <button class="col-lg col-12">
+                            <button class="col-lg col-12" onClick={this.onSearchHandler}>
                                 <span>2145</span> <img src={require("./../assets/images/icons/search.png")} class="img-fluid" alt="" />
                             </button>
                         </div>
@@ -793,7 +856,7 @@ class MainSection extends React.Component{
                     {this.state.searchLocationResults.length == 0 ? null : (
                         <div class="search-input-results">
                             {this.state.searchLocationResults.map(res => (
-                                <div onClick={() => {window.location = '/List?city='+res.cityId+'&district='+res.id+"&page=1"}}>{res.repr}</div>
+                                <div onClick={this.updateSelectedLocation.bind(this, res.cityId, res.id, res.repr)}>{res.repr}</div>
                             ))}
                         </div>
                     )}
