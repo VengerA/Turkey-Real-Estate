@@ -2311,7 +2311,10 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .GalleryImage{
-  width: 300px;
-  height: 300px;
-  object-fit: cover
+  position: absolute;
+  width: 70%;
+  height: 400px;
+  background-size: cover;
+  margin-left: 30%;
+  background-image: url('./assets/images/map.png')
 }

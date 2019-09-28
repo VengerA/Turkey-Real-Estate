@@ -17,7 +17,7 @@ class Header2 extends React.Component{
 
   showProperty = () => {
     let show = this.state.showProperty
-    {this.setState({showProperty: !show})}
+    {this.setState({showProperty: true})}
   } 
 
   render(){

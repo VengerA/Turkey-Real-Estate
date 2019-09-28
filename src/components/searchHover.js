@@ -13,6 +13,8 @@ import MainStore from './store'
 import {observer }from 'mobx-react'
 import axios from 'axios'
 
+import background from './../assets/images/map.png';
+
 @observer
 class SearchHover extends React.Component{
   constructor(props){
@@ -120,16 +122,19 @@ class SearchHover extends React.Component{
                                     {PriceArr}
                                 </ul>
                             </div>
+                            <div class="map-area col-lg-6 col-12">
+                                <a href = {"/City?city=4&"+"page=1"} class = "GalleryImage" style = {{height: "400px"}} ></a>
+                            </div>
                         </div>
                         
                         <div class="blog-title col-12">WE RECOMMEND</div>
                             <div class="property-blogs row col-12 p-0 m-0">
                                 {recomandedArr}
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         );
     }
 }
