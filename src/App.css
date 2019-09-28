@@ -592,7 +592,7 @@
   color: black;
   background: transparent;
 }
-
+/* 
 input[type=range] {
   -webkit-appearance: none;
   margin: 18px 0;
@@ -681,7 +681,7 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #367ebd;
 }
-
+ */
 .AdvancedFilter {
   background-color: #ffffff;
   width: 40.25%;
@@ -799,15 +799,6 @@ input[type=range]:focus::-ms-fill-upper {
 .slider-cover-image {
   width: 100%;
   height: 800px;
-}
-
-.slider{
-  position: absolute;
-  top: 209px;
-  right: 64px;
-  width: 59px;
-  height: 191px;
-  display: flex;
 }
 /* FEATURED 1 */
 
@@ -2312,4 +2303,15 @@ input[type=range]:focus::-ms-fill-upper {
 
 .form-opener {
   display: block !important;
+}
+
+.Gallery {
+  width: 300px;
+  height: 300px;
+}
+
+.GalleryImage{
+  width: 300px;
+  height: 300px;
+  object-fit: cover
 }

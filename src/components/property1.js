@@ -7,7 +7,7 @@ import border_home_icon from "./../static/cerceveEv_logo.png";
 
 import {observer} from 'mobx-react';
 import { Carousel } from 'react-responsive-carousel';
-
+import axios from 'axios';
 import './../App.css';
 
 import background from './../assets/images/big-property-image.png';
@@ -15,15 +15,29 @@ import MainStore from './store';
 
 @observer
 class Property1 extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = { 
-        showEmail: false,
-        showShare: false,
-        imgArr : [{item:0},{item:1},{item:2},{item:3},{item:4},{item:5}],
-        i: 0
+    constructor(props){
+        super(props);
+        this.state = { 
+            showEmail: false,
+            showShare: false,
+            imgArr : [{item:0},{item:1},{item:2},{item:3},{item:4},{item:5}],
+            i: 0
+        }
     }
-  }
+
+    takeCurrencyRates = () => {
+        axios.get("https://api.exchangeratesapi.io/latest?base=TRY ")
+        .then(res => {
+            console.log(res.data.rates.USD)
+            MainStore.DolarBase = res.data.rates.USD
+            MainStore.EuroBase = res.data.rates.EUR
+        })
+    }
+
+    componentWillMount () {
+        // SAZAK TAKE PROPERTY LIST FONKSIYONU CLAISTIKTAN SONRA ASAGIADKI KODU DUZELTIRSEN KANKA DIREK ACILISTA ALICAK DATAYI SONRASINDA MAINSTORE ATICAK O DA ACILDIGINDA 1 KERE RENDER EDICEK TEMIIIIZZZ
+        this.takeCurrencyRates()
+    }
 
     showEmail = () => {
         let show = this.state.showEmail
@@ -35,237 +49,255 @@ class Property1 extends React.Component{
         this.setState({showShare: !show})
     }
 
-  render(){
-    if (this.props.property === undefined)
-        return null
-    const email = () => {
-        let output = null
-        if(this.state.showEmail){
-            output = (
-                <div class="send-mail-area">
-                    <div class="section-title">
-                        Inspire new life
-                    </div>
-                    
-                    <input type="text" placeholder="Sender"/>
-
-                    <input type="text" placeholder="Sender
-                    Recipient E Mail Address"/>
-
-                    <button type="submit">Send E Mail / Send</button>
-                </div>
-            )
+    Currency = (currency) => {
+        let output = null 
+        if(MainStore.currentCurrency === "TRY"){
+            output  = currency.toLocaleString() + " " + MainStore.currentCurrency
         }
+        else if(MainStore.currentCurrency === "USD"){
+            output  = (currency*MainStore.DolarBase).toLocaleString() + " " + MainStore.currentCurrency
+        }
+        else{
+            output  = (currency*MainStore.EuroBase).toLocaleString() + " " + MainStore.currentCurrency
+        }
+        console.log(currency)
+        console.log(MainStore.DolarBase)
+        console.log(currency*MainStore.DolarBase)
         return output
     }
 
-    const share = () => {
-        let output = null
-        if(this.state.showShare){
-            output = (
-                <div class="share-box">
-                    <a href="#" class="social">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-
-                    <a href="#" class="social">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-
-                    <a href="#" class="social">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-                
-            )
-        }
-        return output
-    }
-
-    let AmentitiesaArr = [];
-
-    if (this.props.property !== undefined) {
-        AmentitiesaArr = this.props.property.amenities.map(item => {
-            //sazak burdaki amentities arr i gidip property.amentities diye ceksen daha guzel olabilir sana birakiyorum orayi
-            let output = null 
-            output = (
-                <div class="block col-lg-3 col-6">
-                    <div class="block-item">
-                        <div class="icon">
-                            <img src={require("./../assets/images/icons/cafe.png")} alt="" />
+    render(){
+        if (this.props.property === undefined)
+            return null
+        const email = () => {
+            let output = null
+            if(this.state.showEmail){
+                output = (
+                    <div class="send-mail-area">
+                        <div class="section-title">
+                            Inspire new life
                         </div>
-    
-                        <div class="content">
-                            {item.name}
-                        </div>
+                        
+                        <input type="text" placeholder="Sender"/>
+
+                        <input type="text" placeholder="Sender
+                        Recipient E Mail Address"/>
+
+                        <button type="submit">Send E Mail / Send</button>
                     </div>
-                </div>
-            )
+                )
+            }
             return output
-          })
-          
-        //   this.props.property.gallery.map((path, index) => 
-    }
+        }
 
-    const LittleImages = this.props.property.gallery.slice(0,6).map((item) => { 
-        console.log(item)
-        let output = ((
-            <a href="#" class="little-image" data-lightbox="property-images" >
-                <img src={'http://138.201.16.232' + item} alt="" />
-            </a>
-        ))  
+        const share = () => {
+            let output = null
+            if(this.state.showShare){
+                output = (
+                    <div class="share-box">
+                        <a href="#" class="social">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
 
-        console.log(output)
-        return output 
-    })
+                        <a href="#" class="social">
+                            <i class="fab fa-twitter"></i>
+                        </a>
 
-    const imageArr = this.props.property.gallery.map(item => {
-        let output = ((
-            
-            <img src={'http://138.201.16.232' + item} alt="" />
-        ))
-    })
-    
-    const carouseLArr = () => {
-        let output = ((
-            <Carousel className = "Gallery">    
-                {imageArr}
-            </Carousel>
-        ))
-        console.log(output)
-        return output
-    }
-
-    return (
-        <div class="property-details col-lg-9 col-12">
-            <figure class="property-image" style={{backgroundImage: 'url('+this.props.property.cover_image+')'}}>
-                <div class="property-buttons">
-                    <div class="property-lightbox">
-                        {LittleImages}
-                        <a href="#" class="little-image" data-lightbox="property-images" >
-                            + {this.props.property.gallery.length - 6}
+                        <a href="#" class="social">
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </div>
+                    
+                )
+            }
+            return output
+        }
 
-                    <div class="property-actions">
-                        <div class="hearth">
-                            <div class="favorite">
-                                <div class="row m-0">
-                                    <div class="fav-btn">
-                                        <span href="" class="favme dashicons dashicons-heart">
-                                            <i class="fa fa-heart"></i>
-                                        </span>
+        let AmentitiesaArr = [];
+
+        if (this.props.property !== undefined) {
+            AmentitiesaArr = this.props.property.amenities.map(item => {
+                //sazak burdaki amentities arr i gidip property.amentities diye ceksen daha guzel olabilir sana birakiyorum orayi
+                let output = null 
+                output = (
+                    <div class="block col-lg-3 col-6">
+                        <div class="block-item">
+                            <div class="icon">
+                                <img src={require("./../assets/images/icons/cafe.png")} alt="" />
+                            </div>
+        
+                            <div class="content">
+                                {item.name}
+                            </div>
+                        </div>
+                    </div>
+                )
+                return output
+            })
+            
+            //   this.props.property.gallery.map((path, index) => 
+        }
+
+        const LittleImages = this.props.property.gallery.slice(0,6).map((item) => { 
+            console.log(item)
+            let output = ((
+                <a href="#" class="little-image" data-lightbox="property-images" >
+                    <img src={'http://138.201.16.232' + item} alt="" />
+                </a>
+            ))  
+
+            console.log(output)
+            return output 
+        })
+
+        const imageArr = this.props.property.gallery.map(item => {
+            let output = ((
+                
+                <img src={'http://138.201.16.232' + item} className = "GalleryImage" alt="" />
+            ))
+            return output
+        })
+        
+        const carouseLArr = () => {
+            let output = ((
+                <Carousel className = "Gallery">    
+                    {imageArr}
+                </Carousel>
+            ))
+            console.log(output)
+            return output
+        }
+
+        return (
+            <div class="property-details col-lg-9 col-12">
+                <figure class="property-image" style={{backgroundImage: 'url('+this.props.property.cover_image+')'}}>
+                    <div class="property-buttons">
+                        <div class="property-lightbox">
+                            {LittleImages}
+                            <a href="#" class="little-image" data-lightbox="property-images" >
+                                + {this.props.property.gallery.length - 6}
+                            </a>
+                        </div>
+
+                        <div class="property-actions">
+                            <div class="hearth">
+                                <div class="favorite">
+                                    <div class="row m-0">
+                                        <div class="fav-btn">
+                                            <span href="" class="favme dashicons dashicons-heart">
+                                                <i class="fa fa-heart"></i>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="share">
-                            {share()}
-                            <div class="icon" onClick = {()=> this.showShare()}>
-                                <img src={require("./../assets/images/icons/share.png")} alt="" />
+                            <div class="share">
+                                {share()}
+                                <div class="icon" onClick = {()=> this.showShare()}>
+                                    <img src={require("./../assets/images/icons/share.png")} alt="" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="email">
-                            {email()}
+                            <div class="email">
+                                {email()}
 
-                            <div class="icon" onClick = {() => {this.showEmail()}}>
-                                <img src={require("./../assets/images/icons/email-inside.png")} alt="" />
+                                <div class="icon" onClick = {() => {this.showEmail()}}>
+                                    <img src={require("./../assets/images/icons/email-inside.png")} alt="" />
+                                </div>
+                            </div>
+                            <div class="print">
+                                <div class="icon">
+                                    <img src={require("./../assets/images/icons/print.png")} alt="" />
+                                </div>
                             </div>
                         </div>
-                        <div class="print">
+                    </div>
+                </figure>
+                <div class="property-info col-12 row m-0">
+                    <div class="property-area col-lg-6 col-12">
+                        <div class="location">{this.props.property.city_name} / {this.props.property.district_name} / {this.props.property.subdistrict_name}</div>
+                        <div class="name">{this.props.property.bed_count} Bedroom {this.props.property.project_area} m<sup>2</sup> Apartment in {this.props.property.district_name}</div>
+                    </div>
+
+                    <div class="property-price col-lg-6 col-12">
+                        <div class="block">
+                            <div class="title">
+                                Starts From
+                            </div>
+
+                            <div class="price">
+                            {this.Currency(this.props.property.price_start)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-blocks col-12 row m-0">
+                    <div class="blocks col-12 p-0 row align-items-center m-0">
+                        <div class="block col-lg col-6">
                             <div class="icon">
-                                <img src={require("./../assets/images/icons/print.png")} alt="" />
+                                <img src={require("./../assets/images/icons/home-blue.png")} alt=""/>
+                            </div>
+                            <div class="count">
+                                Residence
                             </div>
                         </div>
-                    </div>
-                </div>
-            </figure>
-            <div class="property-info col-12 row m-0">
-                <div class="property-area col-lg-6 col-12">
-                    <div class="location">{this.props.property.city_name} / {this.props.property.district_name} / {this.props.property.subdistrict_name}</div>
-                    <div class="name">{this.props.property.bed_count} Bedroom {this.props.property.project_area} m<sup>2</sup> Apartment in {this.props.property.district_name}</div>
-                </div>
 
-                <div class="property-price col-lg-6 col-12">
-                    <div class="block">
-                        <div class="title">
-                            Starts From
-                        </div>
-
-                        <div class="price">
-                        {this.props.property.price_start.toLocaleString()} TRY
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="property-blocks col-12 row m-0">
-                <div class="blocks col-12 p-0 row align-items-center m-0">
-                    <div class="block col-lg col-6">
-                        <div class="icon">
-                            <img src={require("./../assets/images/icons/home-blue.png")} alt=""/>
-                        </div>
-                        <div class="count">
-                            Residence
-                        </div>
-                    </div>
-
-                    <div class="block col-lg col-6">
-                        <div class="icon">
-                            <img src={require("./../assets/images/icons/bed-blue.png")} alt=""/>
-                        </div>
-                        <div class="count">{this.props.property.bed_count === null ? '?' : this.props.property.bed_count} </div>
-                        <div class="name">
-                        Bedroom
-                        </div>
-                    </div>
-
-                    <div class="block col-lg col-6">
-                        <div class="icon">
-                            <img src={require("./../assets/images/icons/bathroom-blue.png")} alt=""/>
-                        </div>
-                        <div class="count">{this.props.property.bath_count === null ? '?' : this.props.property.bath_count} </div>
-                        <div class="name">
-                        Bathroom
-                        </div>
-                    </div>
-
-                    <div class="block col-lg col-6">
-                        <div class="icon">
-                            <img src={require("./../assets/images/icons/home-area.png")} alt=""/>
-                        </div>
-                        {this.props.property.construction_area === null ? (
+                        <div class="block col-lg col-6">
+                            <div class="icon">
+                                <img src={require("./../assets/images/icons/bed-blue.png")} alt=""/>
+                            </div>
+                            <div class="count">{this.props.property.bed_count === null ? '?' : this.props.property.bed_count} </div>
                             <div class="name">
-                                {this.props.property.project_area} m<sup>2</sup>
+                            Bedroom
                             </div>
-                        ) : (
+                        </div>
+
+                        <div class="block col-lg col-6">
+                            <div class="icon">
+                                <img src={require("./../assets/images/icons/bathroom-blue.png")} alt=""/>
+                            </div>
+                            <div class="count">{this.props.property.bath_count === null ? '?' : this.props.property.bath_count} </div>
                             <div class="name">
-                                {this.props.property.construction_area} m<sup>2</sup> / {this.props.property.project_area} m<sup>2</sup>
+                            Bathroom
                             </div>
-                        )}
-                        
+                        </div>
+
+                        <div class="block col-lg col-6">
+                            <div class="icon">
+                                <img src={require("./../assets/images/icons/home-area.png")} alt=""/>
+                            </div>
+                            {this.props.property.construction_area === null ? (
+                                <div class="name">
+                                    {this.props.property.project_area} m<sup>2</sup>
+                                </div>
+                            ) : (
+                                <div class="name">
+                                    {this.props.property.construction_area} m<sup>2</sup> / {this.props.property.project_area} m<sup>2</sup>
+                                </div>
+                            )}
+                            
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="property-description col-12">
-                <h1 class="property-title">
-                    Comfort of Residence in Central {this.props.property.district_name}
-                </h1>
+                <div class="property-description col-12">
+                    <h1 class="property-title">
+                        Comfort of Residence in Central {this.props.property.district_name}
+                    </h1>
 
-                <p>{this.props.property.description}</p>
-            </div>
-
-            <div class="property-amenities col-12">
-                <div class="section-title">Amenities</div>
-
-                <div class="amenity-blocks row">
-                    {AmentitiesaArr}
-
+                    <p>{this.props.property.description}</p>
                 </div>
+
+                <div class="property-amenities col-12">
+                    <div class="section-title">Amenities</div>
+
+                    <div class="amenity-blocks row">
+                        {AmentitiesaArr}
+
+                    </div>
+                </div>
+                {carouseLArr()}
             </div>
-            {/* {carouseArr()} */}
-        </div>
-    );
-  }
+        );
+    }
 }
 
 export default Property1;

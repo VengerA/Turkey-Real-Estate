@@ -46,7 +46,6 @@ class SearchHover extends React.Component{
   }
     clickedCity = (city) =>{
         MainStore.clickedCity = city
-        console.log(MainStore.clickedCity)
     }
 
     componentWillMount() {
@@ -59,14 +58,13 @@ class SearchHover extends React.Component{
              MainStore.cities = [
                  ...res.data
                 ]
-             console.log(res)}
-             )
+            }
+        )
     }
 
     
     render(){
         const propertiesArr = MainStore.cities.map(item => {
-            console.log(item)
             let output = null 
             output = ((
                 <li><a href={"/City?city="+ item.id.toString() + "&page=1" }>Properties for Sale in {item.name}</a></li>     
@@ -75,7 +73,6 @@ class SearchHover extends React.Component{
         })
 
         const PriceArr = this.state.priceArr.map(item => {
-            console.log(item)
             let output = null 
             output = ((
                 <li><a href="#">$ {item}</a></li>   
@@ -83,7 +80,6 @@ class SearchHover extends React.Component{
             return output;
         })
         const recomandedArr = MainStore.cities.map(item => {
-            console.log(item)
             let output = null 
             output = ((
                     <div class="blog-block col-lg col-12">

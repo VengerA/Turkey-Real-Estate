@@ -41,11 +41,12 @@ class MainSection extends React.Component{
             selectedDistrictID: undefined,
             selectedPlaceholder: undefined,
             __searchbarinput: '',
+            MinPrice : 0,
+            MaxPrice : 5000000000
         }
     }
     componentDidMount() {
         var vm = this
-        console.log(MainStore.showProperty)
         this.setState({ imageSwitchTimer: setInterval(() => {
             vm.switchNextImage()
         }, 4000) })
@@ -206,6 +207,13 @@ class MainSection extends React.Component{
         this.setState({showAdvanced: !show})
     }
 
+    updateMinPrice = (input) => {
+        this.setState({MinPrice: input.target.value})
+    }
+    updateMaxPrice = (input) => {
+        this.setState({MaxPrice: input.target.value})
+    }
+
     render(){
         const Price = () => {
             let output = null
@@ -218,13 +226,13 @@ class MainSection extends React.Component{
                             </div>
 
                             <div class="input">
-                                <input type="range" class="min-range" step="10000" value="0" max="1000000" />
+                                <input type="range" class="min-range" step="10000" value={this.state.MinPrice} min = "0" max="1000000" onChange = {(data) => this.updateMinPrice(data)} />
 
                                 <div class="values row">
                                     <div class="col-6 text-left">
                                         <i class="fa fa-lira-sign"></i>
                                         <span class="min">
-                                            0
+                                            {this.state.MinPrice}
                                         </span>
                                     </div>
 
@@ -240,7 +248,7 @@ class MainSection extends React.Component{
                             </div>
 
                             <div class="input">
-                                <input type="range" class="max-range" step="200000" min="200000" value="200000" max="1000000" />
+                                <input type="range" class="max-range" step="200000" value = {this.state.MaxPrice} min="200000" value={this.state.MaxPrice} max="1000000" onChange = {(data) => this.updateMaxPrice(data)} />
 
                                 <div class="values row">
                                     <div class="col-6 text-left">
@@ -252,7 +260,7 @@ class MainSection extends React.Component{
 
                                     <div class="col-6 text-right">
                                         <i class="fa fa-lira-sign"></i>
-                                        <span class="max">5M</span>+
+                                        <span class="max">{this.state.MaxPrice.toLocaleString()}</span>+
                                     </div>
                                 </div>
                             </div>

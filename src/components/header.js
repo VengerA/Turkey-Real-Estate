@@ -12,7 +12,6 @@ class Header extends React.Component{
     constructor(props){
         super(props);
         this.state = {  
-        chosenLan: "USD",
         showCurrency : false,
         isFirst: false 
         }
@@ -241,7 +240,7 @@ class Header extends React.Component{
                                     </div>
 
                                     <span class="current-currency">
-                                        $ USD
+                                       {MainStore.currentCurrency} 
                                     </span>
 
                                     <span class="icon">
