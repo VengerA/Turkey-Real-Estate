@@ -21,7 +21,9 @@ class Property1 extends React.Component{
         showEmail: false,
         showShare: false,
         imgArr : [{item:0},{item:1},{item:2},{item:3},{item:4},{item:5}],
-        i: 0
+        i: 0,
+        sliderInterval: undefined,
+        sliderIndex: 0,
     }
   }
 
@@ -33,6 +35,29 @@ class Property1 extends React.Component{
     showShare = () => {
         let show = this.state.showShare
         this.setState({showShare: !show})
+    }
+
+    componentWillMount() {
+        var vm = this
+        this.setState({ sliderInterval: setInterval(() => {
+            vm.switchNextImage()
+        }, 4000) })
+    }
+
+    switchNextImage = () => {
+        if (this.props.property === undefined)
+            return
+
+        this.setState({ sliderIndex: (this.state.sliderIndex + 1) % this.props.property.gallery.length })
+    }
+
+    switchToImage = (indx) => {
+        this.setState({ sliderIndex: indx })
+        clearInterval(this.state.sliderInterval)
+        var vm = this
+        this.setState({ sliderInterval: setInterval(() => {
+            vm.switchNextImage()
+        }, 4000) })
     }
 
   render(){
@@ -136,15 +161,20 @@ class Property1 extends React.Component{
         return output
     }
 
+    var vm = this
+
+    const LittleNumbers = this.props.property.gallery.map((item, index) => {
+        return (
+            <div style={vm.state.sliderIndex == index ? {fontSize: '36px', fontWeight: 'bold', color: '#fff', marginRight: '15px'} : {fontSize: '18px', color: '#fff', marginRight: '15px'}} onClick={this.switchToImage.bind(this, index)}>{index+1}</div>
+        )
+    })
+
     return (
         <div class="property-details col-lg-9 col-12">
-            <figure class="property-image" style={{backgroundImage: 'url('+this.props.property.cover_image+')'}}>
+            <figure class="property-image" style={{backgroundImage: 'url(http://138.201.16.232'+this.props.property.gallery[this.state.sliderIndex]+')'}}>
                 <div class="property-buttons">
-                    <div class="property-lightbox">
-                        {LittleImages}
-                        <a href="#" class="little-image" data-lightbox="property-images" >
-                            + {this.props.property.gallery.length - 6}
-                        </a>
+                    <div class="property-lightbox" style={{display: 'flex', flexDirection: 'row', alignItems: 'center', width: '70%', overflow: 'hidden', overflowX: 'auto', cursor: 'pointer'}}>
+                        {LittleNumbers}
                     </div>
 
                     <div class="property-actions">
