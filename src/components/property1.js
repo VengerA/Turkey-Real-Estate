@@ -6,6 +6,7 @@ import bathroom_icon from "./../static/bathroom_logo.svg";
 import border_home_icon from "./../static/cerceveEv_logo.png";
 
 import {observer} from 'mobx-react';
+import { Carousel } from 'react-responsive-carousel';
 
 import './../App.css';
 
@@ -37,15 +38,6 @@ class Property1 extends React.Component{
   render(){
     if (this.props.property === undefined)
         return null
-
-    const imageArr = this.state.imgArr.map(item => {
-        let output = (
-            <div className = "Property1ImageElement">
-                <p>RESİM</p>
-            </div>
-        )
-        return output
-    })
     const email = () => {
         let output = null
         if(this.state.showEmail){
@@ -91,7 +83,6 @@ class Property1 extends React.Component{
     }
 
     let AmentitiesaArr = [];
-    let LittleImages = [];
 
     if (this.props.property !== undefined) {
         AmentitiesaArr = this.props.property.amenities.map(item => {
@@ -114,18 +105,35 @@ class Property1 extends React.Component{
           })
           
         //   this.props.property.gallery.map((path, index) => 
+    }
 
-        LittleImages = () => { this.state.imgArr.map((item) => { 
-                
-                let output = ((<a href="#" class="little-image" data-lightbox="property-images" data-title={'Image ' + this.props.property.gallery[item.item].index}>
-                    <img src={'http://138.201.16.232' + this.props.property.gallery[item.item].path} alt="" />
-                </a>
-                ))  
-                let current = this.state.i
-                this.setState({i: current + 1})
-                return output 
-            })
-        }
+    const LittleImages = this.props.property.gallery.slice(0,6).map((item) => { 
+        console.log(item)
+        let output = ((
+            <a href="#" class="little-image" data-lightbox="property-images" >
+                <img src={'http://138.201.16.232' + item} alt="" />
+            </a>
+        ))  
+
+        console.log(output)
+        return output 
+    })
+
+    const imageArr = this.props.property.gallery.map(item => {
+        let output = ((
+            
+            <img src={'http://138.201.16.232' + item} alt="" />
+        ))
+    })
+    
+    const carouseLArr = () => {
+        let output = ((
+            <Carousel className = "Gallery">    
+                {imageArr}
+            </Carousel>
+        ))
+        console.log(output)
+        return output
     }
 
     return (
@@ -133,7 +141,10 @@ class Property1 extends React.Component{
             <figure class="property-image" style={{backgroundImage: 'url('+this.props.property.cover_image+')'}}>
                 <div class="property-buttons">
                     <div class="property-lightbox">
-                        {LittleImages()}
+                        {LittleImages}
+                        <a href="#" class="little-image" data-lightbox="property-images" >
+                            + {this.props.property.gallery.length - 6}
+                        </a>
                     </div>
 
                     <div class="property-actions">
@@ -251,6 +262,7 @@ class Property1 extends React.Component{
 
                 </div>
             </div>
+            {/* {carouseArr()} */}
         </div>
     );
   }

@@ -52,35 +52,65 @@ class PropertyHelp extends React.Component{
               </form>
               
               <div class="info-blocks">
-                  <div class="block">
-                      <div class="title">
-                          Project Area
-                      </div>
+                    <div class="block">
+                        <div class="title">
+                            Project District: 
+                        </div>
 
-                      <div class="content">
-                          {this.props.property === undefined ? '...' : (this.props.property.project_area == null ? 'unknown' : this.props.property.project_area)}
-                      </div>
-                  </div>
+                        <div class="content">
+                            {this.props.property === undefined ? '...' : (this.props.property.district_name == null ? 'unknown' : this.props.property.district_name + '/' + this.props.property.subdistrict_name )}
+                        </div>
+                    </div>
 
-                  <div class="block">
-                      <div class="title">
-                          Construction Area
-                      </div>
+                    <div class="block">
+                        <div class="title">
+                            Room Structure:
+                        </div>
 
-                      <div class="content">
-                          {this.props.property === undefined ? '...' : (this.props.property.construction_area == null ? 'unknown' : this.props.property.construction_area)}
-                      </div>
-                  </div>
+                        <div class="content">
+                            {this.props.property === undefined ? '...' : (this.props.property.room_schema == null ? 'unknown' : this.props.property.room_schema)}
+                        </div>
+                    </div>
 
-                  <div class="block">
-                      <div class="title">
-                          Green Area
-                      </div>
+                    <div class="block">
+                        <div class="title">
+                            Bath Count:
+                        </div>
 
-                      <div class="content"> 
-                        {this.props.property === undefined ? '...' : (this.props.property.green_area == null ? 'unknown' : this.props.property.green_area)}
-                      </div>
-                  </div>
+                        <div class="content"> 
+                            {this.props.property === undefined ? '...' : (this.props.property.bath_count == null ? 'unknown' : this.props.property.bath_count)}
+                        </div>
+                    </div>
+                    
+                    <div class="block">
+                        <div class="title">
+                            Gross Metersquare:
+                        </div>
+
+                        <div class="content"> 
+                            {this.props.property === undefined ? '...' : (this.props.property.bath_count == null ? 'unknown' : this.props.property.project_area)} m<sup>2</sup>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">
+                            Metersquare: 
+                        </div>
+
+                        <div class="content"> 
+                            {this.props.property === undefined ? '...' : (this.props.property.construction_area == null ? 'unknown' : this.props.property.construction_area)} m<sup>2</sup>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="title">
+                            Floor / Total Floor:
+                        </div>
+
+                        <div class="content"> 
+                            {this.props.property === undefined ? '...' : (this.props.property.floor_index == null ? 'unknown' : this.props.property.floor_index + ' / ' + this.props.property.floor_count)}
+                        </div>
+                    </div>
                 </div>
           </div>
       </aside>

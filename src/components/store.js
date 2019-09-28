@@ -19,6 +19,12 @@ class MainStore {
 
     @observable currentCurrency = "TRY"
 
+    @observable mail = ""
+
+    @observable DolarBase  = null 
+
+    @observable EuroBase = null
+
     
 }
 

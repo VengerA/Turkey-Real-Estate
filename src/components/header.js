@@ -12,7 +12,7 @@ class Header extends React.Component{
         showDollar: false,
         showTukishLira: true, 
         showEuro: false,
-        isFirst: true 
+        isFirst: false 
         }
     }
 
