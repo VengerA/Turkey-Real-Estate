@@ -52,7 +52,7 @@ class Header2 extends React.Component{
                 <div class="col-lg-9 col-12">
                     <nav class="header-menu">
                         <ul>
-                            <li onClick = {() => {this.showProperty()}}><a href="#">Property</a>
+                            <li onClick = {() => {this.showProperty()}}><a href="#">Cities</a>
                             {ShowProperty()}
                             </li>
                             <li><a href="#">Guide To Turkey</a>

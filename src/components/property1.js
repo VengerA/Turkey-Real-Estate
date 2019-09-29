@@ -277,9 +277,9 @@ class Property1 extends React.Component{
                 </div>
             </div>
             <div class="property-description col-12">
-                <h1 class="property-title">
+                {/* <h1 class="property-title">
                     Comfort of Residence in Central {this.props.property.district_name}
-                </h1>
+                </h1> */}
 
                 <p>{this.props.property.description}</p>
             </div>

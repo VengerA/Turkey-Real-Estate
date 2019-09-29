@@ -43,18 +43,19 @@ class Featured1 extends React.Component{
   }
 
   render(){
-    const arr = this.state.featureds.map(item => {
+    const arr = this.state.guideCities.map(item => {
+      console.log(item)
       let output = null
       output  = ((
         <div class="city-block col-lg-4 col-sm-6 col-12">
           <a href={"/City?city="+ item.id.toString() +"&page=1"} class="city-item">
               <figure class="city-image">
-                  <img src={require("./../assets/images/istanbul.png")}alt=""/>
+                  <img src={"http://138.201.16.232"+ item.gallery[0]} alt=""/>
               </figure>
 
               <div class="city-info">
-                  <div class="city-name">{item.header}</div>
-                  <div class="city-count">{item.propertyCount} Properties</div>
+                  <div class="city-name">{item.name}</div>
+                  <div class="city-count">{item.property_count} Properties</div>
               </div>
           </a>
         </div>
