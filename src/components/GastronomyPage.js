@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Header from './header.js';
-import Header2 from './header2.js';
+import HeaderSection from './headersSection';
 import ContactFooter from './contactFooter.js';
 import Subscribe from './subscribe.js';
 import Footer from './footer.js';
@@ -21,15 +20,21 @@ class GastronomyPage extends React.Component{
   render(){
     
     return (
-      <div>
-        <Header/>
-        <Header2/>
-        <Header3/>
-        <Gastronomy/>
-        <ContactFooter/>
-        <Subscribe/>
-        <Footer/>
-        <Footer2/>
+        <div className = "container-fluid" id = "app">
+          <div className = "general-container">
+            <HeaderSection/>
+            <main id = "main" class = 'city'>
+              <div id ="hero-placeholder">
+                <Gastronomy/>
+                <ContactFooter/>
+              </div>   
+            </main>
+          <footer id = "footer">
+            <Subscribe/>
+            <Footer/>
+            <Footer2/>
+          </footer>
+        </div>
       </div>
     );
   }

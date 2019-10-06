@@ -35,6 +35,7 @@ class Header extends React.Component{
                 MainStore.showEuro= false
                 this.setState({isFirst: false})
                 MainStore.currentCurrency = "USD"
+                localStorage.setItem("currency", "USD")
             }
             else if(id === 2){
                 MainStore.showDollar = false
@@ -42,6 +43,7 @@ class Header extends React.Component{
                 MainStore.showEuro= false
                 this.setState({isFirst: false})
                 MainStore.currentCurrency = "TRY"
+                localStorage.setItem("currency", "TRY")
             }
             else {
                 MainStore.showDollar = false
@@ -49,6 +51,7 @@ class Header extends React.Component{
                 MainStore.showEuro= true
                 this.setState({isFirst: false})
                 MainStore.currentCurrency = "EUR"
+                localStorage.setItem("currency", "EUR")
             }
         }
     }

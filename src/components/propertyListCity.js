@@ -30,7 +30,6 @@ class CityPropertyList extends React.Component{
   takeCurrencyRates = () => {
     axios.get("https://api.exchangeratesapi.io/latest?base=TRY ")
     .then(res => {
-        console.log(res.data.rates.USD)
         MainStore.DolarBase = res.data.rates.USD
         MainStore.EuroBase = res.data.rates.EUR
     })
@@ -52,7 +51,9 @@ class CityPropertyList extends React.Component{
     if (MainStore.searchedCity === undefined || MainStore.searchedCity.id != Number(this.props.cityId)) {
         axios.get("http://138.201.16.232/properties/cities/"+this.props.cityId+"/")
             .then(res => {
+
                 MainStore.searchedCity = res.data
+                console.log(MainStore.searchedCity.districts)
             })
     }
 
@@ -178,13 +179,30 @@ class CityPropertyList extends React.Component{
         else{
             output  = (currency*MainStore.EuroBase).toLocaleString() + " " + MainStore.currentCurrency
         }
-        console.log(currency)
-        console.log(MainStore.DolarBase)
-        console.log(currency*MainStore.DolarBase)
         return output
     }
 
   render(){
+    const DistrictArr = () => {
+        let output = null 
+        if(MainStore.searchedCity !== undefined){
+            console.log(MainStore.searchedCity.districts)
+            let i = 0
+            output = MainStore.searchedCity.districts.slice(0,6).map(item => {
+                
+                let output2 = ((
+                    <a class = "DistrictRow" key = {item[0]} href = {"/List?city=" + MainStore.searchedCity.id + "&district=" + item[0] + "&page=1"}>
+                        <p class = "DistrictName">{item[1]}</p>
+                        <p class = "DistrictPropertyCount">34 Properties</p>
+                    </a>
+                ))
+                i++
+                return output2
+            })
+        }
+        return output
+    }
+
     const propertyArr = MainStore.searchResults.map(item =>{
       let output = null 
       output = ((
@@ -276,37 +294,44 @@ class CityPropertyList extends React.Component{
               </div>
           </div>
       </header>
+      
+      
       <div class="city-lists">
-          <div id="list-view" class="row">
+            
+        <div id="list-view" class="row">
+             <div class = "DistrictContainer">
+                {DistrictArr()}
+            </div>
               <div class="container">
                   <div class="row">
-                      <div class="listing col-12 row">
+                    
+                     <div class="listing col-12 row">
                         {propertyArr}
                           <div class="system_pagination row align-items-center col-12">
-                                        <a href="#" onClick={this.goPrevious} class="arrow prev">
-                                            <img
-                                                src={require("./../assets/images/icons/arrow-chevron-prev.png")}
-                                                alt="" 
-                                            />
-                                        </a>
+                            <a href="#" onClick={this.goPrevious} class="arrow prev">
+                                <img
+                                    src={require("./../assets/images/icons/arrow-chevron-prev.png")}
+                                    alt="" 
+                                />
+                            </a>
 
-                                        <div class="numbers">
-                                            {this.createPaginatorArrows()}
-                                        </div>
-
-                                        <a href="#" onClick={this.goNext} class="arrow next">
-                                            <img 
-                                                src={require("./../assets/images/icons/arrow-chevron-next.png")} 
-                                                alt="" 
-                                            />
-                                        </a>
-                                    </div>
-                                </div>
+                            <div class="numbers">
+                                {this.createPaginatorArrows()}
                             </div>
+
+                            <a href="#" onClick={this.goNext} class="arrow next">
+                                <img 
+                                    src={require("./../assets/images/icons/arrow-chevron-next.png")} 
+                                    alt="" 
+                                />
+                            </a>
                         </div>
-                      </div>
                     </div>
-                  </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
 
     );
   }

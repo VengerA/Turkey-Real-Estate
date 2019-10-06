@@ -17,7 +17,7 @@ class MainStore {
 
     @observable searchResultCount = undefined
 
-    @observable currentCurrency = "TRY"
+    @observable currentCurrency = localStorage.getItem("currency")
 
     @observable mail = ""
 

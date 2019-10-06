@@ -1,15 +1,6 @@
 import React from 'react';
-import location_logo from './../static/location.svg';
-import search_icon from './../static/search_icon.svg';
-import home_icon from "./../static/cerceveEv_logo.png";
-import check_icon from "./../static/check-circle.svg";
-import checked_icon from "./../static/checked-circle.svg";
-import triangle_icon from './../static/triangle.svg';
-import wallet_icon from './../static/wallet2_logo.svg';
-import bed_logo from './../static/bed_logo.svg';
-import klavye_logo from './../static/klavye_logo.svg';
+
 import './../App.css';
-import down_arrow from './../static/down_arrow.svg';
 
 import MainStore from './store.js';
 import {observer} from 'mobx-react';
@@ -42,7 +33,7 @@ class MainSection extends React.Component{
             selectedPlaceholder: undefined,
             __searchbarinput: '',
             MinPrice : 0,
-            MaxPrice : 5000000000
+            MaxPrice : 20000000000
         }
     }
     componentDidMount() {
@@ -148,9 +139,9 @@ class MainSection extends React.Component{
     onSearchHandler = () => {
         if (this.state.selectedCityID !== undefined) {
             if (this.state.selectedDistrictID !== undefined) {
-                window.location = '/List?city='+this.state.selectedCityID+'&district='+this.state.selectedDistrictID+'&page=1'
+                window.location = '/List?city='+this.state.selectedCityID+'&district='+this.state.selectedDistrictID+'&page=1' + "&priceMin=" +this.state.MinPrice + "&priceMax=" + this.state.MaxPrice
             } else {
-                window.location = '/City?city='+this.state.selectedCityID+'&page=1'
+                window.location = '/City?city='+this.state.selectedCityID+'&page=1' +"&priceMin=" + this.state.MinPrice + "&priceMax=" + this.state.MaxPrice
             }
         }
     }
@@ -190,16 +181,22 @@ class MainSection extends React.Component{
     showPropertyType =() =>{
         let show2 = this.state.showPropertyTypes
         this.setState({showPropertyTypes: !show2})
+        this.setState({showPrice: false})
+        this.setState({showBedroomTypes: false})
     } 
 
     showBedroomType =() =>{
         let show2 = this.state.showBedroomTypes
         this.setState({showBedroomTypes: !show2})
+        this.setState({showPropertyTypes: false})
+        this.setState({showPrice: false})
     } 
 
     showPrice = () =>{
         let show1 = this.state.showPrice
         this.setState({showPrice: !show1})
+        this.setState({showPropertyTypes: false})
+        this.setState({showBedroomTypes: false})
     } 
 
     showAdvanced = () => {
@@ -208,16 +205,32 @@ class MainSection extends React.Component{
     }
 
     updateMinPrice = (input) => {
-        this.setState({MinPrice: input.target.value})
+        console.log(input.target.value)
+        if(input.target.value >= this.state.MaxPrice){
+            this.setState({MinPrice: Number(input.target.value)})
+            this.setState({MaxPrice : Number(input.target.value)})
+        }
+        else {
+            this.setState({MinPrice: Number(input.target.value)})
+        }
+        
     }
     updateMaxPrice = (input) => {
-        this.setState({MaxPrice: input.target.value})
+        if(input.target.value <= this.state.MinPrice){
+            this.setState({MinPrice : Number(input.target.value)})
+            this.setState({MaxPrice: Number(input.target.value)})
+        }
+        else {
+            this.setState({MaxPrice: Number(input.target.value)})
+        }
+       
     }
 
     render(){
         const Price = () => {
             let output = null
             if(this.state.showPrice){
+                let min = 2000000
                 output = (
                     <div class="form-opener">
                         <div class="slider">
@@ -226,19 +239,19 @@ class MainSection extends React.Component{
                             </div>
 
                             <div class="input">
-                                <input type="range" class="min-range" step="10000" value={this.state.MinPrice} min = "0" max="1000000" onChange = {(data) => this.updateMinPrice(data)} />
+                                <input type="range" class="min-range" step="50000" value={this.state.MinPrice} min = "0" max="20000000" onChange = {(data) => this.updateMinPrice(data)} />
 
                                 <div class="values row">
                                     <div class="col-6 text-left">
                                         <i class="fa fa-lira-sign"></i>
                                         <span class="min">
-                                            {this.state.MinPrice}
+                                            {this.state.MinPrice.toLocaleString()}
                                         </span>
                                     </div>
 
                                     <div class="col-6 text-right">
                                         <i class="fa fa-lira-sign"></i>
-                                        <span class="max">5M</span>
+                                        <span class="max">20M</span>
                                     </div>
                                 </div>
                             </div>
@@ -248,19 +261,19 @@ class MainSection extends React.Component{
                             </div>
 
                             <div class="input">
-                                <input type="range" class="max-range" step="200000" value = {this.state.MaxPrice} min="200000" value={this.state.MaxPrice} max="1000000" onChange = {(data) => this.updateMaxPrice(data)} />
+                                <input type="range" class="max-range" step="50000" value = {this.state.MaxPrice} min="200000" value={this.state.MaxPrice} max="20000000" onChange = {(data) => this.updateMaxPrice(data)} />
 
                                 <div class="values row">
                                     <div class="col-6 text-left">
                                         <i class="fa fa-lira-sign"></i>
                                         <span class="min">
-                                            200000
+                                            {min.toLocaleString()}
                                         </span>
                                     </div>
 
                                     <div class="col-6 text-right">
                                         <i class="fa fa-lira-sign"></i>
-                                        <span class="max">{this.state.MaxPrice.toLocaleString()}</span>+
+                                        <span class="max">{this.state.MaxPrice.toLocaleString()}</span>
                                     </div>
                                 </div>
                             </div>
@@ -805,23 +818,6 @@ class MainSection extends React.Component{
                             </div>
 
                             <div class="form-box col-lg col-12 row m-0 align-items-center">
-                                <div class="form-item" onClick = {() => {this.showPrice()}}>
-                                    <div class="icon">
-                                        <img src={require("./../assets/images/icons/wallet.png")} alt="" />
-                                    </div>
-
-                                    <div class="title">
-                                        Any Price
-                                    </div>
-
-                                    <div class="icon">
-                                        <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt=""/>
-                                    </div>
-                                </div>
-                                {Price()}
-                            </div>
-
-                            <div class="form-box col-lg col-12 row m-0 align-items-center">
                                 <div class="form-item" onClick ={()=>this.showBedroomType()}>
                                     <div class="icon">
                                         <img src={require("./../assets/images/icons/bedroom.png")} alt="" />
@@ -837,6 +833,23 @@ class MainSection extends React.Component{
                                     {BedroomTypes()}
                                 </div>
                                 
+                            </div>
+
+                            <div class="form-box col-lg col-12 row m-0 align-items-center">
+                                <div class="form-item" onClick = {() => {this.showPrice()}}>
+                                    <div class="icon">
+                                        <img src={require("./../assets/images/icons/wallet.png")} alt="" />
+                                    </div>
+
+                                    <div class="title">
+                                        Any Price
+                                    </div>
+
+                                    <div class="icon">
+                                        <img src={require("./../assets/images/icons/chevron-arrow-down.png")} alt=""/>
+                                    </div>
+                                </div>
+                                {Price()}
                             </div>
                             
                             {/* <div class="form-box col-lg col-12 row m-0 align-items-center">
@@ -856,7 +869,7 @@ class MainSection extends React.Component{
                                 {AdvancedFilter()}
                             </div> */}
                             <button class="col-lg col-12" onClick={this.onSearchHandler}>
-                                <span>2145</span> <img src={require("./../assets/images/icons/search.png")} class="img-fluid" alt="" />
+                               <img src={require("./../assets/images/icons/search.png")} class="img-fluid" alt="" />
                             </button>
                         </div>
                     </div>

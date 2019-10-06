@@ -9,7 +9,6 @@ class Header2 extends React.Component{
   constructor(props){
     super(props);
     this.state = {  
-      chosenLan: "USD",
       showProperty : true,
       showGuide: true
     }
@@ -58,6 +57,7 @@ class Header2 extends React.Component{
                             <li><a href="#">Guide To Turkey</a>
                             {ShowGuide()}
                             </li>
+                            <li><a href="/Gastronomy">Gastronomy</a></li>
                             <li><a href="/citizenship">Citizenship</a></li>
                             <li><a href="/AboutUs">About Us</a></li>
                             <li><a href="/ContactUs">Contact</a></li>

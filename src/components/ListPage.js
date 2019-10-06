@@ -4,7 +4,6 @@ import ContactFooter from './contactFooter.js';
 import Subscribe from './subscribe.js';
 import Footer from './footer.js';
 import Footer2 from './footer2.js';
-import CityIntroduction from './cityIntroduction.js';
 import PropertyList from './propertyList.js';
 import HeaderSection from './headersSection';
 import Header3 from './header3';
